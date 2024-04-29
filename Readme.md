@@ -1,3 +1,8 @@
+## Introduction
+
+This sets up a quarto reveal.js presentation to be loaded under https://wolfgangspahn.github.io/atelier-burgdorf.github.io 
+
+
 ## Setup a quarto reveal js project
 
 To get started with creating a Reveal.js presentation using Quarto from the setup you've described, follow these steps:
