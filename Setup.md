@@ -116,40 +116,41 @@ git push -u origin main
 Run these commands in your CLI to connect your local repository to GitHub and push your changes.
 
 ## Step 6: Configure GitHub Pages
-1. **Set up GitHub Pages to Serve Your Presentation:**
+### Set up GitHub Pages to Serve Your Presentation:
    - Go to your repository on GitHub.
    - Navigate to "Settings" > "Pages".
    - Under "Source", select the `main` branch and the folder `/docs` depending on where you want to generate your site files.
    - Click "Save".
 
-2. **Render Your Quarto Document to the Docs Folder:**
-   - If you chose `/docs` in the repository settings on GitHub, you need to render your Quarto document directly to the `docs/` directory:
-
+### Render Your Quarto Document to the docs/ Folder:
+- If you chose `/docs` in the repository settings on GitHub, you need to configure to render your Quarto document directly to the `docs/` directory:
+  create config file
+  
 ```bash
 touch _quarto.yml
-```     
+```
 
-      with following content:
+with following content:
 
 ```yaml
 project:
   type: website
   output-dir: docs
 ``` 
-      which renders now to docs/
+which hopefully renders now to docs/
 ```bash
 quarto render first.qmd
 > ....
 > Output created: docs\first.html
 ```
    
-   - Commit the changes in the `docs/` directory:
+- Commit the changes in the `docs/` directory:
 
-     ```bash
-     git add docs
-     git commit -m "Add rendered presentation to docs/"
-     git push
-     ```
+```bash
+git add docs
+git commit -m "Add rendered presentation to docs/"
+git push -u origin main
+```
 
 ## Check Your GitHub Pages URL
 Once you have pushed your changes and set up GitHub Pages, your presentation should be available at `https://wolfgangspahn.github.io/atelier-burgdorf.github.io`.
@@ -157,3 +158,11 @@ Once you have pushed your changes and set up GitHub Pages, your presentation sho
 By following these steps, your Quarto presentation will be under version control with Git, and hosted on GitHub Pages, allowing you to share and collaborate on your project easily.
 
 # Pushing updates to GitHub Pages
+
+To keep you local content in sync with your Github pages do the following
+
+```bash
+git add .
+git commit -m "<your message>"
+git push -u origin main
+```
