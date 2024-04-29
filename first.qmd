@@ -1,0 +1,36 @@
+---
+title: "Atelier Burgdorf"
+subtitle: "Didaktik und künstliche Intelligenz"
+format:
+  revealjs: 
+    slide-number: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: images/phbern.svg
+    css: styles.css
+    footer: <https://www.phbern.ch/>
+resources:
+  - first.pdf
+---
+
+## Hallo miteinander
+
+In diesem Atelier werden wir die Möglichkeiten und Herausforderung von künstlicher Intelligenz in der Didaktik erforschen, einschliesslich:
+
+-   ...
+
+... und unsere Visionen, Hoffnung für die nächsten 5-10 Jahre entwickeln.
+
+
+## Mustererkennung
+
+
+<script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js"></script>
+<script src="mustererkennung.js" defer></script>
+
+
+<div id="svg-container"></div>
+
+
+
