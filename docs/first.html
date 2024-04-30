@@ -353,6 +353,19 @@
 <li>Workshop: Und was bedeutet das für die Bildung</li>
 </ul>
 </section>
+<section id="slide-with-form" class="slide level2">
+<h2>Slide with Form</h2>
+<form id="myForm">
+<label for="name">Your Name:</label> <input type="text" id="name" name="name"><br><br> <label for="email">Your Email:</label> <input type="email" id="email" name="email"><br><br> <input type="button" value="Submit" onclick="submitForm()">
+</form>
+<script>
+function submitForm() {
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  alert('Name: ' + name + ', Email: ' + email);
+}
+</script>
+</section>
 <section id="mustererkennung" class="slide level2">
 <h2>Mustererkennung</h2>
 <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js"></script>
