@@ -3,25 +3,47 @@ title: "Atelier Burgdorf"
 subtitle: "Didaktik und künstliche Intelligenz"
 format:
   revealjs: 
+    controls: true
     slide-number: true
     chalkboard: 
       buttons: false
     preview-links: auto
-    logo: images/phbern.svg
-    css: styles.css
-    footer: <https://www.phbern.ch/>
+    logo: images/Logo_PH_Bern.png
+    footer: Dr. Wolfgang Spahn
+    css: [styles.css, custom-styles.css]  # Include your custom CSS file here
 resources:
   - first.pdf
 ---
 
-## Hallo miteinander
+## Agenda
 
-In diesem Atelier werden wir die Möglichkeiten und Herausforderung von künstlicher Intelligenz in der Didaktik erforschen, einschliesslich:
+- KI - Wo stehen wir heute, wo geht die Reise hin
+  - Einführung
+  - KI - Wir bauen ein Neuronales Netz
+  - Grundlagen Modelle
+  - Ausblick 2029/2034
+- Selbstversuche mit ProPhysik 
+  - einen KI Lernbegleiter Prototyp
+- Workshop: Und was bedeutet das für die Bildung
 
--   ...
 
-... und unsere Visionen, Hoffnung für die nächsten 5-10 Jahre entwickeln.
+## Slide with Form
 
+<form id="myForm">
+  <label for="name">Your Name:</label>
+  <input type="text" id="name" name="name"><br><br>
+  <label for="email">Your Email:</label>
+  <input type="email" id="email" name="email"><br><br>
+  <input type="button" value="Submit" onclick="submitForm()">
+</form>
+
+<script>
+function submitForm() {
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  alert('Name: ' + name + ', Email: ' + email);
+}
+</script>
 
 ## Mustererkennung
 

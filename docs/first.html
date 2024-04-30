@@ -31,6 +31,7 @@
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="custom-styles.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -335,13 +336,22 @@
 </div>
 
 </section>
-<section id="hallo-miteinander" class="slide level2">
-<h2>Hallo miteinander</h2>
-<p>In diesem Atelier werden wir die Möglichkeiten und Herausforderung von künstlicher Intelligenz in der Didaktik erforschen, einschliesslich:</p>
+<section id="agenda" class="slide level2">
+<h2>Agenda</h2>
 <ul>
-<li>…</li>
+<li>KI - Wo stehen wir heute, wo geht die Reise hin
+<ul>
+<li>Einführung</li>
+<li>KI - Wir bauen ein Neuronales Netz</li>
+<li>Grundlagen Modelle</li>
+<li>Ausblick 2029/2034</li>
+</ul></li>
+<li>Selbstversuche mit ProPhysik
+<ul>
+<li>einen KI Lernbegleiter Prototyp</li>
+</ul></li>
+<li>Workshop: Und was bedeutet das für die Bildung</li>
 </ul>
-<p>… und unsere Visionen, Hoffnung für die nächsten 5-10 Jahre entwickeln.</p>
 </section>
 <section id="mustererkennung" class="slide level2">
 <h2>Mustererkennung</h2>
@@ -352,9 +362,9 @@
 </div>
 
 <div class="quarto-auto-generated-content">
-<p><img src="images/phbern.svg" class="slide-logo"></p>
+<p><img src="images/Logo_PH_Bern.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p><a href="https://www.phbern.ch/" class="uri">https://www.phbern.ch/</a></p>
+<p>Dr.&nbsp;Wolfgang Spahn</p>
 </div>
 </div>
 </section>
@@ -383,7 +393,7 @@
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-'controlsAuto': true,
+'controlsAuto': false,
 'previewLinksAuto': true,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
@@ -394,7 +404,7 @@
 'smaller': false,
  
         // Display controls in the bottom right corner
-        controls: false,
+        controls: true,
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide

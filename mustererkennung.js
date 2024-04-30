@@ -4,14 +4,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // configuration for the network visualization
     const radius = 20;  // Node radius
     const networkLeftPadding = 100;  // Left padding for the network
-    const networkTopPadding = 25;  // Top padding for the network
+    const networkTopPadding = 35;  // Top padding for the network
     const nodeSpacing = radius * 4;  // Vertical spacing between nodes within a layer
     const layerSpacing = radius * 10;  // Horizontal spacing between layers
 
     ///////////////////////////////////////////// GLOBAL VARIABLES ////////////////////////////////////////////////
 
     // Create an SVG element for the network visualization
-    const global_draw = SVG().addTo('#svg-container').size(1200, 610);
+    const global_draw = SVG().addTo('#svg-container').size(1200, 620);
     // Data model for activations and weights
     let global_networkData = {
         nodes: [],
@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             ];
     // Show labels for the nodes for human readability
     let showLabels = false;
+    let weightUsage = 'zero'; // 'random', 'optimal', 'zero'
 
     ///////////////////////////////////////////// CONFIG NETWORK ////////////////////////////////////////////////
 
@@ -61,14 +62,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const textHorLeftPadding = 5; // Horizontal padding for the text inside the box
     const tri_values = [-1, 0, 1]; // Possible values for activations and weights
     const duo_values = [0, 1]; // Possible values for activations and weights
-    // configuration for the button
-    const buttonX = 900;
-    const buttonY = 50;
-    const buttonWidth = 100;
-    const buttonHeight = 40;
-    const bottonFontSize = 16;
-    const buttonTextX = buttonX + 50;
-    const buttonTextY = buttonY-buttonHeight/2+bottonFontSize/2;
+    // configuration for the buttons
+    const buttonX = 1150;
+    const buttonY = 0;
+    const buttonWidth = 50;
+    const buttonHeight = 20;
+    const bottonFontSize = 12;
+    const buttonTextX = buttonX + buttonWidth/2;
+    const buttonTextY = buttonY-buttonHeight-bottonFontSize/2;
+    const deltaY = 30;
     // configuration for the matrix
     const cellSize = 50;
 
@@ -176,7 +178,9 @@ document.addEventListener('DOMContentLoaded', function() {
     ///////////////////////////////////////////// NETWORK FUNCTIONS ///////////////////////////////////////////
 
     // Initialize activations and weights
-    function initializeNetwork(networkData, image,method = 'random') {
+    function initializeNetwork(networkData, image) {
+        global_networkData.nodes = [];
+        global_networkData.weights = [];
         networkLayers.forEach((layerSize, layerIndex) => {
             let outputLayerIndex = networkLayers.length - 1;
             let inputLayerIndex = 0;
@@ -189,26 +193,26 @@ document.addEventListener('DOMContentLoaded', function() {
             // -- Add the layer activations to the network data
             networkData.nodes.push(layerActivations);
             // Initialize the connection weights for each layer (between itself and the previous layer)
-            // strore it in the networkData.weights[layerIndex - 1]
+            // strore it in the networkData.weights[layerIndex]
             if (layerIndex !== inputLayerIndex) {
-                networkData.weights[layerIndex - 1] = networkData.weights[layerIndex - 1] || [];
+                networkData.weights[layerIndex] = networkData.weights[layerIndex] || [];
                 let layerWeights = [];
                 let nodeWeights = []
                 for (let nodeIndexTo = 0; nodeIndexTo < layerSize; nodeIndexTo++) {
-                    if (method === 'random') {
+                    if (weightUsage === 'random') {
                         if (layerIndex === outputLayerIndex) {
                             nodeWeights = Array.from({ length: networkLayers[layerIndex - 1] },getDuoRandomWeight);
                         } else {
                             nodeWeights = Array.from({ length: networkLayers[layerIndex - 1] },getTriRandomWeight);
                         }
-                    } else if (method === 'optimal') {
+                    } else if (weightUsage === 'optimal') {
                         nodeWeights = optimal_weights[layerIndex][nodeIndexTo];
-                    } else if (method === 'zero') {
+                    } else if (weightUsage === 'zero') {
                         nodeWeights = Array.from({ length: networkLayers[layerIndex - 1] },() => 0);
                     }
                     layerWeights.push(nodeWeights);
                 }
-                networkData.weights[layerIndex - 1].push(layerWeights);
+                networkData.weights[layerIndex] = layerWeights;
             }
         });
         networkData.nodes.forEach((layer,layerIndex) => console.log('shape of nodes for layer',
@@ -220,12 +224,16 @@ document.addEventListener('DOMContentLoaded', function() {
                                                                         isATensor(layer)));
     }
 
+    function update_weights(networkData, weights) {
+        networkData.weights = weights;
+    }
     // forward pass function
     function forwardPass(networkData) {
+        assertDefined(networkData, 'Network data is not defined');
         networkData.nodes.forEach((layer, layerIndex) => {
             if (layerIndex > 0 ) {
                 const prevLayer = networkData.nodes[layerIndex - 1];
-                const weights = networkData.weights[layerIndex - 1][0];//TODO: avoid [0]
+                const weights = networkData.weights[layerIndex];
                 layer.forEach((activation, nodeIndex) => {
                     let sum = 0;
                     prevLayer.forEach((prevActivation, prevNodeIndex) => {
@@ -291,7 +299,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (layerIndex > 0 ) {
                     let randomConnection = [Math.floor(Math.random() * layerSize),Math.floor(Math.random() * prevLayerSize)]; 
                     //console.log('Cycling random connection in', layerIndex, randomConnection);
-                    weight = networkData.weights[layerIndex][0][randomConnection[0]][randomConnection[1]];
+                    weight = networkData.weights[layerIndex][randomConnection[0]][randomConnection[1]];
                     if (layerIndex === outputLayerIndex) {
                         newWeight = cycleValue(weight,duo_values);
                     } else {
@@ -356,7 +364,7 @@ document.addEventListener('DOMContentLoaded', function() {
         networkData.nodes.forEach((layer, layerIndex) => {
             if (layerIndex > 0 ) {
                 const prevLayer = networkData.nodes[layerIndex - 1];
-                const weights = networkData.weights[layerIndex - 1][0];//TODO: avoid [0]
+                const weights = networkData.weights[layerIndex];
                 last_ixs = new Set([]);
                 weights.forEach( (prevs, nodeIndex) => {
                     // indexes where the abs of weights are 1 
@@ -476,6 +484,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const cellBox = draw.rect(cellSize, cellSize)
                     .move(cellX, cellY)
                     .fill(cell === 1 ? 'black' : (cell === -1 ? 'darkred' : 'white'))
+                    .addClass('clickable')
                     .stroke({ width: 1, color: 'gray' });
                 // mouseover effect for the cell
                 cellBox.mouseover(function() {
@@ -497,7 +506,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     cellText.text(newValue);
                     forwardPass(networkData);
                     softmax(networkData);
-                    renderNetwork(draw, networkData, trainingData, image);
+                    renderApp(draw, networkData, trainingData, image);
                 });
                 matrixGroup.add(cellBox).add(cellText);
             });
@@ -505,94 +514,157 @@ document.addEventListener('DOMContentLoaded', function() {
         return matrixGroup;
     }
 
-    function drawButton(draw, networkData, trainingData, image) {
+    function drawShowLabelsButton(draw, networkData, trainingData, image) {
         // Draw the button
-        const button = draw.rect(buttonWidth, buttonHeight).fill("black").stroke({ width: 1, color: 'black' }).radius(10);
+        const button = draw.rect(buttonWidth, buttonHeight)
+                            .fill("black")
+                            .stroke({ width: 1, color: 'black' })
+                            //.attr({ cursor: 'pointer' })
+                            .addClass('clickable')
+                            .radius(2);  // Setting the cursor style directly;
+        button.move(buttonX, buttonY + deltaY); // Move to the bottom right corner or another suitable location
+        // Add text label to the button and change hand cursor when hovering
+        const buttonText = draw.text('labels')
+                            .move(buttonTextX, buttonTextY + deltaY)
+                            .fill("white")
+                            .addClass('clickable')
+                            .font({ family: 'Helvetica', size: bottonFontSize, anchor: 'middle'});
+        // Click event for the button
+        buttonText.click(function() {
+            console.log('Clicked on the ShowLabels button');
+            showLabels = !showLabels;
+            draw.find('.label').forEach(function(element) {
+                element.fill(showLabels? 'black' : 'white');
+            });
+        });
+        // Group the button and text for easier event handling
+        const buttonGroup = draw.group();
+        buttonGroup.add(button).add(buttonText);
+    }
+
+
+    function drawWeightUsageButton(draw, networkData, trainingData, image) {
+        console.log('Drawing button');
+        // Draw the button
+        const button = draw.rect(buttonWidth, buttonHeight)
+                            .fill("black")
+                            .stroke({ width: 1, color: 'black' })
+                            //.attr({ cursor: 'pointer' })
+                            .addClass('clickable')
+                            .radius(2);  // Setting the cursor style directly;
         button.move(buttonX, buttonY); // Move to the bottom right corner or another suitable location
-        // Add text label to the button
-        const buttonText = draw.text('ReTrain')
+        // Add text label to the button and change hand cursor when hovering
+        const buttonText = draw.text(weightUsage)
                             .move(buttonTextX, buttonTextY)
                             .fill("white")
-                            .font({ family: 'Helvetica', size: bottonFontSize, anchor: 'middle' });
+                            .addClass('clickable')
+                            .font({ family: 'Helvetica', size: bottonFontSize, anchor: 'middle'});
         // mouseover effect for the button
-        button.mouseover(function() {
-            this.fill({ color: 'blue' });
-        }).mouseout(function() {
-            this.fill({ color: 'black' });
-        });
+        // button.mouseover(function() {
+        //     this.fill({ color: 'blue' });
+        // }).mouseout(function() {
+        //     this.fill({ color: 'black' });
+        // });
         // Click event for the button
-        button.click(function() {
-            //console.log('Redrawing the network');
-            // Clear the existing network
-            draw.clear();
-            // Redraw the network
-            for(let i = 0; i < 100; i++) {
-                tryToOptimizeWeights(networkData);
-            }
-            renderNetwork(draw, networkData, trainingData, image);
+        buttonText.click(function() {
+            console.log('Clicked on the button');
+            weightUsage = cycleValue(weightUsage, ['random', 'optimal', 'zero'],true);
+            buttonText.text(weightUsage);
+            let images = getRandomElements(global_trainingData.slice(0,8),1);
+            let testImage = chunkArray(images[0][0],2);
+            // deep copy of optimal weights
+            initializeNetwork(global_networkData, testImage);
+            forwardPass(global_networkData);
+            softmax(global_networkData);
+            renderApp(draw, global_networkData, global_trainingData, testImage);
         });
         // Group the button and text for easier event handling
         const buttonGroup = draw.group();
         buttonGroup.add(button).add(buttonText);
     }
     function drawConnections(draw, networkData, trainingData, image) {
+        assertDefined(draw, 'SVG draw object is not defined');
+        assertDefined(networkData, 'Network data is not defined');
+        assertDefined(networkData.nodes, 'Network nodes are not defined');
+        assertDefined(networkData.weights, 'Network weights are not defined');
+        assertDefined(trainingData, 'Training data is not defined');
+        assertDefined(image, 'Image data is not defined');
         // Drawing lines between nodes
         networkData.nodes.forEach((layer, layerIndex) => {
+            let prevLayer = [];
+            let weights = [];
             layer.forEach((activation, nodeIndex) => { 
                 if (layerIndex > 0) {
-                    const prevLayer = networkData.nodes[layerIndex - 1];
-                    const weights = networkData.weights[layerIndex - 1][0];//TODO: avoid [0]
+                    prevLayer = networkData.nodes[layerIndex - 1];
+                    weights = networkData.weights[layerIndex];
+                    let weight = 0;
+                    let lineColor = 'lightgray';
+                    let fromX = 0;
+                    let fromY = 0;
+                    let toX = 0;
+                    let toY = 0;
+                    let midX = 0;
+                    let midY = 0;
+                    let textY = 0;
+                    let line = null;
+                    let weightTextBox = null;
+                    let weightText = null;
+
                     prevLayer.forEach((prevActivation, prevNodeIndex) => {
-                        const weight = weights[nodeIndex][prevNodeIndex];
+                        assertDefined(nodeIndex, 'Node index is not defined');
+                        assertDefined(prevNodeIndex, 'Previous node index is not defined');
+                        console.log('Drawing line from node', prevNodeIndex, 'in layer', layerIndex - 1, 'to node', nodeIndex, 'in layer', layerIndex);
+                        weight = weights[nodeIndex][prevNodeIndex];
                         let lineColor = weight === 1 ? 'black' : (weight === -1 ? 'red' : 'lightgray');
                         // coodinates of the line
-                        const fromX = radius * 2 + (layerIndex - 1) * layerSpacing + networkLeftPadding;
-                        const fromY = (totalHeight - prevLayer.length * nodeSpacing) / 2 + prevNodeIndex * nodeSpacing+networkTopPadding;
-                        const toX = radius * 2 + layerIndex * layerSpacing+ networkLeftPadding;
-                        const toY = (totalHeight - layer.length * nodeSpacing) / 2 + nodeIndex * nodeSpacing+networkTopPadding;
+                        fromX = radius * 2 + (layerIndex - 1) * layerSpacing + networkLeftPadding;
+                        fromY = (totalHeight - prevLayer.length * nodeSpacing) / 2 + prevNodeIndex * nodeSpacing+networkTopPadding;
+                        toX = radius * 2 + layerIndex * layerSpacing+ networkLeftPadding;
+                        toY = (totalHeight - layer.length * nodeSpacing) / 2 + nodeIndex * nodeSpacing+networkTopPadding;
                         // Calculate the midpoints
-                        const midX = (fromX + toX) / 2;
-                        const midY = (fromY + toY) / 2;
+                        midX = (fromX + toX) / 2;
+                        midY = (fromY + toY) / 2;
                         // -- Y coordinates for the text box and text
-                        const textY = midY - boxHeight / 2 - fontSize;
-                        const line = draw.line(fromX, fromY, toX, toY)
-                            .stroke({ width: 2, color: lineColor });
-                        // text box
-                        const weightTextBox = draw.rect(boxWidth, boxHeight)
-                            .move(midX, midY)
-                            .fill('black')
-                            .stroke({ width: 1, color: 'black' })
-                            .hide();  // Initially hide the text
-                        // weight text on top of the box
-                        const weightText = draw.text(weight)
-                            .move(midX+textHorLeftPadding, textY)
-                            .fill('white')
-                            .font({ family: 'Helvetica', size: fontSize })
-                            .hide();  // Initially hide the text
-                        // Hover effect for lines
-                        line.mouseover(function() {
-                            weightText.show();  // Show weight text near the line
-                            weightTextBox.show();
-                            // Show weight text near the line using fromX, fromY, toX, toY
-                        }).mouseout(function() {
-                            weightText.hide();  // Hide weight textK
-                            weightTextBox.hide();
-                            // Remove weight text
-                        });
+                        textY = midY - boxHeight / 2 - fontSize;
+                        line = draw.line(fromX, fromY, toX, toY)
+                            .stroke({ width: 3, color: lineColor })
+                            .addClass('clickable');
+                        // // text box
+                        // weightTextBox = draw.rect(boxWidth, boxHeight)
+                        //     .move(midX, midY)
+                        //     .fill('black')
+                        //     .stroke({ width: 1, color: 'black' })
+                        //     .hide();  // Initially hide the text
+                        // // weight text on top of the box
+                        // weightText = draw.text(weight)
+                        //     .move(midX+textHorLeftPadding, textY)
+                        //     .fill('white')
+                        //     .font({ family: 'Helvetica', size: fontSize })
+                        //     .hide();  // Initially hide the text
+                        // // Hover effect for lines
+                        // line.mouseover(function() {
+                        //     weightText.show();  // Show weight text near the line
+                        //     weightTextBox.show();
+                        //     // Show weight text near the line using fromX, fromY, toX, toY
+                        // }).mouseout(function() {
+                        //     weightText.hide();  // Hide weight textK
+                        //     weightTextBox.hide();
+                        //     // Remove weight text
+                        // });
                         // Change network weights on click
                         line.click(function() {
                             //console.log(`Clicked on line from node ${prevNodeIndex} in layer ${layerIndex - 1} to node ${nodeIndex} in layer ${layerIndex}`);
-                            const currentWeight = networkData.weights[layerIndex - 1][0][nodeIndex][prevNodeIndex]; //TODO: avoid [0]
-                            const newWeight = cycleValue(currentWeight,tri_values);
+                            const currentWeight = networkData.weights[layerIndex][nodeIndex][prevNodeIndex];
+                            const newWeight = cycleValue(currentWeight,tri_values,true);
                             //console.log(`Changing weight from ${currentWeight} to ${newWeight}`);
-                            networkData.weights[layerIndex - 1][0][nodeIndex][prevNodeIndex] = newWeight; //TODO: avoid [0]
+                            networkData.weights[layerIndex][nodeIndex][prevNodeIndex] = newWeight; //TODO: avoid [0]
                             // Update the line color
                             this.stroke(newWeight === 1 ? 'black' : (newWeight === -1 ? 'red' : 'lightgray'));
                             // Update the weight text
                             weightText.text(newWeight);
                             forwardPass(networkData);
                             softmax(networkData);
-                            renderNetwork(draw, networkData, trainingData, image);
+                            renderApp(draw, networkData, trainingData, image);
 
                         });
 
@@ -625,12 +697,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     })
                     .center(centerX, centerY);
                 // label text above the node
-                if(showLabels) {
-                    const labelText = draw.text(networkNodeLabels[layerIndex][nodeIndex])
-                        .move(centerX, centerY - 2*radius - 2*fontSize)
-                        .fill('black')
-                        .font({ family: 'Helvetica', size: fontSize, anchor: 'middle' });
+
+                const labelText = draw.text(networkNodeLabels[layerIndex][nodeIndex])
+                    .move(centerX, centerY - 2*radius - 2*fontSize)
+                    .fill((showLabels || layerIndex == 0)? 'black' : 'white')
+                    .font({ family: 'Helvetica', size: fontSize, anchor: 'middle' });
+                
+                if (layerIndex !== 0) {
+                    labelText.addClass('label');
                 }
+
                 // text box
                 const activationText = draw.text(activation)
                     .move(boxX + textHorLeftPadding, textY)
@@ -671,7 +747,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const maxNodes = Math.max(...networkLayers); // Find the maximum number of nodes in any layer
     const totalHeight = maxNodes * nodeSpacing; // Total height needed to center the largest layer
 
-    function renderNetwork(draw, networkData, trainingData, image) {
+    // Render the network visualization
+    function renderApp(draw, networkData, trainingData, image) {
         assertDefined(draw, 'SVG draw object is not defined');
         // Clear the existing network
         draw.clear();
@@ -681,8 +758,9 @@ document.addEventListener('DOMContentLoaded', function() {
         drawNodes(draw, networkData, trainingData, image);
         // Draw the matrix
         drawMatrix(draw, networkData, trainingData, image, 0, 250);
-        // Draw the button
-        // drawButton();
+        // Draw the buttons
+        drawWeightUsageButton(draw, networkData, trainingData, image);
+        drawShowLabelsButton(draw, networkData, trainingData, image);
         // Draw the error
         error = getError(image, networkData,trainingData);
         draw.text('Error: ' + error)
@@ -692,24 +770,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize and render the network
 
-    let images = getRandomElements(global_trainingData.slice(0,8),1);
-
-    console.log(images[0][0])
-    let image = [[1,1],[-1,-1]]
-
-    images.forEach((testCase,ix) => {
-        global_draw.clear();
+    
+    function run(testCase){
         let testImage = chunkArray(testCase[0],2);
-        console.log('testImage', ix,  testImage);
-        initializeNetwork(global_networkData, testImage, "optimal");
+        initializeNetwork(global_networkData, testImage);
         forwardPass(global_networkData);
         softmax(global_networkData);
-        renderNetwork(global_draw, global_networkData, global_trainingData, testImage);
-        //sleep(1000);
-    });
-    
-    
-
+        console.log('network calculated');
+        renderApp(global_draw, global_networkData, global_trainingData, testImage);
+    }
+    let images = getRandomElements(global_trainingData.slice(0,8),1);
+    run(images[0]);
 
 });
 

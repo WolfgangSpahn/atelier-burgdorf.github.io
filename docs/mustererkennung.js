@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             ];
     // Show labels for the nodes for human readability
     let showLabels = false;
+    let weightUsage = 'random'; // 'random', 'optimal', 'zero'
 
     ///////////////////////////////////////////// CONFIG NETWORK ////////////////////////////////////////////////
 
@@ -62,13 +63,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const tri_values = [-1, 0, 1]; // Possible values for activations and weights
     const duo_values = [0, 1]; // Possible values for activations and weights
     // configuration for the button
-    const buttonX = 900;
+    const buttonX = 1050;
     const buttonY = 50;
-    const buttonWidth = 100;
-    const buttonHeight = 40;
-    const bottonFontSize = 16;
-    const buttonTextX = buttonX + 50;
-    const buttonTextY = buttonY-buttonHeight/2+bottonFontSize/2;
+    const buttonWidth = 50;
+    const buttonHeight = 20;
+    const bottonFontSize = 12;
+    const buttonTextX = buttonX + buttonWidth/2;
+    const buttonTextY = buttonY-buttonHeight-bottonFontSize/2;
     // configuration for the matrix
     const cellSize = 50;
 
@@ -222,6 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // forward pass function
     function forwardPass(networkData) {
+        assertDefined(networkData, 'Network data is not defined');
         networkData.nodes.forEach((layer, layerIndex) => {
             if (layerIndex > 0 ) {
                 const prevLayer = networkData.nodes[layerIndex - 1];
@@ -476,6 +478,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const cellBox = draw.rect(cellSize, cellSize)
                     .move(cellX, cellY)
                     .fill(cell === 1 ? 'black' : (cell === -1 ? 'darkred' : 'white'))
+                    .addClass('clickable')
                     .stroke({ width: 1, color: 'gray' });
                 // mouseover effect for the cell
                 cellBox.mouseover(function() {
@@ -505,31 +508,39 @@ document.addEventListener('DOMContentLoaded', function() {
         return matrixGroup;
     }
 
-    function drawButton(draw, networkData, trainingData, image) {
+    function drawWeightUsageButton(draw, networkData, trainingData, image) {
+        console.log('Drawing button');
         // Draw the button
-        const button = draw.rect(buttonWidth, buttonHeight).fill("black").stroke({ width: 1, color: 'black' }).radius(10);
+        const button = draw.rect(buttonWidth, buttonHeight)
+                            .fill("black")
+                            .stroke({ width: 1, color: 'black' })
+                            //.attr({ cursor: 'pointer' })
+                            .addClass('clickable')
+                            .radius(2);  // Setting the cursor style directly;
         button.move(buttonX, buttonY); // Move to the bottom right corner or another suitable location
-        // Add text label to the button
-        const buttonText = draw.text('ReTrain')
+        // Add text label to the button and change hand cursor when hovering
+        const buttonText = draw.text(weightUsage)
                             .move(buttonTextX, buttonTextY)
                             .fill("white")
-                            .font({ family: 'Helvetica', size: bottonFontSize, anchor: 'middle' });
+                            .addClass('clickable')
+                            .font({ family: 'Helvetica', size: bottonFontSize, anchor: 'middle'});
         // mouseover effect for the button
-        button.mouseover(function() {
-            this.fill({ color: 'blue' });
-        }).mouseout(function() {
-            this.fill({ color: 'black' });
-        });
+        // button.mouseover(function() {
+        //     this.fill({ color: 'blue' });
+        // }).mouseout(function() {
+        //     this.fill({ color: 'black' });
+        // });
         // Click event for the button
         button.click(function() {
-            //console.log('Redrawing the network');
-            // Clear the existing network
-            draw.clear();
-            // Redraw the network
-            for(let i = 0; i < 100; i++) {
-                tryToOptimizeWeights(networkData);
-            }
-            renderNetwork(draw, networkData, trainingData, image);
+            console.log('Clicked on the button');
+            weightUsage = cycleValue(weightUsage, ['random', 'optimal', 'zero'],true);
+            buttonText.text(weightUsage);
+            let images = getRandomElements(global_trainingData.slice(0,8),1);
+            let testImage = chunkArray(images[0][0],2);
+            initializeNetwork(global_networkData, testImage, "optimal");
+            // forwardPass(global_networkData);
+            // softmax(global_networkData);
+
         });
         // Group the button and text for easier event handling
         const buttonGroup = draw.group();
@@ -556,7 +567,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         // -- Y coordinates for the text box and text
                         const textY = midY - boxHeight / 2 - fontSize;
                         const line = draw.line(fromX, fromY, toX, toY)
-                            .stroke({ width: 2, color: lineColor });
+                            .stroke({ width: 3, color: lineColor })
+                            .addClass('clickable');
                         // text box
                         const weightTextBox = draw.rect(boxWidth, boxHeight)
                             .move(midX, midY)
@@ -682,7 +694,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Draw the matrix
         drawMatrix(draw, networkData, trainingData, image, 0, 250);
         // Draw the button
-        // drawButton();
+        drawWeightUsageButton(draw, networkData, trainingData, image);
         // Draw the error
         error = getError(image, networkData,trainingData);
         draw.text('Error: ' + error)
@@ -692,24 +704,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize and render the network
 
-    let images = getRandomElements(global_trainingData.slice(0,8),1);
-
-    console.log(images[0][0])
-    let image = [[1,1],[-1,-1]]
-
-    images.forEach((testCase,ix) => {
-        global_draw.clear();
+    
+    function run(testCase){
         let testImage = chunkArray(testCase[0],2);
-        console.log('testImage', ix,  testImage);
         initializeNetwork(global_networkData, testImage, "optimal");
         forwardPass(global_networkData);
         softmax(global_networkData);
+        console.log('network calculated');
         renderNetwork(global_draw, global_networkData, global_trainingData, testImage);
-        //sleep(1000);
-    });
-    
-    
-
+    }
+    let images = getRandomElements(global_trainingData.slice(0,8),1);
+    run(images[0]);
 
 });
 

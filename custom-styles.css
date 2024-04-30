@@ -1,0 +1,16 @@
+/* Increase specificity by specifying a more detailed selector */
+body .reveal .slides > h1 {
+    color: #ba1313;
+}
+
+.reveal h2 {
+    color: #ba1313; /* Change the color value as needed */
+}
+
+.reveal h3 {
+    color: #ba1313; /* Change the color value as needed */
+}
+
+.clickable {
+    cursor: pointer;
+}
