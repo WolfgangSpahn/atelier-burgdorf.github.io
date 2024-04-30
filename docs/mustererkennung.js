@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ///////////////////////////////////////////// GLOBAL VARIABLES ////////////////////////////////////////////////
 
     // Create an SVG element for the network visualization
-    const global_draw = SVG().addTo('#svg-container').size(1200, 620);
+    const global_draw = SVG().size('100%', '100%').addTo('#svg-container').size(1200, 620);
     // Data model for activations and weights
     let global_networkData = {
         nodes: [],
