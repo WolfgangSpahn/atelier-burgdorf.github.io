@@ -323,6 +323,29 @@
       margin-right: 0; 
     }
   </style>
+  <!-- bring into global scope -->
+
+  <!-- used it via SVG(). -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js"></script>
+
+  <!-- use it via d3. -->
+
+  <script src="https://cdn.jsdelivr.net/npm/svg.draggable.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+
+  <!-- use it via uid. -->
+
+  
+
+  
+
+  
+
+  <!-- import as module, use import statement to bring items into scope -->
+
+  <script type="module" src="draw.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -335,6 +358,50 @@
 <div class="quarto-title-authors">
 </div>
 
+</section>
+<section id="infos" class="slide level2">
+<h2>Infos</h2>
+<p><br></p>
+<p>Zum Starten des Ateliers bitte diesen Link verwenden:</p>
+<br>
+<div id="ip-socket" class="centered-xxl-text">
+
+</div>
+<script type="module">
+  // using the "let ip_socket = await getIPSocket();" from draw.js displays the IP address in the html
+  import {getIPSocket} from "./draw.js";
+  getIPSocket().then(ip_socket => {
+    document.getElementById("ip-socket").innerHTML = `http://${ip_socket.ip}:${ip_socket.socketNr}/`;
+  });
+</script>
+<p><br><br></p>
+<p>Um in den Vollbildmodus zu gelangen, klicken Sie bitte auf den Button “Fullscreen” oder drücken Sie die Taste “F11”.</p>
+<p><br></p>
+<button onclick="goFullScreen()" class="centered-xxl-rounded-button">
+Fullscreen
+</button>
+<script>
+function goFullScreen() {
+    if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+    } else if (document.documentElement.webkitRequestFullscreen) { /* Safari */
+        document.documentElement.webkitRequestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) { /* IE11 */
+        document.documentElement.msRequestFullscreen();
+    }
+}
+</script>
+</section>
+<section id="willkommen-im-atelier" class="slide level2">
+<h2>Willkommen im Atelier</h2>
+<div id="svg-team">
+
+</div>
+<div id="toast-container" class="toast-container">
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/uuid@8.3.0/dist/umd/uuid.min.js"></script>
+<script src="team.js"></script>
 </section>
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
@@ -353,26 +420,728 @@
 <li>Workshop: Und was bedeutet das für die Bildung</li>
 </ul>
 </section>
-<section id="slide-with-form" class="slide level2">
-<h2>Slide with Form</h2>
-<form id="myForm">
-<label for="name">Your Name:</label> <input type="text" id="name" name="name"><br><br> <label for="email">Your Email:</label> <input type="email" id="email" name="email"><br><br> <input type="button" value="Submit" onclick="submitForm()">
-</form>
-<script>
-function submitForm() {
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  alert('Name: ' + name + ', Email: ' + email);
-}
-</script>
+<section id="section" class="slide level2">
+<h2>_</h2>
+<p><br><br></p>
+<div class="centered-xxl-text">
+<p>KI - Wo stehen wir heute, wo geht die Reise hin</p>
+</div>
+</section>
+<section id="ki-definition" class="slide level2">
+<h2>KI: Definition</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Viele Definitionen für Intelligenz</p>
+<ul>
+<li><strong>Intelligenz (ganzheitlich)</strong> ist die Hauptfunktion des menschlichen Gehirns, um kognitive Funktionen bereitzustellen, die einem Lebewesen das Überleben in einer feindlichen Umgebung ermöglichen.</li>
+<li><strong>Intelligenz (kommerziell)</strong> wird benötigt, um Aufgaben zu erledigen, die von geistigen Arbeitern ausgeführt werden.</li>
+<li>1000 andere: …</li>
+</ul>
+<p><strong>Künstliche Intelligenz</strong>: eine Software kann bis zu einem gewissen Grad geistige Arbeit leisten.</p>
+</div><div class="column" style="width:50%;">
+<p>Analogie</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/artificialHeart.jpg"></p>
+<figcaption>Ein künstliches Herz ersetzt ein menschliches Herz.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="cognition---2024" class="slide level2">
+<h2>Cognition - 2024</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Text</strong> <img data-src="images/ChatGPT.png" style="border: 1px solid lightgray;;width:70.0%"></p>
+<p><strong>Video</strong> <img data-src="images/ai_dino1.gif" style="width:70.0%"></p>
+</div><div class="column" style="width:50%;">
+<p><strong>Bild</strong> <img data-src="images/smart-city-computer-vision-yolov7-deep-learning.png" style="width:80.0%"></p>
+<p><strong>Sound</strong> <img data-src="images/sound.png" style="width:70.0%"></p>
+</div>
+</div>
+</section>
+<section id="humanoide-roboter-2024" class="slide level2">
+<h2>Humanoide Roboter 2024</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/robots at assembly line.jpg" style="width:80.0%"> <img data-src="images/robot gets tomato.jpg" style="width:80.0%"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/robots in warehouse1.jpg" style="width:80.0%"> <img data-src="images/robot is cooking.jpg" style="width:80.0%"></p>
+</div><p><img data-src="images/robot hand.gif" class="absolute" style="top: 30%; left: 25%; width: 30%; "></p>
+</div>
 </section>
 <section id="mustererkennung" class="slide level2">
 <h2>Mustererkennung</h2>
-<script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js"></script>
-<script src="mustererkennung.js" defer=""></script>
-<div id="svg-container">
+<script type="module" src="mustererkennung.js"></script>
+<div id="svg-mustererkennung">
 
 </div>
+</section>
+<section id="text-bedeutung" class="slide level2">
+<h2>Text Bedeutung</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Wort Embeddings</strong></p>
+<ul>
+<li>Ein Wort entspricht einem Zahlen Vektor</li>
+<li>Wort Beziehungen entsprechen Vektor Beziehungen</li>
+</ul>
+<p><img data-src="images/word embedding.png" style="width:80.0%"></p>
+</div><div class="column" style="width:50%;">
+<p><strong>Satz Embedding</strong></p>
+<ul>
+<li>Ein Satz entspricht einem Zahlen Vektor</li>
+<li>Satz Beziehungen entsprechen Vektor Beziehungen</li>
+</ul>
+<p><img data-src="images/Attention Matrix.png" style="width:80.0%"></p>
+</div>
+</div>
+</section>
+<section id="mehrdeutigkeit" class="slide level2">
+<h2>Mehrdeutigkeit @!?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Ein Wort, zwei Bedeutungen</strong></p>
+<ul>
+<li>Ein Wort hat zunächst nur eine Bedeutung (embedding).</li>
+<li>Um Text realistisch zu bearbeiten, müssen Worte im Kontext prozessiert werden.</li>
+</ul>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/meaning of bank.png" class="gray-border" style="width:95.0%"></p>
+<figcaption>Beispiel: bank (Geldinstitut), bank (Ufer)</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Das Wort im Kontext</strong></p>
+<ul>
+<li>Ein neuronal Netz analysiert die Beziehungen der Worte im Kontext (Satz, Paragraph, Buch)</li>
+<li>Daraus lernt es das wahrscheinlichste Wort vorherzusagen.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/context of bank.png" class="gray-border" style="width:95.0%"></p>
+<figcaption>Beispiel: river, bank</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="section-1" class="slide level2">
+<h2>_</h2>
+<p><br><br></p>
+<div class="centered-xxl-text">
+<p>Versuchen wir es selbst</p>
+</div>
+</section>
+<section id="ki-erledigt-geitsige-arbeit" class="slide level2">
+<h2>KI erledigt geitsige Arbeit</h2>
+<div class="columns">
+<div class="column" style="width:50;">
+<p>LLMs können geistige Arbeit erledigen im Umgang mit Wissen (Training) und Dokumenten (spezielle Techniken).</p>
+<ul>
+<li>identifiziere Sachverhalt(e), die kombiniert und zusammengefasst werden</li>
+<li>identifiziere Regeln, die auf den Inhalt der Frage angewandt werden und deren Ergebnis erklärt wird</li>
+<li>identifiziere Formel(n), die mit den Werten aus der Frage gelöst werden. Gib den Pfad an.</li>
+</ul>
+<p><a href="https://openai.com/">OpenAI</a> <a href="https://openai.com/chatgpt">ChatGPT</a></p>
+</div><div class="column" style="width:15%;">
+
+</div><div class="column" style="width:35%;">
+<table>
+<thead>
+<tr class="header">
+<th>Fertigkeiten</th>
+<th></th>
+<th>Anmerkungen</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Schlussfolgern</td>
+<td>✓</td>
+<td>Kann Dinge erfinden</td>
+</tr>
+<tr class="even">
+<td>Planen</td>
+<td>✗</td>
+<td>Nein, muss vom Nutzer kommen</td>
+</tr>
+<tr class="odd">
+<td>Abstraktes Denken</td>
+<td>✓</td>
+<td>Wenn der Kontext klar ist</td>
+</tr>
+<tr class="even">
+<td>Komplexe Zusammenhänge</td>
+<td>✓</td>
+<td>Wenn der Kontext klar ist</td>
+</tr>
+<tr class="odd">
+<td>Aus Erfahrung lernen</td>
+<td>✓</td>
+<td>Nur innerhalb einer Sitzung</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="intuitives-denken-12" class="slide level2">
+<h2>Intuitives Denken 1/2</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Wie viele Tiere jeder Art hat Moses mit auf die Arche genommen?</p>
+<form id="form1">
+<input type="text" id="inputField1" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField1','form1');
+</script>
+
+<p>Und was sagen die KI Modelle?</p>
+<ul>
+<li><a href="https://labs.perplexity.ai/">Kleine LLMs</a></li>
+<li><a href="https://chatgpt.com/?model=text-davinci-002-render-sha">GPT 3.5</a></li>
+<li><a href="https://chatgpt.com/?oai-dm=1&amp;model=gpt-4">GPT 4</a></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div id="show1">
+
+</div>
+<script type="module">
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show1","form1",{ width: 500, height: 550 });
+</script>
+</div>
+</div>
+</section>
+<section id="intuitives-denken-22" class="slide level2">
+<h2>Intuitives Denken 2/2</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Ein Schläger und ein Ball kosten zusammen 1,10 Dollar. Der Schläger kostet einen Dollar mehr als der Ball. Wie viel kostet der Ball?</p>
+<form id="form2">
+<input type="text" id="inputField2" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField2','form2');
+</script>
+<p>Und was sagen die KI Modelle?</p>
+<ul>
+<li><a href="https://labs.perplexity.ai/">Kleine LLMs</a></li>
+<li><a href="https://chatgpt.com/?model=text-davinci-002-render-sha">GPT 3.5</a></li>
+<li><a href="https://chatgpt.com/?oai-dm=1&amp;model=gpt-4">GPT 4</a></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div id="show2">
+
+</div>
+<script type="module">
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show2","form2",{ width: 500, height: 550 });
+</script>
+</div>
+</div>
+</section>
+<section id="schlussfolgerungen-12" class="slide level2">
+<h2>Schlussfolgerungen 1/2</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>In the sentence “The nurse marries the doctor because she is pregnant”. Who is pregnant?</p>
+<form id="form3">
+<input type="text" id="inputField3" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField3','form3');
+</script>
+<p>Und was sagen die KI Modelle?</p>
+<ul>
+<li><a href="https://labs.perplexity.ai/">Kleine LLMs</a></li>
+<li><a href="https://chatgpt.com/?model=text-davinci-002-render-sha">GPT 3.5</a></li>
+<li><a href="https://chatgpt.com/?oai-dm=1&amp;model=gpt-4">GPT 4</a></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div id="show3">
+
+</div>
+<script type="module">
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show3","form3",{ width: 500, height: 550 });
+</script>
+</div>
+</div>
+</section>
+<section id="schlussfolgerungen-22" class="slide level2">
+<h2>Schlussfolgerungen 2/2</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Ich war auf einer Party. Ich kam vor John an. David kam nach Joe an. Joe kam vor mir an. John kam nach David an. Wer kam zuerst an?</p>
+<form id="form4">
+<input type="text" id="inputField4" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField4','form4');
+</script>
+<p>Und was sagen die KI Modelle?</p>
+<ul>
+<li><a href="https://labs.perplexity.ai/">Kleine LLMs</a></li>
+<li><a href="https://chatgpt.com/?model=text-davinci-002-render-sha">GPT 3.5</a></li>
+<li><a href="https://chatgpt.com/?oai-dm=1&amp;model=gpt-4">GPT 4</a></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div id="show4">
+
+</div>
+<script type="module">
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show4","form4",{ width: 500, height: 550 });
+</script>
+</div>
+</div>
+</section>
+<section id="um-die-ecke-denken---theory-of-mind" class="slide level2">
+<h2>Um die Ecke “denken” - Theory of Mind</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Sie sind ein Butler in einem Schloss. Im Wohnzimmer befindet sich eine sehr teure Vase. Ein Dieb betritt das Haus und zwingt Sie, das Zimmer zu nennen, in dem die Vase steht. Sie müssen ein Zimmer benennen. Wie antworten Sie?</p>
+<form id="form5">
+<input type="text" id="inputField5" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField5','form5');
+</script>
+<p>Und was sagen die KI Modelle?</p>
+<ul>
+<li><a href="https://labs.perplexity.ai/">Kleine LLMs</a> Claude3-Haiku</li>
+<li><a href="https://chatgpt.com/?model=text-davinci-002-render-sha">GPT 3.5</a></li>
+<li><a href="https://chatgpt.com/?oai-dm=1&amp;model=gpt-4">GPT 4</a></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div id="show5">
+
+</div>
+<script type="module">
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show5","form5",{ width: 500, height: 550 });
+</script>
+</div>
+</div>
+</section>
+<section id="section-2" class="slide level2">
+<h2>_</h2>
+<p><br><br></p>
+<div class="centered-xxl-text">
+<p>Wie geht es weiter?</p>
+</div>
+</section>
+<section id="model-entwicklung-12" class="slide level2">
+<h2>Model Entwicklung 1/2</h2>
+
+<img data-src="images/Models over time.png" style="width:70.0%" class="r-stretch"></section>
+<section id="model-entwicklung-22" class="slide level2">
+<h2>Model Entwicklung 2/2</h2>
+
+<img data-src="images/Benchmarks.png" style="width:70.0%" class="r-stretch"></section>
+<section id="beispiel-benchmark" class="slide level2">
+<h2>Beispiel Benchmark</h2>
+
+<img data-src="images/MMMU.png" style="width:70.0%" class="r-stretch"></section>
+<section id="robotor-entwicklung" class="slide level2">
+<h2>Robotor Entwicklung</h2>
+
+<img data-src="images/NrOfProfServ.png" style="width:70.0%" class="r-stretch"></section>
+<section id="section-3" class="slide level2">
+<h2>_</h2>
+<p><br><br></p>
+<div class="centered-xxl-text">
+<p>KI MINT Vision</p>
+</div>
+</section>
+<section id="ein-ki-lernbegleiter-hilft-bei-den-hausaufgaben" class="slide level2">
+<h2>Ein KI Lernbegleiter hilft bei den Hausaufgaben</h2>
+<p>Bitte meldet Euch bei ProPhysik an und bearbeitet die Aufgaben mit <a href="https://sebayt.ch/">Newton</a></p>
+</section>
+<section id="wie-hat-sich-der-tutor-verhalten" class="slide level2">
+<h2>Wie hat sich der Tutor verhalten?</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Was kann die Tutor schon, was noch nicht? Wie unterscheidet sich der Tutor von ChatGPT? Wie von einem Menschen?</p>
+<form id="from6">
+<input type="text" id="inputField6" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField6','form6');
+</script>
+</div><div class="column" style="width:60%;">
+<div id="show6">
+
+</div>
+<script type="module">
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show6","form6",{ width: 500, height: 550 });
+</script>
+</div>
+</div>
+</section>
+<section id="welches-lernmodell-wurde-verwendet" class="slide level2">
+<h2>Welches Lernmodell wurde verwendet?</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Was für eine Art von Lernmodell wurde verwendet? Welche Annahmen liegen dahinter? Welches Bild der Lernenden wird vorausgesetzt?</p>
+<form id="from7">
+<textarea id="inputField7" name="input" style="height:150px; width: 300px;"></textarea>
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField7','form7');
+</script>
+</div><div class="column" style="width:60%;">
+<div id="show7">
+
+</div>
+<script type="module">
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show7","form7",{ width: 500, height: 550 });
+</script>
+</div>
+</div>
+</section>
+<section id="vision-mint-bildung-2035" class="slide level2">
+<h2>Vision MINT Bildung 2035</h2>
+<p><img data-src="images/2847_cartoon_back_to_school_1.jpg" style="width:70.0%"></p>
+<p><img data-src="images/CH-Vorschriftssignal_9_-_Einbahnstrasse,_SSV_1932.svg.png" class="absolute" style="top: 180px; left: 850px; width: 30%; "></p>
+<p><a href="https://www.prpeak.com/opinion/cartoon-homework-assignments-7489368">Source</a></p>
+</section>
+<section id="vision-mint-bildung-2035-1" class="slide level2">
+<h2>Vision MINT Bildung 2035</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>individuellen Entwicklung</li>
+<li>personalisierte Ansätze</li>
+<li>eigenes Tempo <img data-src="images/student-study-group.webp" style="width:70.0%"></li>
+<li>lernen in der Gruppe</li>
+<li>Lehrpersonen als Lernpartner</li>
+<li>eigenverantwortlicher Lernprozess</li>
+</ul>
+</div><div class="column" style="width:20%;">
+<p><br><br><br><br> <img data-src="images/left-right-bold-arrow-icon.svg"></p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="images/Holzwerkstatt_2-1-scaled-crop.jpg" class="absolute" style="top: 100px; left: 700px; width: 40%; "> <img data-src="images/csm_Finn_mit_Sonde_ea9ce59730.jpg" class="absolute" style="top: 300px; left: 1000px; width: 40%; "> <img data-src="images/schüler im labor.jpg" class="absolute" style="top: 350px; left: 650px; width: 40%; "></p>
+<div class="absolute" style="bottom: 0px; ">
+<p>Sources: <a href="https://www.badische-zeitung.de/seit-30-jahren-wird-im-novartis-schullabor-in-basel-neugier-auf-wissenschaft-geweckt">1</a> <a href="https://www.evim.de/news-veranstaltungen/news-und-veranstaltungen/detail-meldungen/hoehenflug-fuer-schueler-der-technik-werkstatt/">2</a> <a href="https://freie-landschule.de/wp-content/uploads/2024/03/Holzwerkstatt_2-1-2048x1536.jpg">3</a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="lernwirksame-ki-tutoren-13" class="slide level2">
+<h2>Lernwirksame KI Tutoren 1/3</h2>
+<p>Eine lernwirksame KI berücksicht die aktuellen Forschungsergebnisse (John Hattie, Hilber Meyer) zum lernwirksamen Untericht.</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>bietet sichtbares und reflektiertes Lernen</strong></p>
+<ul>
+<li>erfasst und passt sich der kognitiven Stufe an</li>
+<li>wirksames Feedback zu Fortschritten</li>
+<li>implementiert Lernziele</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div id="board1-1">
+
+</div>
+<script type="module">
+  import {board} from './draw.js';
+  board("#board1-1",{width:450, height:220});
+</script>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>ermöglicht strukturiertes Vorgehen</strong></p>
+<ul>
+<li>inhaltliche Koherenz entlang eines strukturierten Lernpfades</li>
+<li>verknüpft Wissen und Methoden</li>
+<li>bietet eine anregende Methoden Vielfalt</li>
+<li>baut auf Vorwissen und Alltagserfahrung auf</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div id="board1-2">
+
+</div>
+<script type="module">
+  import {board} from './draw.js';
+  board("#board1-2",{width:450, height:300});
+</script>
+</div>
+</div>
+</section>
+<section id="lernwirksame-ki-tutoren-23" class="slide level2">
+<h2>Lernwirksame KI Tutoren 2/3</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>aktiviert und motiviert die Lernenden</strong></p>
+<ul>
+<li>interaktive und spielerische Ansätze</li>
+<li>personalierte Lernmöglichkeiten</li>
+<li>fordern ohne zu überfordern</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div id="board2-1">
+
+</div>
+<script type="module">
+  import {board} from './draw.js';
+  board("#board2-1",{width:450, height:260});
+</script>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>analysiert und verbessert kontinuierlich</strong></p>
+<ul>
+<li>motivierende Lernanalysen</li>
+<li>formatives Assessment</li>
+<li>adaptiver Lernpfad</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div id="board2-2">
+
+</div>
+<script type="module">
+  import {board} from './draw.js';
+  board("#board2-2",{width:450, height:260});
+</script>
+</div>
+</div>
+</section>
+<section id="lernwirksame-ki-tutoren-33" class="slide level2">
+<h2>Lernwirksame KI Tutoren 3/3</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>fördert Lernen in der (Klein-)Gruppe</strong></p>
+<ul>
+<li>lernen in einer APP an verschiedenen Standorten</li>
+<li>gemeinsame Erfolgsergebnisse</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div id="board3-1">
+
+</div>
+<script type="module">
+  import {board} from './draw.js';
+  board("#board3-1",{width:450, height:200});
+</script>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>unterstützt die Lehrenden als Lernpartner</strong></p>
+<ul>
+<li>Steuerung des Lernpfades/Lernsstrategy</li>
+<li>transparentes Erfassen von Lernfortschritten</li>
+<li>Frühwarnsystem zur proaktiven, respektvollen Intervention</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div id="board3-2">
+
+</div>
+<script type="module">
+  import {board} from './draw.js';
+  board("#board3-2",{width:450, height:350});
+</script>
+</div>
+</div>
+</section>
+<section id="section-4" class="slide level2">
+<h2>_</h2>
+<p><br><br></p>
+<div class="centered-xxl-text">
+<p>Unserer Meinung zu KI</p>
+</div>
+</section>
+<section id="unsere-meinung-zu-ki-13" class="slide level2">
+<h2>Unsere Meinung zu KI 1/3</h2>
+<ul>
+<li>Ich habe ein gutes Verständnis was künstliche Intelligenz ist
+<div id="scale1">
+
+</div>
+<script type="module">
+import {domReady,checkSVG, getSVG, likertScale} from './draw.js';
+domReady(() => {
+  checkSVG();
+  const draw = getSVG("#scale1",{height:100});
+  likertScale(draw,"scale1");
+})
+</script></li>
+<li>Produkte und Dienstleistungen, die künstliche Intelligenz nutzen, werden mein tägliches Leben in den nächsten 3 bis 5 Jahren tiefgreifend verändern.
+<div id="scale2">
+
+</div>
+<script type="module">
+import {domReady,checkSVG, getSVG, likertScale} from './draw.js';
+domReady(() => {
+  checkSVG();
+  const draw = getSVG("#scale2",{height:100});
+  likertScale(draw,"scale2");
+})
+</script></li>
+<li>Produkte und Dienstleistungen mit künstlicher Intelligenz Intelligenz machen mein Leben einfacher
+<div id="scale3">
+
+</div>
+<script type="module">
+import {domReady,checkSVG, getSVG, likertScale} from './draw.js';
+domReady(() => {
+  checkSVG();
+  const draw = getSVG("#scale3",{height:100});
+  likertScale(draw,"scale3");
+})
+</script></li>
+</ul>
+</section>
+<section id="unsere-meinung-zu-ki-23" class="slide level2">
+<h2>Unsere Meinung zu KI 2/3</h2>
+<ul>
+<li>Produkte und Dienstleistungen mit künstlicher Intelligenz Intelligenz haben mehr Vorteile als Nachteile
+<div id="scale4">
+
+</div>
+<script type="module">
+import {domReady,checkSVG, getSVG, likertScale} from './draw.js';
+domReady(() => {
+  checkSVG();
+  const draw = getSVG("#scale4",{height:100});
+  likertScale(draw,"scale4");
+})
+</script></li>
+<li>Ich weiß, welche Produkte und Dienstleistungen künstliche Intelligenz nutzen
+<div id="scale5">
+
+</div>
+<script type="module">
+import {domReady,checkSVG, getSVG, likertScale} from './draw.js';
+domReady(() => {
+  checkSVG();
+  const draw = getSVG("#scale5",{height:100});
+  likertScale(draw,"scale5");
+})
+</script></li>
+<li>Ich vertraue Unternehmen, die künstliche Intelligenz einsetzen, genauso viel wie anderen Unternehmen.
+<div id="scale6">
+
+</div>
+<script type="module">
+import {domReady,checkSVG, getSVG, likertScale} from './draw.js';
+domReady(() => {
+  checkSVG();
+  const draw = getSVG("#scale6",{height:100});
+  likertScale(draw,"scale6");
+})
+</script></li>
+</ul>
+</section>
+<section id="unsere-meinung-zu-ki-33" class="slide level2">
+<h2>Unsere Meinung zu KI 3/3</h2>
+<ul>
+<li>Produkte und Dienstleistungen, die künstliche Intelligenz nutzen, haben mein tägliches Leben in den letzten 3 bis 5 Jahren tiefgreifend verändert
+<div id="scale7">
+
+</div>
+<script type="module">
+import {domReady,checkSVG, getSVG, likertScale} from './draw.js';
+domReady(() => {
+  checkSVG();
+  const draw = getSVG("#scale7",{height:100});
+  likertScale(draw,"scale7");
+})
+</script></li>
+<li>Produkte und Dienstleistungen mit künstlicher Intelligenz Intelligenz machen mich nervös
+<div id="scale8">
+
+</div>
+<script type="module">
+import {domReady,checkSVG, getSVG, likertScale} from './draw.js';
+domReady(() => {
+  checkSVG();
+  const draw = getSVG("#scale8",{height:100});
+  likertScale(draw,"scale8");
+})
+</script></li>
+</ul>
+</section>
+<section id="ergebnisse" class="slide level2">
+<h2>Ergebnisse</h2>
+<table>
+<caption>
+Antworten im Vergleich
+</caption>
+<tbody><tr>
+<th>
+Welt
+</th>
+<th>
+EU
+</th>
+<th>
+Schweiz
+</th>
+</tr>
+<tr>
+<td>
+Row 1
+</td>
+<td>
+Data
+</td>
+<td>
+<div id="showScale1">
+
+</div>
+</td>
+</tr>
+<tr>
+<td>
+Row 2
+</td>
+<td>
+Data
+</td>
+<td>
+Data
+</td>
+</tr>
+<tr>
+<td>
+Row 3
+</td>
+<td>
+Data
+</td>
+<td>
+Data
+</td>
+</tr>
+</tbody></table>
+<script type="module">
+  import {likertPercentage} from "./draw.js"
+    likertPercentage("scale1").then(value => {
+      document.getElementById("showScale1").innerHTML = `${value}%`;
+    });
+</script>
+</section>
+<section id="globale-meinung-zu-ki---vergleich" class="slide level2">
+<h2>Globale Meinung zu KI - Vergleich</h2>
+<p><img data-src="images/AI Poll.png" style="border: 1px solid gray;"></p>
 
 <div class="quarto-auto-generated-content">
 <p><img src="images/Logo_PH_Bern.png" class="slide-logo"></p>
@@ -414,7 +1183,7 @@ function submitForm() {
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":false},
-'smaller': false,
+'smaller': true,
  
         // Display controls in the bottom right corner
         controls: true,

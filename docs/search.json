@@ -11,7 +11,7 @@
     "href": "first.html#mustererkennung",
     "title": "Atelier Burgdorf",
     "section": "Mustererkennung",
-    "text": "Mustererkennung\n\n\n\n\n\n\n\n\n\nDr. Wolfgang Spahn"
+    "text": "Mustererkennung"
   },
   {
     "objectID": "first.html#agenda",
@@ -26,5 +26,628 @@
     "title": "Atelier Burgdorf",
     "section": "Slide with Form",
     "text": "Slide with Form\n\nYour Name:  Your Email:"
+  },
+  {
+    "objectID": "first.html#slide-with-interactive-image",
+    "href": "first.html#slide-with-interactive-image",
+    "title": "Atelier Burgdorf",
+    "section": "Slide with Interactive Image",
+    "text": "Slide with Interactive Image\nClick on the image below to show/hide it.\n\n\n\n\nhello"
+  },
+  {
+    "objectID": "first.html#künstliche-intelligenz-definition-analogie",
+    "href": "first.html#künstliche-intelligenz-definition-analogie",
+    "title": "Atelier Burgdorf",
+    "section": "Künstliche Intelligenz: Definition, Analogie",
+    "text": "Künstliche Intelligenz: Definition, Analogie\n::: {layout-ncol=2}\n\nKünstliche Intelligenz\nIntelligenz (ganzheitlich) ist die Hauptfunktion des menschlichen Gehirns, um kognitive Funktionen bereitzustellen, die einem Lebewesen das Überleben in einer feindlichen Umgebung ermöglichen. Intelligenz (kommerziell) wird benötigt, um Aufgaben zu erledigen, die von geistigen Arbeitern ausgeführt werden. 1000 andere: …\nKünstliche Intelligenz: eine Software kann bis zu einem gewissen Grad geistige Arbeit leisten.\n\n\nKünstliches Herz\nKünstliches Herz: ersetzt ein menschliches Herz bis zu einem gewissen Grad, kann Blut pumpen."
+  },
+  {
+    "objectID": "first.html#kognitions-automation---2024",
+    "href": "first.html#kognitions-automation---2024",
+    "title": "Atelier Burgdorf",
+    "section": "Kognitions Automation - 2024",
+    "text": "Kognitions Automation - 2024"
+  },
+  {
+    "objectID": "first.html#humanoide-roboter-2024",
+    "href": "first.html#humanoide-roboter-2024",
+    "title": "Atelier Burgdorf",
+    "section": "Humanoide Roboter 2024",
+    "text": "Humanoide Roboter 2024"
+  },
+  {
+    "objectID": "first.html#text-vektoren-verschlüsseln-bedeutung",
+    "href": "first.html#text-vektoren-verschlüsseln-bedeutung",
+    "title": "Atelier Burgdorf",
+    "section": "Text: Vektoren verschlüsseln Bedeutung",
+    "text": "Text: Vektoren verschlüsseln Bedeutung"
+  },
+  {
+    "objectID": "first.html#und-was-machen-wir-bei-mehrdeutigkeit",
+    "href": "first.html#und-was-machen-wir-bei-mehrdeutigkeit",
+    "title": "Atelier Burgdorf",
+    "section": "Und was machen wir bei Mehrdeutigkeit?",
+    "text": "Und was machen wir bei Mehrdeutigkeit?"
+  },
+  {
+    "objectID": "first.html",
+    "href": "first.html",
+    "title": "Atelier Burgdorf",
+    "section": "",
+    "text": "KI - Wo stehen wir heute, wo geht die Reise hin\n\nEinführung\nKI - Wir bauen ein Neuronales Netz\nGrundlagen Modelle\nAusblick 2029/2034\n\nSelbstversuche mit ProPhysik\n\neinen KI Lernbegleiter Prototyp\n\nWorkshop: Und was bedeutet das für die Bildung"
+  },
+  {
+    "objectID": "Setup.html",
+    "href": "Setup.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "This sets up a quarto reveal.js presentation to be loaded under https://wolfgangspahn.github.io/atelier-burgdorf.github.io"
+  },
+  {
+    "objectID": "Setup.html#organize-your-project-directory",
+    "href": "Setup.html#organize-your-project-directory",
+    "title": "Introduction",
+    "section": "Organize Your Project Directory",
+    "text": "Organize Your Project Directory\nEnsure your project directory first/ is set up as described. It should contain: - The first.qmd file with your presentation content and configuration. - An images/ directory containing the image phbern.svg. - A styles.css file to customize the presentation’s styling.\nYour directory structure should look like this:\nfirst/\n│\n├── first.qmd\n├── images/\n│   └── phbern.svg\n└── styles.css"
+  },
+  {
+    "objectID": "Setup.html#write-your-presentation-content",
+    "href": "Setup.html#write-your-presentation-content",
+    "title": "Introduction",
+    "section": "Write Your Presentation Content",
+    "text": "Write Your Presentation Content\nIn your first.qmd file, you’ve already configured some basic settings for Reveal.js such as enabling slide numbers, disabling the chalkboard buttons, and adding a footer. Continue to populate your presentation by adding more slides using markdown syntax under the initial slide (# Hallo miteinander)."
+  },
+  {
+    "objectID": "Setup.html#convert-your-quarto-document-to-a-reveal.js-presentation",
+    "href": "Setup.html#convert-your-quarto-document-to-a-reveal.js-presentation",
+    "title": "Introduction",
+    "section": "Convert Your Quarto Document to a Reveal.js Presentation",
+    "text": "Convert Your Quarto Document to a Reveal.js Presentation\nOpen a command-line interface (CLI) and navigate to your project directory. Once you are in the first/ directory, run the following command to render your Quarto document into a Reveal.js presentation:\nquarto render first.qmd"
+  },
+  {
+    "objectID": "Setup.html#view-your-presentation",
+    "href": "Setup.html#view-your-presentation",
+    "title": "Introduction",
+    "section": "View Your Presentation",
+    "text": "View Your Presentation\nAfter running the command, Quarto will generate the presentation and save it in a new directory named _site. You can open the resulting HTML file in any web browser to view your presentation."
+  },
+  {
+    "objectID": "Setup.html#further-customization-and-iteration",
+    "href": "Setup.html#further-customization-and-iteration",
+    "title": "Introduction",
+    "section": "Further Customization and Iteration",
+    "text": "Further Customization and Iteration\n\nIf you need to make changes, adjust the content in your .qmd file and rerun the quarto render first.qmd command to update the presentation.\nYou can modify styles.css to change the styling of your presentation, and these changes will be applied when you re-render the presentation."
+  },
+  {
+    "objectID": "Setup.html#optional-watching-changes",
+    "href": "Setup.html#optional-watching-changes",
+    "title": "Introduction",
+    "section": "Optional: Watching Changes",
+    "text": "Optional: Watching Changes\nIf you are making frequent changes and want to see updates in real-time, you can use the quarto preview command which automatically re-renders the presentation when it detects changes in the project files:\nquarto preview first.qmd\nThis command will also open a live preview in your default web browser.\nBy following these steps, you should be able to create and customize your Reveal.js presentation using Quarto."
+  },
+  {
+    "objectID": "Setup.html#initialize-a-git-repository",
+    "href": "Setup.html#initialize-a-git-repository",
+    "title": "Introduction",
+    "section": "Initialize a Git Repository",
+    "text": "Initialize a Git Repository\nFirst, ensure you are in your project directory (in your case, the first/ directory). Open your command-line interface and run:\ncd path/to/your/first/\ngit init\nThis command initializes a new Git repository in your directory."
+  },
+  {
+    "objectID": "Setup.html#create-a-.gitignore-file",
+    "href": "Setup.html#create-a-.gitignore-file",
+    "title": "Introduction",
+    "section": "Create a .gitignore File",
+    "text": "Create a .gitignore File\nBefore adding files to the repository, it’s a good practice to create a .gitignore file to exclude files and directories that do not need to be tracked by Git (like temporary files or dependencies). For a Quarto project, you might want to ignore the _site/ directory and any log files:\n# Ignore all log files\n*.log\n\n# Ignore system files\n.DS_Store\nThumbs.db\n\n# Ignore Quarto temporary files\n.quarto-cache/\n.quarto-work/\n\n/.quarto/\nCreate this .gitignore file in your first/ directory."
+  },
+  {
+    "objectID": "Setup.html#create-a-.nojekyll-to-prevent-jekyll-rendering",
+    "href": "Setup.html#create-a-.nojekyll-to-prevent-jekyll-rendering",
+    "title": "Introduction",
+    "section": "Create a .nojekyll to prevent jekyll rendering",
+    "text": "Create a .nojekyll to prevent jekyll rendering\nBy default github will interpret your docs a jekyll projekt. To hinder this do following on vscode commandline\ntouch .nojekyll"
+  },
+  {
+    "objectID": "Setup.html#add-and-commit-your-files",
+    "href": "Setup.html#add-and-commit-your-files",
+    "title": "Introduction",
+    "section": "Add and Commit Your Files",
+    "text": "Add and Commit Your Files\nAdd all relevant files to the repository and make your first commit:\ngit add .\ngit commit -m \"Initial commit of Quarto presentation\""
+  },
+  {
+    "objectID": "Setup.html#create-a-github-repository",
+    "href": "Setup.html#create-a-github-repository",
+    "title": "Introduction",
+    "section": "Create a GitHub Repository",
+    "text": "Create a GitHub Repository\nGo to GitHub and create a new repository. You can name it something relevant, such as first-presentation."
+  },
+  {
+    "objectID": "Setup.html#add-github-repository-as-a-remote",
+    "href": "Setup.html#add-github-repository-as-a-remote",
+    "title": "Introduction",
+    "section": "Add GitHub Repository as a Remote",
+    "text": "Add GitHub Repository as a Remote\nAfter creating the repository on GitHub, you will see instructions to push an existing repository from the command line. It will look something like this (replace &lt;username&gt; with your actual GitHub username):\ngit git remote add origin https://github.com/WolfgangSpahn/atelier-burgdorf.github.io\ngit branch -M main\ngit push -u origin main\nRun these commands in your CLI to connect your local repository to GitHub and push your changes."
+  },
+  {
+    "objectID": "Setup.html#step-6-configure-github-pages",
+    "href": "Setup.html#step-6-configure-github-pages",
+    "title": "Introduction",
+    "section": "Step 6: Configure GitHub Pages",
+    "text": "Step 6: Configure GitHub Pages\n\nSet up GitHub Pages to Serve Your Presentation:\n\nGo to your repository on GitHub.\nNavigate to “Settings” &gt; “Pages”.\nUnder “Source”, select the main branch and the folder /docs depending on where you want to generate your site files.\nClick “Save”.\n\n\n\nRender Your Quarto Document to the docs/ Folder:\n\nIf you chose /docs in the repository settings on GitHub, you need to configure to render your Quarto document directly to the docs/ directory: create config file\n\ntouch _quarto.yml\nwith following content:\nproject:\n  type: website\n  output-dir: docs\nwhich hopefully renders now to docs/\nquarto render first.qmd\n&gt; ....\n&gt; Output created: docs\\first.html\n\nCommit the changes in the docs/ directory:\n\ngit add docs\ngit commit -m \"Add rendered presentation to docs/\"\ngit push -u origin main"
+  },
+  {
+    "objectID": "Setup.html#check-your-github-pages-url",
+    "href": "Setup.html#check-your-github-pages-url",
+    "title": "Introduction",
+    "section": "Check Your GitHub Pages URL",
+    "text": "Check Your GitHub Pages URL\nOnce you have pushed your changes and set up GitHub Pages, your presentation should be available at https://wolfgangspahn.github.io/atelier-burgdorf.github.io.\nBy following these steps, your Quarto presentation will be under version control with Git, and hosted on GitHub Pages, allowing you to share and collaborate on your project easily."
+  },
+  {
+    "objectID": "Readme.html",
+    "href": "Readme.html",
+    "title": "",
+    "section": "",
+    "text": "German Version:\nhttps://wolfgangspahn.github.io/atelier-burgdorf.github.io"
+  },
+  {
+    "objectID": "Readme.html#atelier-burgdorf-animierte-presentation",
+    "href": "Readme.html#atelier-burgdorf-animierte-presentation",
+    "title": "",
+    "section": "",
+    "text": "German Version:\nhttps://wolfgangspahn.github.io/atelier-burgdorf.github.io"
+  },
+  {
+    "objectID": "first.html#willkommen-im-atelier",
+    "href": "first.html#willkommen-im-atelier",
+    "title": "Atelier Burgdorf",
+    "section": "Willkommen im Atelier",
+    "text": "Willkommen im Atelier"
+  },
+  {
+    "objectID": "first.html#ki-definition",
+    "href": "first.html#ki-definition",
+    "title": "Atelier Burgdorf",
+    "section": "KI: Definition",
+    "text": "KI: Definition\n\n\nViele Definitionen für Intelligenz\n\nIntelligenz (ganzheitlich) ist die Hauptfunktion des menschlichen Gehirns, um kognitive Funktionen bereitzustellen, die einem Lebewesen das Überleben in einer feindlichen Umgebung ermöglichen.\nIntelligenz (kommerziell) wird benötigt, um Aufgaben zu erledigen, die von geistigen Arbeitern ausgeführt werden.\n1000 andere: …\n\nKünstliche Intelligenz: eine Software kann bis zu einem gewissen Grad geistige Arbeit leisten.\n\nAnalogie\n\n\n\nEin künstliches Herz ersetzt ein menschliches Herz."
+  },
+  {
+    "objectID": "first.html#cognition---2024",
+    "href": "first.html#cognition---2024",
+    "title": "Atelier Burgdorf",
+    "section": "Cognition - 2024",
+    "text": "Cognition - 2024\n\n\nText \nVideo \n\nBild \nSound"
+  },
+  {
+    "objectID": "first.html#text-bedeutung",
+    "href": "first.html#text-bedeutung",
+    "title": "Atelier Burgdorf",
+    "section": "Text Bedeutung",
+    "text": "Text Bedeutung\n\n\nWort Embeddings\n\nEin Wort entspricht einem Zahlen Vektor\nWort Beziehungen entsprechen Vektor Beziehungen\n\n\n\nSatz Embedding\n\nEin Satz entspricht einem Zahlen Vektor\nSatz Beziehungen entsprechen Vektor Beziehungen"
+  },
+  {
+    "objectID": "first.html#mehrdeutigkeit",
+    "href": "first.html#mehrdeutigkeit",
+    "title": "Atelier Burgdorf",
+    "section": "Mehrdeutigkeit @!?",
+    "text": "Mehrdeutigkeit @!?\n\n\nEin Wort, zwei Bedeutungen\n\nEin Wort hat zunächst nur eine Bedeutung (embedding).\nUm Text realistisch zu bearbeiten, müssen Worte im Kontext prozessiert werden.\n\n\n\n\n\nBeispiel: bank (Geldinstitut), bank (Ufer)\n\n\n\nDas Wort im Kontext\n\nEin neuronal Netz analysiert die Beziehungen der Worte im Kontext (Satz, Paragraph, Buch)\nDaraus lernt es das wahrscheinlichste Wort vorherzusagen.\n\n\n\n\nBeispiel: river, bank"
+  },
+  {
+    "objectID": "first.html#quiz",
+    "href": "first.html#quiz",
+    "title": "Atelier Burgdorf",
+    "section": "Quiz",
+    "text": "Quiz\n\nWie viele Tiere jeder Art hat Moses mit auf die Arche genommen?\n\n\nWieviel:  \n\n\nEin Schläger und ein Ball kosten zusammen 1,10 Dollar. Der Schläger kostet einen Dollar mehr als der Ball. Wie viel kostet der Ball?\n\n\nWieviel:  \n\nNun ChatGPT\n\n\n\n\nDr. Wolfgang Spahn"
+  },
+  {
+    "objectID": "first.html#who-is-in",
+    "href": "first.html#who-is-in",
+    "title": "Atelier Burgdorf",
+    "section": "Who is in?",
+    "text": "Who is in?"
+  },
+  {
+    "objectID": "first.html#board",
+    "href": "first.html#board",
+    "title": "Atelier Burgdorf",
+    "section": "Board",
+    "text": "Board\n\nLoad"
+  },
+  {
+    "objectID": "test.html#board",
+    "href": "test.html#board",
+    "title": "Atelier Burgdorf",
+    "section": "board",
+    "text": "board\n\n\n\n\n\n\n\n\nDr. Wolfgang Spahn"
+  },
+  {
+    "objectID": "first.html#board-1",
+    "href": "first.html#board-1",
+    "title": "Atelier Burgdorf",
+    "section": "Board",
+    "text": "Board"
+  },
+  {
+    "objectID": "first.html#intuitives-denken",
+    "href": "first.html#intuitives-denken",
+    "title": "Atelier Burgdorf",
+    "section": "Intuitives Denken",
+    "text": "Intuitives Denken\n\nWie viele Tiere jeder Art hat Moses mit auf die Arche genommen?\n\n\nWieviel:  \n\n\nEin Schläger und ein Ball kosten zusammen 1,10 Dollar. Der Schläger kostet einen Dollar mehr als der Ball. Wie viel kostet der Ball?\n\n\nWieviel:  \n\nNun ChatGPT"
+  },
+  {
+    "objectID": "first.html#schlussfolgerungen-theory-of-mind",
+    "href": "first.html#schlussfolgerungen-theory-of-mind",
+    "title": "Atelier Burgdorf",
+    "section": "Schlussfolgerungen, “Theory of Mind”",
+    "text": "Schlussfolgerungen, “Theory of Mind”\n\nIm Satz “die Schwester heiratet den Arzt weil sie schwanger ist”. Wer ist schwanger?\n\n\n?:  \n\n\nIch war auf einer Party. Ich kam vor John an. David kam nach Joe an. Joe kam vor mir an. John kam nach David an. Wer kam zuerst an?\n\n\n?:"
+  },
+  {
+    "objectID": "first.html#theory-of-mind---ich-denke-dass-du-denkst",
+    "href": "first.html#theory-of-mind---ich-denke-dass-du-denkst",
+    "title": "Atelier Burgdorf",
+    "section": "“Theory of mind” - Ich denke dass Du denkst",
+    "text": "“Theory of mind” - Ich denke dass Du denkst\n\n\nSie sind ein Butler in einem Schloss. Im Wohnzimmer befindet sich eine sehr teure Vase. Ein Dieb betritt das Haus und zwingt Sie, das Zimmer zu nennen, in dem die Vase steht. Sie müssen ein Zimmer benennen. Wie antworten Sie?\n\n?:  \n\n\n\n\n\n\n\n\n\n\n\n\nDr. Wolfgang Spahn"
+  },
+  {
+    "objectID": "first.html#schlussfolgerungen",
+    "href": "first.html#schlussfolgerungen",
+    "title": "Atelier Burgdorf",
+    "section": "Schlussfolgerungen",
+    "text": "Schlussfolgerungen\n\n\nIm Satz “die Schwester heiratet den Arzt weil sie schwanger ist”. Wer ist schwanger?\n\n?:  \n\nIch war auf einer Party. Ich kam vor John an. David kam nach Joe an. Joe kam vor mir an. John kam nach David an. Wer kam zuerst an?\n\n?:"
+  },
+  {
+    "objectID": "first.html#schlussfolgerungen-12",
+    "href": "first.html#schlussfolgerungen-12",
+    "title": "Atelier Burgdorf",
+    "section": "Schlussfolgerungen 1/2",
+    "text": "Schlussfolgerungen 1/2\n\n\nIn the sentence “The nurse marries the doctor because she is pregnant”. Who is pregnant?\n\n\n\n\nUnd was sagen die KI Modelle?\n\nKleine LLMs\nGPT 3.5\nGPT 4"
+  },
+  {
+    "objectID": "first.html#schlussfolgerungen-22",
+    "href": "first.html#schlussfolgerungen-22",
+    "title": "Atelier Burgdorf",
+    "section": "Schlussfolgerungen 2/2",
+    "text": "Schlussfolgerungen 2/2\n\n\nIch war auf einer Party. Ich kam vor John an. David kam nach Joe an. Joe kam vor mir an. John kam nach David an. Wer kam zuerst an?\n\n\n\n\nUnd was sagen die KI Modelle?\n\nKleine LLMs\nGPT 3.5\nGPT 4"
+  },
+  {
+    "objectID": "first.html#ich-denke-dass-du-denkst",
+    "href": "first.html#ich-denke-dass-du-denkst",
+    "title": "Atelier Burgdorf",
+    "section": "Ich denke dass Du denkst",
+    "text": "Ich denke dass Du denkst\n\n\nSie sind ein Butler in einem Schloss. Im Wohnzimmer befindet sich eine sehr teure Vase. Ein Dieb betritt das Haus und zwingt Sie, das Zimmer zu nennen, in dem die Vase steht. Sie müssen ein Zimmer benennen. Wie antworten Sie?\n\n\n\n\nUnd was sagen die KI Modelle?\n\nKleine LLMs\nGPT 3.5\nGPT 4"
+  },
+  {
+    "objectID": "first.html#model-entwicklung-12",
+    "href": "first.html#model-entwicklung-12",
+    "title": "Atelier Burgdorf",
+    "section": "Model Entwicklung 1/2",
+    "text": "Model Entwicklung 1/2"
+  },
+  {
+    "objectID": "first.html#model-entwicklung-22",
+    "href": "first.html#model-entwicklung-22",
+    "title": "Atelier Burgdorf",
+    "section": "Model Entwicklung 2/2",
+    "text": "Model Entwicklung 2/2"
+  },
+  {
+    "objectID": "first.html#beispiel-benchmark",
+    "href": "first.html#beispiel-benchmark",
+    "title": "Atelier Burgdorf",
+    "section": "Beispiel Benchmark",
+    "text": "Beispiel Benchmark"
+  },
+  {
+    "objectID": "first.html#robotor-entwicklung",
+    "href": "first.html#robotor-entwicklung",
+    "title": "Atelier Burgdorf",
+    "section": "Robotor Entwicklung",
+    "text": "Robotor Entwicklung"
+  },
+  {
+    "objectID": "first.html#unsere-meinung-zu-ki",
+    "href": "first.html#unsere-meinung-zu-ki",
+    "title": "Atelier Burgdorf",
+    "section": "Unsere Meinung zu KI",
+    "text": "Unsere Meinung zu KI\n\n\n\n\nIch habe ein gutes Verständnis was künstliche Intelligenz ist\nProdukte und Dienstleistungen, die künstliche Intelligenz nutzen, werden mein tägliches Leben in den nächsten 3 bis 5 Jahren tiefgreifend verändern.\nIch vertraue darauf, dass künstliche Intelligenz keine Gruppe von Menschen diskriminiert oder voreingenommen ist.\nProdukte und Dienstleistungen mit künstlicher Intelligenz Intelligenz haben mehr Vorteile als Nachteile\nProdukte und Dienstleistungen mit künstlicher Intelligenz Intelligenz begeistern mich\nIch vertraue Unternehmen, die künstliche Intelligenz einsetzen, genauso viel wie anderen Unternehmen.\nProdukte und Dienstleistungen mit künstlicher Intelligenz Intelligenz machen mich nervös\nIch weiß, welche Arten von Produkten und Dienstleistungen künstliche Intelligenz nutzen\nIch vertraue darauf, dass Unternehmen, die künstliche Intelligenz nutzen, meine persönlichen Daten schützen\nProdukte und Dienstleistungen, die künstliche Intelligenz nutzen, haben mein tägliches Leben in den letzten 3 bis 5 Jahren tiefgreifend verändert\n\n\n\n\n\n\n\n\n\n\nDr. Wolfgang Spahn"
+  },
+  {
+    "objectID": "first.html#intuitives-denken-12",
+    "href": "first.html#intuitives-denken-12",
+    "title": "Atelier Burgdorf",
+    "section": "Intuitives Denken 1/2",
+    "text": "Intuitives Denken 1/2\n\n\nWie viele Tiere jeder Art hat Moses mit auf die Arche genommen?\n\n\n\n\n\nUnd was sagen die KI Modelle?\n\nKleine LLMs\nGPT 3.5\nGPT 4"
+  },
+  {
+    "objectID": "first.html#intuitives-denken-22",
+    "href": "first.html#intuitives-denken-22",
+    "title": "Atelier Burgdorf",
+    "section": "Intuitives Denken 2/2",
+    "text": "Intuitives Denken 2/2\n\n\nEin Schläger und ein Ball kosten zusammen 1,10 Dollar. Der Schläger kostet einen Dollar mehr als der Ball. Wie viel kostet der Ball?\n\n\n\n\nUnd was sagen die KI Modelle?\n\nKleine LLMs\nGPT 3.5\nGPT 4"
+  },
+  {
+    "objectID": "first.html#unsere-meinung-zu-ki-13",
+    "href": "first.html#unsere-meinung-zu-ki-13",
+    "title": "Atelier Burgdorf",
+    "section": "Unsere Meinung zu KI 1/3",
+    "text": "Unsere Meinung zu KI 1/3\n\nIch habe ein gutes Verständnis was künstliche Intelligenz ist\n\n\n\n\nProdukte und Dienstleistungen, die künstliche Intelligenz nutzen, werden mein tägliches Leben in den nächsten 3 bis 5 Jahren tiefgreifend verändern.\n\n\n\n\nProdukte und Dienstleistungen mit künstlicher Intelligenz Intelligenz machen mein Leben einfacher"
+  },
+  {
+    "objectID": "first.html#unsere-meinung-zu-ki-23",
+    "href": "first.html#unsere-meinung-zu-ki-23",
+    "title": "Atelier Burgdorf",
+    "section": "Unsere Meinung zu KI 2/3",
+    "text": "Unsere Meinung zu KI 2/3\n\nProdukte und Dienstleistungen mit künstlicher Intelligenz Intelligenz haben mehr Vorteile als Nachteile\n\n\n\n\nIch weiß, welche Produkte und Dienstleistungen künstliche Intelligenz nutzen\n\n\n\n\nIch vertraue Unternehmen, die künstliche Intelligenz einsetzen, genauso viel wie anderen Unternehmen."
+  },
+  {
+    "objectID": "first.html#unsere-meinung-zu-ki-33",
+    "href": "first.html#unsere-meinung-zu-ki-33",
+    "title": "Atelier Burgdorf",
+    "section": "Unsere Meinung zu KI 3/3",
+    "text": "Unsere Meinung zu KI 3/3\n\nProdukte und Dienstleistungen, die künstliche Intelligenz nutzen, haben mein tägliches Leben in den letzten 3 bis 5 Jahren tiefgreifend verändert\n\n\n\n\nProdukte und Dienstleistungen mit künstlicher Intelligenz Intelligenz machen mich nervös"
+  },
+  {
+    "objectID": "first.html#globale-meinung-zu-ki-23",
+    "href": "first.html#globale-meinung-zu-ki-23",
+    "title": "Atelier Burgdorf",
+    "section": "Globale Meinung zu KI 2/3",
+    "text": "Globale Meinung zu KI 2/3\n\n\n\n\n\nDr. Wolfgang Spahn"
+  },
+  {
+    "objectID": "first.html#globale-meinung-zu-ki",
+    "href": "first.html#globale-meinung-zu-ki",
+    "title": "Atelier Burgdorf",
+    "section": "Globale Meinung zu KI",
+    "text": "Globale Meinung zu KI"
+  },
+  {
+    "objectID": "first.html#test",
+    "href": "first.html#test",
+    "title": "Atelier Burgdorf",
+    "section": "Test",
+    "text": "Test\n\n\n\n\n\n\n\n\nDr. Wolfgang Spahn"
+  },
+  {
+    "objectID": "test.html#test",
+    "href": "test.html#test",
+    "title": "Atelier Burgdorf",
+    "section": "Test",
+    "text": "Test"
+  },
+  {
+    "objectID": "first.html#unsere-meinung-zu-ki-24",
+    "href": "first.html#unsere-meinung-zu-ki-24",
+    "title": "Atelier Burgdorf",
+    "section": "Unsere Meinung zu KI 2/4",
+    "text": "Unsere Meinung zu KI 2/4\n\nProdukte und Dienstleistungen mit künstlicher Intelligenz Intelligenz haben mehr Vorteile als Nachteile\n\n\n\n\nIch weiß, welche Produkte und Dienstleistungen künstliche Intelligenz nutzen\n\n\n\n\nIch vertraue Unternehmen, die künstliche Intelligenz einsetzen, genauso viel wie anderen Unternehmen."
+  },
+  {
+    "objectID": "first.html#unsere-meinung-zu-ki-34",
+    "href": "first.html#unsere-meinung-zu-ki-34",
+    "title": "Atelier Burgdorf",
+    "section": "Unsere Meinung zu KI 3/4",
+    "text": "Unsere Meinung zu KI 3/4\n\nProdukte und Dienstleistungen, die künstliche Intelligenz nutzen, haben mein tägliches Leben in den letzten 3 bis 5 Jahren tiefgreifend verändert\n\n\n\n\nProdukte und Dienstleistungen mit künstlicher Intelligenz Intelligenz machen mich nervös"
+  },
+  {
+    "objectID": "first.html#unsere-meinung-zu-ki-44",
+    "href": "first.html#unsere-meinung-zu-ki-44",
+    "title": "Atelier Burgdorf",
+    "section": "Unsere Meinung zu KI 4/4",
+    "text": "Unsere Meinung zu KI 4/4\n\nProdukte und Dienstleistungen, die künstliche Intelligenz nutzen, haben mein tägliches Leben in den letzten 3 bis 5 Jahren tiefgreifend verändert"
+  },
+  {
+    "objectID": "first.html#play-with-the-tutor",
+    "href": "first.html#play-with-the-tutor",
+    "title": "Atelier Burgdorf",
+    "section": "Play with the Tutor",
+    "text": "Play with the Tutor"
+  },
+  {
+    "objectID": "first.html#section",
+    "href": "first.html#section",
+    "title": "Atelier Burgdorf",
+    "section": "_",
+    "text": "_\n\n\nKI - Wo stehen wir heute, wo geht die Reise hin"
+  },
+  {
+    "objectID": "first.html#lernwirksame-ki-12",
+    "href": "first.html#lernwirksame-ki-12",
+    "title": "Atelier Burgdorf",
+    "section": "Lernwirksame KI 1/2",
+    "text": "Lernwirksame KI 1/2\nEine lernwirksame KI berücksicht die aktuellen Forschungsergebnisse (John Hattie, Hilber Meyer) zum lernwirksamen Untericht.\n\nbietet sichtbares und (selbst)reflektiertes Lernen\n\nerfasst und passt sich an die kognitive Stufe an\ngibt wirksames Feedback und macht Fortschritte sichtbar\nermöglicht Erfahrung von Selbstwirksamkeit\nsetzt Lernziele die verstanden werden und motivieren\n\nermöglicht strukturiertes Vorgehen\n\nerzielt inhaltliche Koherenz entlang eines strukturierten Lernpfades\nverknüpft Wissen und Methoden verschiedener Bereiche\nbietet eine anregende Methoden Vielfalt\nbaut auf Vorwissen und Alltagserfahrung auf"
+  },
+  {
+    "objectID": "first.html#lernwirksame-ki-22",
+    "href": "first.html#lernwirksame-ki-22",
+    "title": "Atelier Burgdorf",
+    "section": "Lernwirksame KI 2/2",
+    "text": "Lernwirksame KI 2/2\n\naktiviert und motiviert die Lernenden\n\nermöglicht interaktive und spielerische Ansätze\nbietet personalierte Lernmöglichkeiten\nfordert heraus ohne zu überfordern\n\nanalysiert und verbessert kontinuierlich\n\nführt motivierende Lernanalysen durch\nnutzt formatives Assessment"
+  },
+  {
+    "objectID": "first.html#lernwirksame-ki-22-1",
+    "href": "first.html#lernwirksame-ki-22-1",
+    "title": "Atelier Burgdorf",
+    "section": "Lernwirksame KI 2/2",
+    "text": "Lernwirksame KI 2/2\n\nfördert Lernen in der (Klein-)Gruppe\n\nerlaubt lernen in einer APP an verschiedenen Standorten\nstimuliert gemeinsame Erfolgsergebnisse\n\nuntersützt den Lehrer als Lern-coach und partner\n\nmanagebare Steuerung des Lernpfades\nerlaubt transparentes Erfassen von Lernfortschritten\nbietet ein Frühwarnsystem, für indivuelle Förderung\nermöglicht respektvolle Intervention\n\n\n\n\n\n\nDr. Wolfgang Spahn"
+  },
+  {
+    "objectID": "first.html#lernwirksame-ki-13",
+    "href": "first.html#lernwirksame-ki-13",
+    "title": "Atelier Burgdorf",
+    "section": "Lernwirksame KI 1/3",
+    "text": "Lernwirksame KI 1/3\nEine lernwirksame KI berücksicht die aktuellen Forschungsergebnisse (John Hattie, Hilber Meyer) zum lernwirksamen Untericht.\n\n\nbietet sichtbares und reflektiertes Lernen\n\nerfasst und passt sich der kognitiven Stufe an\nwirksames Feedback zu Fortschritten\nimplementiert Lernziele\n\n\n\n\n\n\n\n\n\n\nermöglicht strukturiertes Vorgehen\n\ninhaltliche Koherenz entlang eines strukturierten Lernpfades\nverknüpft Wissen und Methoden\nbietet eine anregende Methoden Vielfalt\nbaut auf Vorwissen und Alltagserfahrung auf"
+  },
+  {
+    "objectID": "first.html#lernwirksame-ki-23",
+    "href": "first.html#lernwirksame-ki-23",
+    "title": "Atelier Burgdorf",
+    "section": "Lernwirksame KI 2/3",
+    "text": "Lernwirksame KI 2/3\n\n\naktiviert und motiviert die Lernenden\n\ninteraktive und spielerische Ansätze\npersonalierte Lernmöglichkeiten\nfordern ohne zu überfordern\n\n\n\n\n\n\n\n\n\n\nanalysiert und verbessert kontinuierlich\n\nmotivierende Lernanalysen\nformatives Assessment\nadaptiver Lernpfad"
+  },
+  {
+    "objectID": "first.html#lernwirksame-ki-33",
+    "href": "first.html#lernwirksame-ki-33",
+    "title": "Atelier Burgdorf",
+    "section": "Lernwirksame KI 3/3",
+    "text": "Lernwirksame KI 3/3\n\n\nfördert Lernen in der (Klein-)Gruppe\n\nlernen in einer APP an verschiedenen Standorten\ngemeinsame Erfolgsergebnisse\n\n\n\n\n\n\n\n\n\n\nunterstützt die Lehrenden als Lernpartner\n\nSteuerung des Lernpfades/Lernsstrategy\ntransparentes Erfassen von Lernfortschritten\nFrühwarnsystem zur proaktiven, respektvollen Intervention\n\n\n\n\n\n\n\n\n\n\n\n\nDr. Wolfgang Spahn"
+  },
+  {
+    "objectID": "first.html#lernwirksame-ki-tutoren-13",
+    "href": "first.html#lernwirksame-ki-tutoren-13",
+    "title": "Atelier Burgdorf",
+    "section": "Lernwirksame KI Tutoren 1/3",
+    "text": "Lernwirksame KI Tutoren 1/3\nEine lernwirksame KI berücksicht die aktuellen Forschungsergebnisse (John Hattie, Hilber Meyer) zum lernwirksamen Untericht.\n\n\nbietet sichtbares und reflektiertes Lernen\n\nerfasst und passt sich der kognitiven Stufe an\nwirksames Feedback zu Fortschritten\nimplementiert Lernziele\n\n\n\n\n\n\n\n\n\n\nermöglicht strukturiertes Vorgehen\n\ninhaltliche Koherenz entlang eines strukturierten Lernpfades\nverknüpft Wissen und Methoden\nbietet eine anregende Methoden Vielfalt\nbaut auf Vorwissen und Alltagserfahrung auf"
+  },
+  {
+    "objectID": "first.html#lernwirksame-ki-tutoren-23",
+    "href": "first.html#lernwirksame-ki-tutoren-23",
+    "title": "Atelier Burgdorf",
+    "section": "Lernwirksame KI Tutoren 2/3",
+    "text": "Lernwirksame KI Tutoren 2/3\n\n\naktiviert und motiviert die Lernenden\n\ninteraktive und spielerische Ansätze\npersonalierte Lernmöglichkeiten\nfordern ohne zu überfordern\n\n\n\n\n\n\n\n\n\n\nanalysiert und verbessert kontinuierlich\n\nmotivierende Lernanalysen\nformatives Assessment\nadaptiver Lernpfad"
+  },
+  {
+    "objectID": "first.html#lernwirksame-ki-tutoren-33",
+    "href": "first.html#lernwirksame-ki-tutoren-33",
+    "title": "Atelier Burgdorf",
+    "section": "Lernwirksame KI Tutoren 3/3",
+    "text": "Lernwirksame KI Tutoren 3/3\n\n\nfördert Lernen in der (Klein-)Gruppe\n\nlernen in einer APP an verschiedenen Standorten\ngemeinsame Erfolgsergebnisse\n\n\n\n\n\n\n\n\n\n\nunterstützt die Lehrenden als Lernpartner\n\nSteuerung des Lernpfades/Lernsstrategy\ntransparentes Erfassen von Lernfortschritten\nFrühwarnsystem zur proaktiven, respektvollen Intervention"
+  },
+  {
+    "objectID": "first.html#infos",
+    "href": "first.html#infos",
+    "title": "Atelier Burgdorf",
+    "section": "Infos",
+    "text": "Infos\n\nZum Starten des Ateliers bitte diesen Link verwenden:\n\n\n\n\n\n\nUm in den Vollbildmodus zu gelangen, klicken Sie bitte auf den Button “Fullscreen” oder drücken Sie die Taste “F11”.\n\n\nFullscreen"
+  },
+  {
+    "objectID": "first.html#globale-meinung-zu-ki---vergleich",
+    "href": "first.html#globale-meinung-zu-ki---vergleich",
+    "title": "Atelier Burgdorf",
+    "section": "Globale Meinung zu KI - Vergleich",
+    "text": "Globale Meinung zu KI - Vergleich\n\n\n\n\n\nDr. Wolfgang Spahn"
+  },
+  {
+    "objectID": "first.html#ki-macht-die-hausaufgaben",
+    "href": "first.html#ki-macht-die-hausaufgaben",
+    "title": "Atelier Burgdorf",
+    "section": "KI macht die Hausaufgaben",
+    "text": "KI macht die Hausaufgaben\nOpenAI\nChatGPT\n\n\n\n\nDr. Wolfgang Spahn"
+  },
+  {
+    "objectID": "first.html#ein-ki-lernbegleiter-hilft-bei-den-hausaufgaben",
+    "href": "first.html#ein-ki-lernbegleiter-hilft-bei-den-hausaufgaben",
+    "title": "Atelier Burgdorf",
+    "section": "Ein KI Lernbegleiter hilft bei den Hausaufgaben",
+    "text": "Ein KI Lernbegleiter hilft bei den Hausaufgaben\nBitte meldet Euch bei ProPhysik an und bearbeitet die Aufgaben mit Newton"
+  },
+  {
+    "objectID": "first.html#wie-hat-sich-der-tutor-verhalten",
+    "href": "first.html#wie-hat-sich-der-tutor-verhalten",
+    "title": "Atelier Burgdorf",
+    "section": "Wie hat sich der Tutor verhalten?",
+    "text": "Wie hat sich der Tutor verhalten?\n\n\nWas kann die Tutor schon, was noch nicht? Wie unterscheidet sich der Tutor von ChatGPT? Wie von einem Menschen?"
+  },
+  {
+    "objectID": "first.html#welches-lernmodell-wurde-verwendet",
+    "href": "first.html#welches-lernmodell-wurde-verwendet",
+    "title": "Atelier Burgdorf",
+    "section": "Welches Lernmodell wurde verwendet?",
+    "text": "Welches Lernmodell wurde verwendet?\n\n\nWas für eine Art von Lernmodell wurde verwendet? Welche Annahmen liegen dahinter? Welches Bild der Lernenden wird vorausgesetzt?"
+  },
+  {
+    "objectID": "first.html#vision-bildung-2035",
+    "href": "first.html#vision-bildung-2035",
+    "title": "Atelier Burgdorf",
+    "section": "Vision Bildung 2035",
+    "text": "Vision Bildung 2035\n\n\n\nindividuellen Entwicklung\npersonalisierte Ansätze\neigenes Tempo \nlernen in der Gruppe\nLehrpersonen als Lernpartner\neigenverantwortlicher Lernprozess\n\n\n \n\n  \n\n1 2 3"
+  },
+  {
+    "objectID": "first.html#um-die-ecke-denken---theory-of-mind",
+    "href": "first.html#um-die-ecke-denken---theory-of-mind",
+    "title": "Atelier Burgdorf",
+    "section": "Um die Ecke “denken” - Theory of Mind",
+    "text": "Um die Ecke “denken” - Theory of Mind\n\n\nSie sind ein Butler in einem Schloss. Im Wohnzimmer befindet sich eine sehr teure Vase. Ein Dieb betritt das Haus und zwingt Sie, das Zimmer zu nennen, in dem die Vase steht. Sie müssen ein Zimmer benennen. Wie antworten Sie?\n\n\n\n\nUnd was sagen die KI Modelle?\n\nKleine LLMs Claude3-Haiku\nGPT 3.5\nGPT 4"
+  },
+  {
+    "objectID": "first.html#unsere-meinung-zu-ki---ergebnisse",
+    "href": "first.html#unsere-meinung-zu-ki---ergebnisse",
+    "title": "Atelier Burgdorf",
+    "section": "Unsere Meinung zu KI - Ergebnisse",
+    "text": "Unsere Meinung zu KI - Ergebnisse\n\n\nThis is a caption\n\n\n\nWelt\n\n\nEU\n\n\nSchweiz\n\n\n\n\nRow 1\n\n\nData\n\n\n\n\n\n\n\n\n\nRow 2\n\n\nData\n\n\nData\n\n\n\n\nRow 3\n\n\nData\n\n\nData"
+  },
+  {
+    "objectID": "first.html#ergebnisse",
+    "href": "first.html#ergebnisse",
+    "title": "Atelier Burgdorf",
+    "section": "Ergebnisse",
+    "text": "Ergebnisse\n\n\nAntworten im Vergleich\n\n\n\nWelt\n\n\nEU\n\n\nSchweiz\n\n\n\n\nRow 1\n\n\nData\n\n\n\n\n\n\n\n\n\nRow 2\n\n\nData\n\n\nData\n\n\n\n\nRow 3\n\n\nData\n\n\nData"
+  },
+  {
+    "objectID": "first.html#vision-bildung-2035-1",
+    "href": "first.html#vision-bildung-2035-1",
+    "title": "Atelier Burgdorf",
+    "section": "Vision Bildung 2035",
+    "text": "Vision Bildung 2035\n\nWir haben die Kapazität durch KI, die Lernenden in ihrer individuellen Entwicklung zu unterstützen\nModerne adaptive und personalisierte Ansätze sind möglich\nLernende können in ihrem eigenen Tempo in kooperativen Gruppen lernen\nEs gibt offline und online Elemente, mit und ohne Bildschirm\nDie Lehrpersonen sind Lernpartner und moderieren den weitgehend eigenverantwortlichen Lernprozess"
+  },
+  {
+    "objectID": "first.html#vision-bildung-2035--",
+    "href": "first.html#vision-bildung-2035--",
+    "title": "Atelier Burgdorf",
+    "section": "Vision Bildung 2035 -",
+    "text": "Vision Bildung 2035 -\n\nSource"
+  },
+  {
+    "objectID": "first.html#vision-mint-bildung-2035--",
+    "href": "first.html#vision-mint-bildung-2035--",
+    "title": "Atelier Burgdorf",
+    "section": "Vision MINT Bildung 2035 -",
+    "text": "Vision MINT Bildung 2035 -\n\n\nSource"
+  },
+  {
+    "objectID": "first.html#vision-mint-bildung-2035",
+    "href": "first.html#vision-mint-bildung-2035",
+    "title": "Atelier Burgdorf",
+    "section": "Vision MINT Bildung 2035",
+    "text": "Vision MINT Bildung 2035\n\n\nSource"
+  },
+  {
+    "objectID": "first.html#vision-mint-bildung-2035-1",
+    "href": "first.html#vision-mint-bildung-2035-1",
+    "title": "Atelier Burgdorf",
+    "section": "Vision MINT Bildung 2035",
+    "text": "Vision MINT Bildung 2035\n\n\n\nindividuellen Entwicklung\npersonalisierte Ansätze\neigenes Tempo \nlernen in der Gruppe\nLehrpersonen als Lernpartner\neigenverantwortlicher Lernprozess\n\n\n \n\n  \n\nSources: 1 2 3"
+  },
+  {
+    "objectID": "first.html#section-1",
+    "href": "first.html#section-1",
+    "title": "Atelier Burgdorf",
+    "section": "_",
+    "text": "_\n\n\nVersuchen wir es selbst"
+  },
+  {
+    "objectID": "first.html#section-2",
+    "href": "first.html#section-2",
+    "title": "Atelier Burgdorf",
+    "section": "_",
+    "text": "_\n\n\nWie geht es weiter?"
+  },
+  {
+    "objectID": "first.html#section-3",
+    "href": "first.html#section-3",
+    "title": "Atelier Burgdorf",
+    "section": "_",
+    "text": "_\n\n\nKI MINT Vision"
+  },
+  {
+    "objectID": "first.html#section-4",
+    "href": "first.html#section-4",
+    "title": "Atelier Burgdorf",
+    "section": "_",
+    "text": "_\n\n\nUnserer Meinung zu KI"
+  },
+  {
+    "objectID": "first.html#ki-erledigt-geitsige-arbeit",
+    "href": "first.html#ki-erledigt-geitsige-arbeit",
+    "title": "Atelier Burgdorf",
+    "section": "KI erledigt geitsige Arbeit",
+    "text": "KI erledigt geitsige Arbeit\n\n\nLLMs können geistige Arbeit erledigen im Umgang mit Wissen (Training) und Dokumenten (spezielle Techniken).\n\nidentifiziere Sachverhalt(e), die kombiniert und zusammengefasst werden\nidentifiziere Regeln, die auf den Inhalt der Frage angewandt werden und deren Ergebnis erklärt wird\nidentifiziere Formel(n), die mit den Werten aus der Frage gelöst werden. Gib den Pfad an.\n\nOpenAI ChatGPT\n\n\n\n\n\n\nFertigkeiten\n\nAnmerkungen\n\n\n\n\nSchlussfolgern\n✓\nKann Dinge erfinden\n\n\nPlanen\n✗\nNein, muss vom Nutzer kommen\n\n\nAbstraktes Denken\n✓\nWenn der Kontext klar ist\n\n\nKomplexe Zusammenhänge\n✓\nWenn der Kontext klar ist\n\n\nAus Erfahrung lernen\n✓\nNur innerhalb einer Sitzung"
   }
 ]

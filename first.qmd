@@ -1,19 +1,64 @@
 ---
 title: "Atelier Burgdorf"
 subtitle: "Didaktik und künstliche Intelligenz"
-format:
+format: 
   revealjs: 
     controls: true
+    smaller: true
     slide-number: true
     chalkboard: 
       buttons: false
     preview-links: auto
     logo: images/Logo_PH_Bern.png
     footer: Dr. Wolfgang Spahn
-    css: [styles.css, custom-styles.css]  # Include your custom CSS file here
+    css: [styles.css, custom-styles.css]  # custom css
+    include-in-header: includes.html
 resources:
   - first.pdf
 ---
+
+## Infos
+
+<br>
+
+Zum Starten des Ateliers bitte diesen Link verwenden:
+
+<br>
+<div id="ip-socket" class="centered-xxl-text"></div>
+<script type="module">
+  // using the "let ip_socket = await getIPSocket();" from draw.js displays the IP address in the html
+  import {getIPSocket} from "./draw.js";
+  getIPSocket().then(ip_socket => {
+    document.getElementById("ip-socket").innerHTML = `http://${ip_socket.ip}:${ip_socket.socketNr}/`;
+  });
+</script>
+
+<br><br>
+
+Um in den Vollbildmodus zu gelangen, klicken Sie bitte auf den Button "Fullscreen" oder drücken Sie die Taste "F11".
+
+<br>
+
+<button onclick="goFullScreen()" class="centered-xxl-rounded-button">Fullscreen</button>
+
+<script>
+function goFullScreen() {
+    if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+    } else if (document.documentElement.webkitRequestFullscreen) { /* Safari */
+        document.documentElement.webkitRequestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) { /* IE11 */
+        document.documentElement.msRequestFullscreen();
+    }
+}
+</script>
+
+## Willkommen im Atelier
+<div id="svg-team"></div>
+<div class="toast-container" id="toast-container"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/uuid@8.3.0/dist/umd/uuid.min.js"></script>
+<script src="team.js"></script>
 
 ## Agenda
 
@@ -26,33 +71,707 @@ resources:
   - einen KI Lernbegleiter Prototyp
 - Workshop: Und was bedeutet das für die Bildung
 
+## _
 
-## Slide with Form
+<br><br>
 
-<form id="myForm">
-  <label for="name">Your Name:</label>
-  <input type="text" id="name" name="name"><br><br>
-  <label for="email">Your Email:</label>
-  <input type="email" id="email" name="email"><br><br>
-  <input type="button" value="Submit" onclick="submitForm()">
-</form>
+::: {.centered-xxl-text}
+KI - Wo stehen wir heute, wo geht die Reise hin
+:::
 
-<script>
-function submitForm() {
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  alert('Name: ' + name + ', Email: ' + email);
-}
-</script>
+## KI: Definition
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+Viele Definitionen für Intelligenz
+
+- **Intelligenz (ganzheitlich)** ist die Hauptfunktion des menschlichen Gehirns, um kognitive Funktionen bereitzustellen, die einem Lebewesen das Überleben in einer feindlichen Umgebung ermöglichen. 
+- **Intelligenz (kommerziell)** wird benötigt, um Aufgaben zu erledigen, die von geistigen Arbeitern ausgeführt werden. 
+- 1000 andere: …
+
+**Künstliche Intelligenz**: eine Software kann bis zu einem gewissen Grad geistige Arbeit leisten.
+:::
+::: {.column width="50%"}
+Analogie
+
+![Ein künstliches Herz ersetzt ein menschliches Herz.](images/artificialHeart.jpg)
+
+:::
+::::
+
+## Cognition - 2024
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+**Text**
+![](images/ChatGPT.png){width="70%" style="border: 1px solid lightgray;"}
+
+**Video**
+![](images/ai_dino1.gif){width="70%"}
+
+
+:::
+
+::: {.column width="50%"}
+
+**Bild**
+![](images/smart-city-computer-vision-yolov7-deep-learning.png){width="80%"}
+
+**Sound**
+![](images/sound.png){width="70%"}
+
+:::
+::::
+
+## Humanoide Roboter 2024
+
+:::: {.columns}
+::: {.column width="50%"}
+![](images/robots at assembly line.jpg){width="80%" }
+![](images/robot gets tomato.jpg){width="80%"}
+:::
+::: {.column width="50%"}
+![](images/robots in warehouse1.jpg){width="80%" }
+![](images/robot is cooking.jpg){width="80%" }
+:::
+![](images/robot hand.gif){.absolute top="30%" left="25%" width="30%" }
+::::
 
 ## Mustererkennung
 
+<script type="module" src="mustererkennung.js"></script>
+<div id="svg-mustererkennung"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js"></script>
-<script src="mustererkennung.js" defer></script>
+
+## Text Bedeutung
+:::: {.columns}
+::: {.column width="50%"}
+**Wort Embeddings**
+
+- Ein Wort entspricht einem Zahlen Vektor
+- Wort Beziehungen entsprechen Vektor Beziehungen 
+
+![](images/word embedding.png){width="80%" }
+:::
+::: {.column width="50%"}
+
+**Satz Embedding**
+
+- Ein Satz entspricht einem Zahlen Vektor
+- Satz Beziehungen entsprechen Vektor Beziehungen
+
+![](images/Attention Matrix.png){width="80%" }
+:::
+::::
 
 
-<div id="svg-container"></div>
+## Mehrdeutigkeit @!?
+:::: {.columns}
+::: {.column width="50%"}
+**Ein Wort, zwei Bedeutungen**
+
+- Ein Wort hat zunächst nur eine Bedeutung (embedding). 
+- Um Text realistisch zu bearbeiten, müssen Worte im Kontext prozessiert werden.
+
+<br>
+
+![Beispiel: bank (Geldinstitut), bank (Ufer)](images/meaning of bank.png){width="95%" .gray-border}
+
+:::
+::: {.column width="50%"}
+
+**Das Wort im Kontext**
+
+- Ein neuronal Netz analysiert die Beziehungen der Worte im Kontext (Satz, Paragraph, Buch)
+- Daraus lernt es das wahrscheinlichste Wort vorherzusagen.
+
+![Beispiel: river, bank](images/context of bank.png){width="95%" .gray-border}
+
+:::
+::::
+
+## _
+
+<br><br>
+
+::: {.centered-xxl-text}
+Versuchen wir es selbst
+:::
+
+## KI erledigt geitsige Arbeit
+
+:::: {.columns}
+::: {.column width="50"}
+
+LLMs können geistige Arbeit erledigen im Umgang mit Wissen (Training) und Dokumenten (spezielle Techniken).
+
+- identifiziere Sachverhalt(e), die kombiniert und zusammengefasst werden
+- identifiziere Regeln, die auf den Inhalt der Frage angewandt werden und deren Ergebnis erklärt wird
+- identifiziere Formel(n), die mit den Werten aus der Frage gelöst werden. Gib den Pfad an.
+
+[OpenAI](https://openai.com/)
+[ChatGPT](https://openai.com/chatgpt)
+
+:::
+::: {.column width="15%"}
+:::
+::: {.column width="35%"}
+
+Fertigkeiten           |   | Anmerkungen
+-----------------------|---|---------------------------
+Schlussfolgern         | ✓ | Kann Dinge erfinden
+Planen                 | ✗ | Nein, muss vom Nutzer kommen
+Abstraktes Denken      | ✓ | Wenn der Kontext klar ist
+Komplexe Zusammenhänge | ✓ | Wenn der Kontext klar ist
+Aus Erfahrung lernen   | ✓ | Nur innerhalb einer Sitzung 
+
+:::
+::::
+
+
+
+## Intuitives Denken 1/2
+
+:::: {.columns}
+::: {.column width="40%"}
+
+Wie viele Tiere jeder Art hat Moses mit auf die Arche genommen?
+
+<form id="form1">
+  <input type="text" id="inputField1" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField1','form1');
+</script>
+
+</script>
+
+Und was sagen die KI Modelle?
+
+- [Kleine LLMs](https://labs.perplexity.ai/)
+- [GPT 3.5](https://chatgpt.com/?model=text-davinci-002-render-sha)
+- [GPT 4](https://chatgpt.com/?oai-dm=1&model=gpt-4)
+
+:::
+::: {.column width="60%"}
+<div id="show1"></div>
+<script type="module">
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show1","form1",{ width: 500, height: 550 });
+</script>
+:::
+:::
+
+## Intuitives Denken 2/2
+
+:::: {.columns}
+::: {.column width="40%"}
+
+Ein Schläger und ein Ball kosten zusammen 1,10 Dollar. Der Schläger kostet einen Dollar mehr als der Ball. Wie viel kostet der Ball?
+
+<form id="form2">
+  <input type="text" id="inputField2" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField2','form2');
+</script>
+
+Und was sagen die KI Modelle?
+
+- [Kleine LLMs](https://labs.perplexity.ai/)
+- [GPT 3.5](https://chatgpt.com/?model=text-davinci-002-render-sha)
+- [GPT 4](https://chatgpt.com/?oai-dm=1&model=gpt-4)
+
+:::
+::: {.column width="60%"}
+<div id="show2"></div>
+<script type="module">
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show2","form2",{ width: 500, height: 550 });
+</script>
+:::
+:::
+
+## Schlussfolgerungen 1/2
+
+:::: {.columns}
+::: {.column width="40%"}
+
+In the sentence “The nurse marries the doctor because she is pregnant”. Who is pregnant?
+
+<form id="form3">
+  <input type="text" id="inputField3" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField3','form3');
+</script>
+
+Und was sagen die KI Modelle?
+
+- [Kleine LLMs](https://labs.perplexity.ai/)
+- [GPT 3.5](https://chatgpt.com/?model=text-davinci-002-render-sha)
+- [GPT 4](https://chatgpt.com/?oai-dm=1&model=gpt-4)
+
+:::
+::: {.column width="60%"}
+<div id="show3"></div>
+<script type="module">
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show3","form3",{ width: 500, height: 550 });
+</script>
+:::
+:::
+
+## Schlussfolgerungen 2/2
+
+:::: {.columns}
+::: {.column width="40%"}
+
+Ich war auf einer Party. Ich kam vor John an. David kam nach Joe an. Joe kam vor mir an. John kam nach David an. Wer kam zuerst an?
+
+<form id="form4">
+  <input type="text" id="inputField4" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField4','form4');
+</script>
+
+Und was sagen die KI Modelle?
+
+- [Kleine LLMs](https://labs.perplexity.ai/)
+- [GPT 3.5](https://chatgpt.com/?model=text-davinci-002-render-sha)
+- [GPT 4](https://chatgpt.com/?oai-dm=1&model=gpt-4)
+
+:::
+::: {.column width="60%"}
+<div id="show4"></div>
+<script type="module">
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show4","form4",{ width: 500, height: 550 });
+</script>
+:::
+::::
+
+## Um die Ecke "denken" - Theory of Mind
+
+:::: {.columns}
+::: {.column width="40%"}
+
+Sie sind ein Butler in einem Schloss. Im Wohnzimmer befindet sich eine sehr teure Vase. Ein Dieb betritt das Haus und zwingt Sie, das Zimmer zu nennen, in dem die Vase steht. Sie müssen ein Zimmer benennen. Wie antworten Sie?
+
+<form id="form5">
+  <input type="text" id="inputField5" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField5','form5');
+</script>
+
+Und was sagen die KI Modelle?
+
+- [Kleine LLMs](https://labs.perplexity.ai/) Claude3-Haiku
+- [GPT 3.5](https://chatgpt.com/?model=text-davinci-002-render-sha)
+- [GPT 4](https://chatgpt.com/?oai-dm=1&model=gpt-4)
+:::
+::: {.column width="60%"}
+<div id="show5"></div>
+<script type="module">
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show5","form5",{ width: 500, height: 550 });
+</script>
+
+:::
+::::
+
+## _
+
+<br><br>
+
+::: {.centered-xxl-text}
+Wie geht es weiter?
+:::
+
+
+## Model Entwicklung 1/2
+
+![](images/Models over time.png){width="70%"}
+
+## Model Entwicklung 2/2
+
+![](images/Benchmarks.png){width="70%"}
+
+## Beispiel Benchmark
+
+![](images/MMMU.png){width="70%"}
+
+## Robotor Entwicklung
+
+![](images/NrOfProfServ.png){width="70%"}
+
+
+## _
+
+<br><br>
+
+::: {.centered-xxl-text}
+KI MINT Vision
+:::
+
+
+## Ein KI Lernbegleiter hilft bei den Hausaufgaben
+
+Bitte meldet Euch bei ProPhysik an und bearbeitet die Aufgaben mit [Newton](https://sebayt.ch/)
+
+## Wie hat sich der Tutor verhalten?
+
+:::: {.columns}
+::: {.column width="40%"}
+
+Was kann die Tutor schon, was noch nicht? Wie unterscheidet sich der Tutor von ChatGPT? Wie von einem Menschen?
+
+<form id="from6">
+  <input type="text" id="inputField6" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField6','form6');
+</script>
+:::
+::: {.column width="60%"}
+<div id="show6"></div>
+<script type="module">
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show6","form6",{ width: 500, height: 550 });
+</script>
+
+:::
+::::
+
+## Welches Lernmodell wurde verwendet?
+
+:::: {.columns}
+::: {.column width="40%"}
+
+Was für eine Art von Lernmodell wurde verwendet? Welche Annahmen liegen dahinter? Welches Bild der Lernenden wird vorausgesetzt?
+
+<form id="from7">
+  <textarea id="inputField7" name="input" style="height:150px; width: 300px;"></textarea>
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField7','form7');
+</script>
+:::
+::: {.column width="60%"}
+<div id="show7"></div>
+<script type="module">
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show7","form7",{ width: 500, height: 550 });
+</script>
+
+:::
+::::
+
+## Vision MINT Bildung 2035
+
+![](images/2847_cartoon_back_to_school_1.jpg){width="70%"}
+
+![](images/CH-Vorschriftssignal_9_-_Einbahnstrasse,_SSV_1932.svg.png){width="30%" .absolute top=180 left=850 }
+
+[Source](https://www.prpeak.com/opinion/cartoon-homework-assignments-7489368)
+
+
+
+## Vision MINT Bildung 2035
+
+:::: {.columns}
+::: {.column width="40%"}
+- individuellen Entwicklung
+- personalisierte Ansätze
+- eigenes Tempo
+![](images/student-study-group.webp){width="70%"}
+- lernen in der Gruppe
+- Lehrpersonen als Lernpartner
+- eigenverantwortlicher Lernprozess
+:::
+::: {.column width="20%"}
+<br><br><br><br>
+![](images/left-right-bold-arrow-icon.svg)
+
+:::
+
+::: {.column width="40%"}
+
+
+![](images/Holzwerkstatt_2-1-scaled-crop.jpg){width="40%" .absolute top=100 left=700 }
+![](images/csm_Finn_mit_Sonde_ea9ce59730.jpg){width="40%" .absolute top=300 left=1000 }
+![](images/schüler im labor.jpg){width="40%" .absolute top=350 left=650 }
+
+:::{.absolute bottom=0}
+Sources: 
+[1](https://www.badische-zeitung.de/seit-30-jahren-wird-im-novartis-schullabor-in-basel-neugier-auf-wissenschaft-geweckt)
+[2](https://www.evim.de/news-veranstaltungen/news-und-veranstaltungen/detail-meldungen/hoehenflug-fuer-schueler-der-technik-werkstatt/)
+[3](https://freie-landschule.de/wp-content/uploads/2024/03/Holzwerkstatt_2-1-2048x1536.jpg)
+:::
+
+:::
+::::
+
+
+
+## Lernwirksame KI Tutoren 1/3 
+
+Eine lernwirksame KI berücksicht die aktuellen Forschungsergebnisse (John Hattie, Hilber Meyer) zum lernwirksamen Untericht.
+
+:::: {.columns}
+::: {.column width="60%"}
+**bietet sichtbares und reflektiertes Lernen**
+
+  - erfasst und passt sich der kognitiven Stufe an
+  - wirksames Feedback zu Fortschritten
+  - implementiert Lernziele
+:::
+::: {.column width="40%"}
+<div id='board1-1'></div>
+<script type="module">
+  import {board} from './draw.js';
+  board("#board1-1",{width:450, height:220});
+</script>
+:::
+::::
+
+:::: {.columns}
+::: {.column width="60%"}
+**ermöglicht strukturiertes Vorgehen**
+
+  - inhaltliche Koherenz entlang eines strukturierten Lernpfades
+  - verknüpft Wissen und Methoden
+  - bietet eine anregende Methoden Vielfalt
+  - baut auf Vorwissen und Alltagserfahrung auf
+:::
+::: {.column width="40%"}
+<div id='board1-2'></div>
+<script type="module">
+  import {board} from './draw.js';
+  board("#board1-2",{width:450, height:300});
+</script>
+:::
+::::
+
+## Lernwirksame KI Tutoren 2/3
+
+:::: {.columns}
+::: {.column width="60%"}
+**aktiviert und motiviert die Lernenden**
+
+  - interaktive und spielerische Ansätze
+  - personalierte Lernmöglichkeiten
+  - fordern ohne zu überfordern
+:::
+::: {.column width="40%"}
+<div id='board2-1'></div>
+<script type="module">
+  import {board} from './draw.js';
+  board("#board2-1",{width:450, height:260});
+</script>
+:::
+::::
+
+:::: {.columns}
+::: {.column width="60%"}
+**analysiert und verbessert kontinuierlich**
+
+  - motivierende Lernanalysen
+  - formatives Assessment
+  - adaptiver Lernpfad
+:::
+::: {.column width="40%"}
+<div id='board2-2'></div>
+<script type="module">
+  import {board} from './draw.js';
+  board("#board2-2",{width:450, height:260});
+</script>
+:::
+::::
+
+## Lernwirksame KI Tutoren 3/3
+
+:::: {.columns}
+::: {.column width="60%"}
+**fördert Lernen in der (Klein-)Gruppe**
+
+  - lernen in einer APP an verschiedenen Standorten
+  - gemeinsame Erfolgsergebnisse
+:::
+::: {.column width="40%"}
+<div id='board3-1'></div>
+<script type="module">
+  import {board} from './draw.js';
+  board("#board3-1",{width:450, height:200});
+</script>
+:::
+::::
+
+:::: {.columns}
+::: {.column width="60%"}
+**unterstützt die Lehrenden als Lernpartner**
+
+  - Steuerung des Lernpfades/Lernsstrategy
+  - transparentes Erfassen von Lernfortschritten
+  - Frühwarnsystem zur proaktiven, respektvollen Intervention
+:::
+::: {.column width="40%"}
+<div id='board3-2'></div>
+<script type="module">
+  import {board} from './draw.js';
+  board("#board3-2",{width:450, height:350});
+</script>
+:::
+::::
+
+
+## _
+
+<br><br>
+
+::: {.centered-xxl-text}
+Unserer Meinung zu KI
+:::
+
+
+## Unsere Meinung zu KI 1/3
+
+- Ich habe ein gutes Verständnis was künstliche Intelligenz ist
+<div id="scale1"></div>
+<script type="module">
+  import {domReady,checkSVG, getSVG, likertScale} from './draw.js';
+  domReady(() => {
+    checkSVG();
+    const draw = getSVG("#scale1",{height:100});
+    likertScale(draw,"scale1");
+  })
+</script>
+- Produkte und Dienstleistungen, die künstliche Intelligenz nutzen, werden mein tägliches Leben in den nächsten 3 bis 5 Jahren tiefgreifend verändern.
+<div id="scale2"></div>
+<script type="module">
+  import {domReady,checkSVG, getSVG, likertScale} from './draw.js';
+  domReady(() => {
+    checkSVG();
+    const draw = getSVG("#scale2",{height:100});
+    likertScale(draw,"scale2");
+  })
+</script>
+- Produkte und Dienstleistungen mit künstlicher Intelligenz Intelligenz machen mein Leben einfacher
+<div id="scale3"></div>
+<script type="module">
+  import {domReady,checkSVG, getSVG, likertScale} from './draw.js';
+  domReady(() => {
+    checkSVG();
+    const draw = getSVG("#scale3",{height:100});
+    likertScale(draw,"scale3");
+  })
+</script>
+
+
+## Unsere Meinung zu KI 2/3
+
+- Produkte und Dienstleistungen mit künstlicher Intelligenz Intelligenz haben mehr Vorteile als Nachteile
+<div id="scale4"></div>
+<script type="module">
+  import {domReady,checkSVG, getSVG, likertScale} from './draw.js';
+  domReady(() => {
+    checkSVG();
+    const draw = getSVG("#scale4",{height:100});
+    likertScale(draw,"scale4");
+  })
+</script>
+- Ich weiß, welche Produkte und Dienstleistungen künstliche Intelligenz nutzen
+<div id="scale5"></div>
+<script type="module">
+  import {domReady,checkSVG, getSVG, likertScale} from './draw.js';
+  domReady(() => {
+    checkSVG();
+    const draw = getSVG("#scale5",{height:100});
+    likertScale(draw,"scale5");
+  })
+</script>
+- Ich vertraue Unternehmen, die künstliche Intelligenz einsetzen, genauso viel wie anderen Unternehmen.
+<div id="scale6"></div>
+<script type="module">
+  import {domReady,checkSVG, getSVG, likertScale} from './draw.js';
+  domReady(() => {
+    checkSVG();
+    const draw = getSVG("#scale6",{height:100});
+    likertScale(draw,"scale6");
+  })
+  </script>
+
+## Unsere Meinung zu KI 3/3
+- Produkte und Dienstleistungen, die künstliche Intelligenz nutzen, haben mein tägliches Leben in den letzten 3 bis 5 Jahren tiefgreifend verändert
+<div id="scale7"></div>
+<script type="module">
+  import {domReady,checkSVG, getSVG, likertScale} from './draw.js';
+  domReady(() => {
+    checkSVG();
+    const draw = getSVG("#scale7",{height:100});
+    likertScale(draw,"scale7");
+  })
+</script>
+- Produkte und Dienstleistungen mit künstlicher Intelligenz Intelligenz machen mich nervös
+<div id="scale8"></div>
+<script type="module">
+  import {domReady,checkSVG, getSVG, likertScale} from './draw.js';
+  domReady(() => {
+    checkSVG();
+    const draw = getSVG("#scale8",{height:100});
+    likertScale(draw,"scale8");
+  })
+</script>
+
+## Ergebnisse
+
+<table>
+  <caption>Antworten im Vergleich</caption>
+  <tr>
+    <th>Welt</th><th>EU</th><th>Schweiz</th>
+  </tr>
+  <tr>
+    <td>Row 1</td><td>Data</td><td><div id="showScale1"></div></td>
+  </tr>
+  <tr>
+    <td>Row 2</td><td>Data</td><td>Data</td>
+  </tr>
+  <tr>
+    <td>Row 3</td><td>Data</td><td>Data</td>
+  </tr>
+</table>
+
+
+<script type="module">
+  import {likertPercentage} from "./draw.js"
+    likertPercentage("scale1").then(value => {
+      document.getElementById("showScale1").innerHTML = `${value}%`;
+    });
+</script>
+
+## Globale Meinung zu KI - Vergleich
+
+![](images/AI Poll.png){style="border: 1px solid gray;"}
+
+
+
+
+
+
+
 
 
 

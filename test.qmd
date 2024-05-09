@@ -1,0 +1,38 @@
+---
+title: "Atelier Burgdorf"
+subtitle: "Didaktik und künstliche Intelligenz"
+format: 
+  revealjs: 
+    controls: true
+    smaller: true
+    slide-number: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: images/Logo_PH_Bern.png
+    footer: Dr. Wolfgang Spahn
+    css: [styles.css, custom-styles.css]  # Include your custom CSS file here
+    include-in-header: includes.html
+resources:
+  - first.pdf
+---
+
+
+## Test
+
+<div id="scale1"></div>
+<script type="module">
+  import {domReady,getSVG, likertScale} from './draw.js';
+  domReady(() => {
+    const draw = getSVG("#scale1");
+    likertScale(draw);
+  })
+</script>
+
+## board
+<div id='board1'></div>
+<script type="module">
+  import {board} from './draw.js';
+  board("#board1",{width:100, height:100});
+  alert(uuid.v4())
+</script>
