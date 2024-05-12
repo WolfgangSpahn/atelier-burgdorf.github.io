@@ -18,7 +18,7 @@
     "href": "first.html#agenda",
     "title": "Atelier Burgdorf",
     "section": "Agenda",
-    "text": "Agenda\n\nKI - Wo stehen wir heute, wo geht die Reise hin\n\nEinführung\nKI - Wir bauen ein Neuronales Netz\nGrundlagen Modelle\nAusblick 2029/2034\n\nSelbstversuche mit ProPhysik\n\neinen KI Lernbegleiter Prototyp\n\nWorkshop: Und was bedeutet das für die Bildung"
+    "text": "Agenda\n\nWas ist künstliche Intelligenz (20 min)\n\nEinführung\nKI - Wir bauen ein Neuronales Netz\nGrundlagen Modelle\nAusblick 2029/2034\n\nSelbstversuche mit ProPhysik (20 min)\n\neinen KI Lernbegleiter Prototyp\n\nUnd was bedeutet das für die Bildung (20 min)\n\nKI MINT Vision\nLernwirksame KI Tutoren\n\n\n\n\nFokus ist auf Technik und Didaktik. Vertehen was KI ist und wie sie funktioniert.\nDa wir relative wenig Leute sind könnnen gerne Fragen gestellt werden.\nWir habe ca. 10 min Pufferzeit eingeplant.\nBitte versteht aber dass ich auf die Zeit achten muss."
   },
   {
     "objectID": "first.html#slide-with-form",
@@ -53,7 +53,7 @@
     "href": "first.html#humanoide-roboter-2024",
     "title": "Atelier Burgdorf",
     "section": "Humanoide Roboter 2024",
-    "text": "Humanoide Roboter 2024"
+    "text": "Humanoide Roboter 2024\n\n\n \n\n \n\n\n\n\nDiese Roboter werden in Pilotprojekten eingesetzt. Keine Laborübungen."
   },
   {
     "objectID": "first.html#text-vektoren-verschlüsseln-bedeutung",
@@ -200,14 +200,14 @@
     "href": "first.html#willkommen-im-atelier",
     "title": "Atelier Burgdorf",
     "section": "Willkommen im Atelier",
-    "text": "Willkommen im Atelier"
+    "text": "Willkommen im Atelier\n\n\n\n\n\n\n\n\n\n\nBitte wählt Euch ein Tier aus. So können wir anonym Euer Feedback einholen."
   },
   {
     "objectID": "first.html#ki-definition",
     "href": "first.html#ki-definition",
     "title": "Atelier Burgdorf",
     "section": "KI: Definition",
-    "text": "KI: Definition\n\n\nViele Definitionen für Intelligenz\n\nIntelligenz (ganzheitlich) ist die Hauptfunktion des menschlichen Gehirns, um kognitive Funktionen bereitzustellen, die einem Lebewesen das Überleben in einer feindlichen Umgebung ermöglichen.\nIntelligenz (kommerziell) wird benötigt, um Aufgaben zu erledigen, die von geistigen Arbeitern ausgeführt werden.\n1000 andere: …\n\nKünstliche Intelligenz: eine Software kann bis zu einem gewissen Grad geistige Arbeit leisten.\n\nAnalogie\n\n\n\nEin künstliches Herz ersetzt ein menschliches Herz."
+    "text": "KI: Definition\n\n\nViele Definitionen für Intelligenz\n\nIntelligenz (ganzheitlich) ist die Hauptfunktion des menschlichen Gehirns, um kognitive Funktionen bereitzustellen, die einem Lebewesen das Überleben in einer feindlichen Umgebung ermöglichen.\nIntelligenz (kommerziell) wird benötigt, um Aufgaben zu erledigen, die von geistigen Arbeitern ausgeführt werden.\n1000 andere: …\n\nKünstliche Intelligenz: eine Software kann bis zu einem gewissen Grad geistige Arbeit leisten.\n\nAnalogie\n\n\n\nEin künstliches Herz ersetzt ein menschliches Herz.\n\n\n\n\n\n\nDaher spreche ich lieber von cognitive Aufgaben."
   },
   {
     "objectID": "first.html#cognition---2024",
@@ -221,7 +221,7 @@
     "href": "first.html#text-bedeutung",
     "title": "Atelier Burgdorf",
     "section": "Text Bedeutung",
-    "text": "Text Bedeutung\n\n\nWort Embeddings\n\nEin Wort entspricht einem Zahlen Vektor\nWort Beziehungen entsprechen Vektor Beziehungen\n\n\n\nSatz Embedding\n\nEin Satz entspricht einem Zahlen Vektor\nSatz Beziehungen entsprechen Vektor Beziehungen"
+    "text": "Text Bedeutung\n\n\nWort Embeddings\n\nEin Wort/Token entspricht einem Zahlen Vektor\nWort Beziehungen entsprechen Vektor Beziehungen\n\n\n\nSatz Embedding\n\nEin Satz entspricht einem Zahlen Vektor\nSatz Beziehungen entsprechen Vektor Beziehungen\n\n\n\n\nOpenAI Tokenizer"
   },
   {
     "objectID": "first.html#mehrdeutigkeit",
@@ -298,14 +298,14 @@
     "href": "first.html#schlussfolgerungen-12",
     "title": "Atelier Burgdorf",
     "section": "Schlussfolgerungen 1/2",
-    "text": "Schlussfolgerungen 1/2\n\n\nIn the sentence “The nurse marries the doctor because she is pregnant”. Who is pregnant?\n\n\n\n\nUnd was sagen die KI Modelle?\n\nKleine LLMs\nGPT 3.5\nGPT 4"
+    "text": "Schlussfolgerungen 1/2\n\n\nIn the sentence “The nurse marries the doctor because she is pregnant”. Who is pregnant?\n\n\n\n\nUnd was sagen die KI Modelle?\n\nOpen LLMs\nGPT 3.5\nGPT 4"
   },
   {
     "objectID": "first.html#schlussfolgerungen-22",
     "href": "first.html#schlussfolgerungen-22",
     "title": "Atelier Burgdorf",
     "section": "Schlussfolgerungen 2/2",
-    "text": "Schlussfolgerungen 2/2\n\n\nIch war auf einer Party. Ich kam vor John an. David kam nach Joe an. Joe kam vor mir an. John kam nach David an. Wer kam zuerst an?\n\n\n\n\nUnd was sagen die KI Modelle?\n\nKleine LLMs\nGPT 3.5\nGPT 4"
+    "text": "Schlussfolgerungen 2/2\n\n\nIch war auf einer Party. Ich kam vor John an. David kam nach Joe an. Joe kam vor mir an. John kam nach David an. Wer kam zuerst an?\n\n\n\n\nUnd was sagen die KI Modelle?\n\nOpen LLMs\nGPT 3.5\nGPT 4"
   },
   {
     "objectID": "first.html#ich-denke-dass-du-denkst",
@@ -326,7 +326,7 @@
     "href": "first.html#model-entwicklung-22",
     "title": "Atelier Burgdorf",
     "section": "Model Entwicklung 2/2",
-    "text": "Model Entwicklung 2/2"
+    "text": "Model Entwicklung 2/2\n\n\nx MMMU (new)"
   },
   {
     "objectID": "first.html#beispiel-benchmark",
@@ -354,14 +354,14 @@
     "href": "first.html#intuitives-denken-12",
     "title": "Atelier Burgdorf",
     "section": "Intuitives Denken 1/2",
-    "text": "Intuitives Denken 1/2\n\n\nWie viele Tiere jeder Art hat Moses mit auf die Arche genommen?\n\n\n\n\n\nUnd was sagen die KI Modelle?\n\nKleine LLMs\nGPT 3.5\nGPT 4"
+    "text": "Intuitives Denken 1/2\n\n\nWie viele Tiere jeder Art hat Moses mit auf die Arche genommen?\n\n\n\n\nUnd was sagen die KI Modelle?\n\nOpen LLMs\nGPT 3.5\nGPT 4"
   },
   {
     "objectID": "first.html#intuitives-denken-22",
     "href": "first.html#intuitives-denken-22",
     "title": "Atelier Burgdorf",
     "section": "Intuitives Denken 2/2",
-    "text": "Intuitives Denken 2/2\n\n\nEin Schläger und ein Ball kosten zusammen 1,10 Dollar. Der Schläger kostet einen Dollar mehr als der Ball. Wie viel kostet der Ball?\n\n\n\n\nUnd was sagen die KI Modelle?\n\nKleine LLMs\nGPT 3.5\nGPT 4"
+    "text": "Intuitives Denken 2/2\n\n\nEin Schläger und ein Ball kosten zusammen 1,10 Dollar. Der Schläger kostet einen Dollar mehr als der Ball. Wie viel kostet der Ball?\n\n\n\n\nUnd was sagen die KI Modelle?\n\nOpen LLMs\nGPT 3.5\nGPT 4"
   },
   {
     "objectID": "first.html#unsere-meinung-zu-ki-13",
@@ -494,35 +494,35 @@
     "href": "first.html#lernwirksame-ki-tutoren-13",
     "title": "Atelier Burgdorf",
     "section": "Lernwirksame KI Tutoren 1/3",
-    "text": "Lernwirksame KI Tutoren 1/3\nEine lernwirksame KI berücksicht die aktuellen Forschungsergebnisse (John Hattie, Hilber Meyer) zum lernwirksamen Untericht.\n\n\nbietet sichtbares und reflektiertes Lernen\n\nerfasst und passt sich der kognitiven Stufe an\nwirksames Feedback zu Fortschritten\nimplementiert Lernziele\n\n\n\n\n\n\n\n\n\n\nermöglicht strukturiertes Vorgehen\n\ninhaltliche Koherenz entlang eines strukturierten Lernpfades\nverknüpft Wissen und Methoden\nbietet eine anregende Methoden Vielfalt\nbaut auf Vorwissen und Alltagserfahrung auf"
+    "text": "Lernwirksame KI Tutoren 1/3\nEine lernwirksame KI berücksicht die aktuellen Forschungsergebnisse (John Hattie, Hilber Meyer) zum lernwirksamen Untericht.\n\n\nbietet sichtbares und reflektiertes Lernen\n\n\nErwartungen:\n\n\n\n\n\n\n\nerfasst und passt sich der kognitiven Stufe an\nwirksames Feedback zu Fortschritten\nimplementiert Lernziele\n\n\n\n\n\n\n\n\n\n\n\n\n\nermöglicht strukturiertes Vorgehen\n\n\nErwartungen:\n\n\n\n\n\n\n\ninhaltliche Koherenz entlang eines strukturierten Lernpfades\nverknüpft Wissen und Methoden\nbietet eine anregende Methoden Vielfalt\nbaut auf Vorwissen und Alltagserfahrung auf"
   },
   {
     "objectID": "first.html#lernwirksame-ki-tutoren-23",
     "href": "first.html#lernwirksame-ki-tutoren-23",
     "title": "Atelier Burgdorf",
     "section": "Lernwirksame KI Tutoren 2/3",
-    "text": "Lernwirksame KI Tutoren 2/3\n\n\naktiviert und motiviert die Lernenden\n\ninteraktive und spielerische Ansätze\npersonalierte Lernmöglichkeiten\nfordern ohne zu überfordern\n\n\n\n\n\n\n\n\n\n\nanalysiert und verbessert kontinuierlich\n\nmotivierende Lernanalysen\nformatives Assessment\nadaptiver Lernpfad"
+    "text": "Lernwirksame KI Tutoren 2/3\n\n\naktiviert und motiviert die Lernenden\n\n\nErwartungen:\n\n\n\n\n\n\n\ninteraktive und spielerische Ansätze\npersonalierte Lernmöglichkeiten\nfordern ohne zu überfordern\n\n\n\n\n\n\n\n\n\n\n\n\n\nanalysiert und verbessert kontinuierlich\n\n\nErwartungen:\n\n\n\n\n\n\n\nmotivierende Lernanalysen\nformatives Assessment\nadaptiver Lernpfad"
   },
   {
     "objectID": "first.html#lernwirksame-ki-tutoren-33",
     "href": "first.html#lernwirksame-ki-tutoren-33",
     "title": "Atelier Burgdorf",
     "section": "Lernwirksame KI Tutoren 3/3",
-    "text": "Lernwirksame KI Tutoren 3/3\n\n\nfördert Lernen in der (Klein-)Gruppe\n\nlernen in einer APP an verschiedenen Standorten\ngemeinsame Erfolgsergebnisse\n\n\n\n\n\n\n\n\n\n\nunterstützt die Lehrenden als Lernpartner\n\nSteuerung des Lernpfades/Lernsstrategy\ntransparentes Erfassen von Lernfortschritten\nFrühwarnsystem zur proaktiven, respektvollen Intervention"
+    "text": "Lernwirksame KI Tutoren 3/3\n\n\nfördert Lernen in der (Klein-)Gruppe\n\n\nErwartungen:\n\n\n\n\n\n\n\nlernen in einer APP an verschiedenen Standorten\ngemeinsame Erfolgsergebnisse\n\n\n\n\n\n\n\n\n\n\n\n\n\nunterstützt die Lehrenden als Lehrpartner\n\n\nErwartungen:\n\n\n\n\n\n\n\nSteuerung des Lernpfades/Lernsstrategy\ntransparentes Erfassen von Lernfortschritten\nFrühwarnsystem zur proaktiven, respektvollen Intervention"
   },
   {
     "objectID": "first.html#infos",
     "href": "first.html#infos",
     "title": "Atelier Burgdorf",
     "section": "Infos",
-    "text": "Infos\n\nZum Starten des Ateliers bitte diesen Link verwenden:\n\n\n\n\n\n\nUm in den Vollbildmodus zu gelangen, klicken Sie bitte auf den Button “Fullscreen” oder drücken Sie die Taste “F11”.\n\n\nFullscreen"
+    "text": "Infos\n\nZum Starten des Ateliers bitte diesen Link verwenden:\n\n\n\n\n\n\nFèr Vollbildmodus bitte diesen Button “Fullscreen” klicken oder Taste “F11”.\n\n\nFullscreen\n\n\n\n\nWillkommen zum Atelier “Didaktik und künstliche Intelligenz”.\nWer bin ich? Wolfgang Spahn, Wiss. MA für KI Didaktik Systeme an der PH Bern. Physiker, Dr, CTO etc.\nDu oder Sie.\nBitte wählt Euch ein Tier aus. So können wir anonym Euer Feedback einholen."
   },
   {
     "objectID": "first.html#globale-meinung-zu-ki---vergleich",
     "href": "first.html#globale-meinung-zu-ki---vergleich",
     "title": "Atelier Burgdorf",
     "section": "Globale Meinung zu KI - Vergleich",
-    "text": "Globale Meinung zu KI - Vergleich\n\n\n\n\n\nDr. Wolfgang Spahn"
+    "text": "Globale Meinung zu KI - Vergleich"
   },
   {
     "objectID": "first.html#ki-macht-die-hausaufgaben",
@@ -536,7 +536,7 @@
     "href": "first.html#ein-ki-lernbegleiter-hilft-bei-den-hausaufgaben",
     "title": "Atelier Burgdorf",
     "section": "Ein KI Lernbegleiter hilft bei den Hausaufgaben",
-    "text": "Ein KI Lernbegleiter hilft bei den Hausaufgaben\nBitte meldet Euch bei ProPhysik an und bearbeitet die Aufgaben mit Newton"
+    "text": "Ein KI Lernbegleiter hilft bei den Hausaufgaben\n\n\n\nBitte meldet Euch bei ProPhysik an und bearbeitet die Aufgaben mit Isaac"
   },
   {
     "objectID": "first.html#wie-hat-sich-der-tutor-verhalten",
@@ -564,7 +564,7 @@
     "href": "first.html#um-die-ecke-denken---theory-of-mind",
     "title": "Atelier Burgdorf",
     "section": "Um die Ecke “denken” - Theory of Mind",
-    "text": "Um die Ecke “denken” - Theory of Mind\n\n\nSie sind ein Butler in einem Schloss. Im Wohnzimmer befindet sich eine sehr teure Vase. Ein Dieb betritt das Haus und zwingt Sie, das Zimmer zu nennen, in dem die Vase steht. Sie müssen ein Zimmer benennen. Wie antworten Sie?\n\n\n\n\nUnd was sagen die KI Modelle?\n\nKleine LLMs Claude3-Haiku\nGPT 3.5\nGPT 4"
+    "text": "Um die Ecke “denken” - Theory of Mind\n\n\nSie sind ein Butler in einem Schloss. Im Wohnzimmer befindet sich eine sehr teure Vase. Ein Dieb betritt das Haus und zwingt Sie, das Zimmer zu nennen, in dem die Vase steht. Sie müssen ein Zimmer benennen. Wie antworten Sie?\n\n\n\n\nUnd was sagen die KI Modelle?\n\nOpen LLMs\nGPT 3.5\nGPT 4"
   },
   {
     "objectID": "first.html#unsere-meinung-zu-ki---ergebnisse",
@@ -578,7 +578,7 @@
     "href": "first.html#ergebnisse",
     "title": "Atelier Burgdorf",
     "section": "Ergebnisse",
-    "text": "Ergebnisse\n\n\nAntworten im Vergleich\n\n\n\nWelt\n\n\nEU\n\n\nSchweiz\n\n\n\n\nRow 1\n\n\nData\n\n\n\n\n\n\n\n\n\nRow 2\n\n\nData\n\n\nData\n\n\n\n\nRow 3\n\n\nData\n\n\nData"
+    "text": "Ergebnisse\n\n\n\nMeinungen zu KI im Vergleich\n\n\n\nFrage\n\n\nWorld\n\n\nEU\n\n\nAU-GB-US\n\n\nWir CH\n\n\n\n\nhabe gutes Verständnis\n\n\n67%\n\n\n64%\n\n\n62%\n\n\n\n\n\n\n\n\n\nwird tiefgreifend verändern\n\n\n66%\n\n\n59%\n\n\n58%\n\n\n\n\n\n\n\n\n\nmehr Vorteile als Nachteile\n\n\n54%\n\n\n46%\n\n\n41%\n\n\n\n\n\n\n\n\n\nmacht mein Leben einfacher\n\n\n54%\n\n\n44%\n\n\n40%\n\n\n\n\n\n\n\n\n\nvertraue Unternehmen auch mit KI\n\n\n52%\n\n\n46%\n\n\n41%\n\n\n\n\n\n\n\n\n\nmacht mich nervös\n\n\n52%\n\n\n50%\n\n\n65%\n\n\n\n\n\n\n\n\n\nweiß wer KI nutzt\n\n\n51%\n\n\n42%\n\n\n38%\n\n\n\n\n\n\n\n\n\nhat tiefgreifend verändert\n\n\n49%\n\n\n38%\n\n\n35%\n\n\n\n\n\n\n\n\n\nErgebnis"
   },
   {
     "objectID": "first.html#vision-bildung-2035-1",
@@ -606,7 +606,7 @@
     "href": "first.html#vision-mint-bildung-2035",
     "title": "Atelier Burgdorf",
     "section": "Vision MINT Bildung 2035",
-    "text": "Vision MINT Bildung 2035\n\n\nSource"
+    "text": "Vision MINT Bildung 2035\n\n\n\n\nSource"
   },
   {
     "objectID": "first.html#vision-mint-bildung-2035-1",
@@ -627,27 +627,83 @@
     "href": "first.html#section-2",
     "title": "Atelier Burgdorf",
     "section": "_",
-    "text": "_\n\n\nWie geht es weiter?"
+    "text": "_\n\n\nWie geht es weiter?\n\n Stanford University AI Index Report for 2024\n\nWelche Entwicklung kann man erwarten?"
   },
   {
     "objectID": "first.html#section-3",
     "href": "first.html#section-3",
     "title": "Atelier Burgdorf",
     "section": "_",
-    "text": "_\n\n\nKI MINT Vision"
+    "text": "_\n\n\nPraxisbeispiel: Ein KI Physik Tutor"
   },
   {
     "objectID": "first.html#section-4",
     "href": "first.html#section-4",
     "title": "Atelier Burgdorf",
     "section": "_",
-    "text": "_\n\n\nUnserer Meinung zu KI"
+    "text": "_\n\n\nKI MINT Vision"
   },
   {
     "objectID": "first.html#ki-erledigt-geitsige-arbeit",
     "href": "first.html#ki-erledigt-geitsige-arbeit",
     "title": "Atelier Burgdorf",
     "section": "KI erledigt geitsige Arbeit",
-    "text": "KI erledigt geitsige Arbeit\n\n\nLLMs können geistige Arbeit erledigen im Umgang mit Wissen (Training) und Dokumenten (spezielle Techniken).\n\nidentifiziere Sachverhalt(e), die kombiniert und zusammengefasst werden\nidentifiziere Regeln, die auf den Inhalt der Frage angewandt werden und deren Ergebnis erklärt wird\nidentifiziere Formel(n), die mit den Werten aus der Frage gelöst werden. Gib den Pfad an.\n\nOpenAI ChatGPT\n\n\n\n\n\n\nFertigkeiten\n\nAnmerkungen\n\n\n\n\nSchlussfolgern\n✓\nKann Dinge erfinden\n\n\nPlanen\n✗\nNein, muss vom Nutzer kommen\n\n\nAbstraktes Denken\n✓\nWenn der Kontext klar ist\n\n\nKomplexe Zusammenhänge\n✓\nWenn der Kontext klar ist\n\n\nAus Erfahrung lernen\n✓\nNur innerhalb einer Sitzung"
+    "text": "KI erledigt geitsige Arbeit\n\n\nLLMs können geistige Arbeit erledigen im Umgang mit Wissen (Training) und Dokumenten (spezielle Techniken).\n\nidentifiziere Sachverhalt(e), die kombiniert und zusammengefasst werden\nidentifiziere Regeln, die auf den Inhalt der Frage angewandt werden und deren Ergebnis erklärt wird\nidentifiziere Formel(n), die mit den Werten aus der Frage gelöst werden. Gib den Pfad an.\n\nOpen LLMs OpenAI ChatGPT\n\n\n\n\n\n\nFertigkeiten\n\nAnmerkungen\n\n\n\n\nSchlussfolgern\n✓\nKann Dinge erfinden\n\n\nPlanen\n✗\nNein, muss vom Nutzer kommen\n\n\nAbstraktes Denken\n✓\nWenn der Kontext klar ist (robust?)\n\n\nKomplexe Zusammenhänge\n✓\nWenn der Kontext klar ist (robust?)\n\n\nAus Erfahrung lernen\n✓\nNur innerhalb einer Sitzung\n\n\n\n\n\n\nbitte klassifiziere ein 2x2 Bild mit zwei möglichen Farben - rot(x) oder schwarz(o) - in einfarbig, vertikal, horizontal, schachbrett oder na. Hier ein Beispiel: [[x,x], [o,o]] =&gt; vertikal bitte warte auf meine Eingabe"
+  },
+  {
+    "objectID": "first.html#kognition---2024",
+    "href": "first.html#kognition---2024",
+    "title": "Atelier Burgdorf",
+    "section": "Kognition - 2024",
+    "text": "Kognition - 2024\n\n\nText \nVideo \n\nBild \nSound \n\n\n\n\nForschung deckt ziemlich alle cognitiven Bereiche ab."
+  },
+  {
+    "objectID": "first.html#um-die-ecke-denken---tom",
+    "href": "first.html#um-die-ecke-denken---tom",
+    "title": "Atelier Burgdorf",
+    "section": "Um die Ecke “denken” - ToM",
+    "text": "Um die Ecke “denken” - ToM\n\n\nSie sind ein Butler in einem Schloss. Im Wohnzimmer befindet sich eine sehr teure Vase. Ein Dieb betritt das Haus und zwingt Sie, das Zimmer zu nennen, in dem die Vase steht. Sie müssen ein Zimmer benennen. Wie antworten Sie?\n\n\n\n\nUnd was sagen die KI Modelle?\n\nOpen LLMs\nGPT 3.5\nGPT 4"
+  },
+  {
+    "objectID": "first.html#schlussfolgern-12",
+    "href": "first.html#schlussfolgern-12",
+    "title": "Atelier Burgdorf",
+    "section": "Schlussfolgern 1/2",
+    "text": "Schlussfolgern 1/2\n\n\nIn the sentence “The nurse marries the doctor because she is pregnant”. Who is pregnant?\n\n\n\n\nUnd was sagen die KI Modelle?\n\nOpen LLMs\nGPT 3.5\nGPT 4"
+  },
+  {
+    "objectID": "first.html#schlussfolgern-22",
+    "href": "first.html#schlussfolgern-22",
+    "title": "Atelier Burgdorf",
+    "section": "Schlussfolgern 2/2",
+    "text": "Schlussfolgern 2/2\n\n\nIch war auf einer Party. Ich kam vor John an. David kam nach Joe an. Joe kam vor mir an. John kam nach David an. Wer kam zuerst an?\n\n\n\n\nUnd was sagen die KI Modelle?\n\nOpen LLMs\nGPT 3.5\nGPT 4"
+  },
+  {
+    "objectID": "first.html#section-5",
+    "href": "first.html#section-5",
+    "title": "Atelier Burgdorf",
+    "section": "_",
+    "text": "_\n\n\nUnserer Meinung zu KI"
+  },
+  {
+    "objectID": "first.html#chatgpt-fehler",
+    "href": "first.html#chatgpt-fehler",
+    "title": "Atelier Burgdorf",
+    "section": "ChatGPT Fehler",
+    "text": "ChatGPT Fehler\n\n\nHow many times is p negated in the following formula:\n----- ----- ----- ----- ----- -- p\n\n\n\n\n\nUnd was sagen die KI Modelle?\n\nOpen LLMs\nGPT 3.5\nGPT 4\n\n\n\n\n\n\n\n\nOpenAI Tokenizer\n\nBitte zählt die Anzahl der Tokens"
+  },
+  {
+    "objectID": "first.html#trainingsarten",
+    "href": "first.html#trainingsarten",
+    "title": "Atelier Burgdorf",
+    "section": "Trainingsarten",
+    "text": "Trainingsarten\n\n\nÜberwachtes Lernen\nMenschliche Experten klassifizieren/merkieren die Daten. Aufgrund dieser Daten wird das Modell trainiert. Aufwendig und teuer.\n\n\nUnüberwachtes Lernen Das Modell lernt aus den Daten ohne menschliche Eingriffe. Rekonsturiert verauschte Daten. source\n\nFindet das nächste Wort/Bild in einer Sequenz. how are [you]"
+  },
+  {
+    "objectID": "first.html#section-6",
+    "href": "first.html#section-6",
+    "title": "Atelier Burgdorf",
+    "section": "_",
+    "text": "_\n\n\n😀 Vielen Dank! 😀\n\n\n\n\n\nYou need to login to participate"
   }
 ]

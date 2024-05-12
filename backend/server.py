@@ -17,7 +17,7 @@ import socket
 
 nicknames = {}
 likertScores = {}
-socketNr = 5000
+socketNr = 5050
 
 # -------------------------------------------------- Setup logging
 
@@ -150,7 +150,7 @@ def get_likert_scale(likert_id):
     if likert_id not in likertScores:
         return jsonify({'warning': f'No likert scores found for the given likert id: {likert_id}'}), 200
     else:
-        return jsonify({'likert': calcLikertPercentage(likertScores)}), 200
+        return jsonify({'likert': calcLikertPercentage(likertScores[likert_id])}), 200
         # percentage = 100 - (scores[likert_id] * 25)
         # return jsonify({'likert': percentage}), 200
 
@@ -158,7 +158,7 @@ def calcLikertPercentage(likertScores):
     contribution = {"0":1, "1":0.75, "2":0.5, "3":0.25, "4":0}
     # calculate the percentage of the likert score
     scores = likertScores
-    contribs = [contribution[score] for score in scores.values()]
+    contribs = [contribution[score] for score in list(scores.values())]
     # average the contributions
     percentage = sum(contribs) / len(contribs) * 100
     return round(percentage)

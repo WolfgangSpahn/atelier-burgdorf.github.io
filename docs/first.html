@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
   <link rel="stylesheet" href="styles.css">
@@ -353,7 +418,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Atelier Burgdorf</h1>
-  <p class="subtitle">Didaktik und künstliche Intelligenz</p>
+  <p class="subtitle">Wolfgang Spahn – Didaktik und künstliche Intelligenz</p>
 
 <div class="quarto-title-authors">
 </div>
@@ -375,7 +440,7 @@
   });
 </script>
 <p><br><br></p>
-<p>Um in den Vollbildmodus zu gelangen, klicken Sie bitte auf den Button “Fullscreen” oder drücken Sie die Taste “F11”.</p>
+<p>Fèr Vollbildmodus bitte diesen Button “Fullscreen” klicken oder Taste “F11”.</p>
 <p><br></p>
 <button onclick="goFullScreen()" class="centered-xxl-rounded-button">
 Fullscreen
@@ -391,6 +456,25 @@ function goFullScreen() {
     }
 }
 </script>
+<aside class="notes">
+<ul>
+<li>Willkommen zum Atelier “Didaktik und künstliche Intelligenz”.</li>
+<li>Wer bin ich? Wolfgang Spahn, Wiss. MA für KI Didaktik Systeme an der PH Bern. Physiker, Dr, CTO etc.</li>
+<li>Du oder Sie.</li>
+<li>Bitte wählt Euch ein Tier aus. So können wir anonym Euer Feedback einholen.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!--==============================================================================================================================================-->
 </section>
 <section id="willkommen-im-atelier" class="slide level2">
 <h2>Willkommen im Atelier</h2>
@@ -402,30 +486,70 @@ function goFullScreen() {
 </div>
 <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.0/dist/umd/uuid.min.js"></script>
 <script src="team.js"></script>
+<aside class="notes">
+<ul>
+<li>Bitte wählt Euch ein Tier aus. So können wir anonym Euer Feedback einholen.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!--==============================================================================================================================================-->
 </section>
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
 <ul>
-<li>KI - Wo stehen wir heute, wo geht die Reise hin
+<li>Was ist künstliche Intelligenz (20 min)
 <ul>
 <li>Einführung</li>
 <li>KI - Wir bauen ein Neuronales Netz</li>
 <li>Grundlagen Modelle</li>
 <li>Ausblick 2029/2034</li>
 </ul></li>
-<li>Selbstversuche mit ProPhysik
+<li>Selbstversuche mit ProPhysik (20 min)
 <ul>
 <li>einen KI Lernbegleiter Prototyp</li>
 </ul></li>
-<li>Workshop: Und was bedeutet das für die Bildung</li>
+<li>Und was bedeutet das für die Bildung (20 min)
+<ul>
+<li>KI MINT Vision</li>
+<li>Lernwirksame KI Tutoren</li>
+</ul></li>
 </ul>
+<aside class="notes">
+<ul>
+<li>Fokus ist auf Technik und Didaktik. Vertehen was KI ist und wie sie funktioniert.</li>
+<li>Da wir relative wenig Leute sind könnnen gerne Fragen gestellt werden.</li>
+<li>Wir habe ca. 10 min Pufferzeit eingeplant.</li>
+<li>Bitte versteht aber dass ich auf die Zeit achten muss.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!--==============================================================================================================================================-->
 </section>
 <section id="section" class="slide level2">
 <h2>_</h2>
-<p><br><br></p>
+<p><br><br><br><br></p>
 <div class="centered-xxl-text">
 <p>KI - Wo stehen wir heute, wo geht die Reise hin</p>
 </div>
+<!--==============================================================================================================================================-->
 </section>
 <section id="ki-definition" class="slide level2">
 <h2>KI: Definition</h2>
@@ -448,9 +572,25 @@ function goFullScreen() {
 </div>
 </div>
 </div>
+<aside class="notes">
+<ul>
+<li>Daher spreche ich lieber von cognitive Aufgaben.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!--==============================================================================================================================================-->
 </section>
-<section id="cognition---2024" class="slide level2">
-<h2>Cognition - 2024</h2>
+<section id="kognition---2024" class="slide level2">
+<h2>Kognition - 2024</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Text</strong> <img data-src="images/ChatGPT.png" style="border: 1px solid lightgray;;width:70.0%"></p>
@@ -460,6 +600,22 @@ function goFullScreen() {
 <p><strong>Sound</strong> <img data-src="images/sound.png" style="width:70.0%"></p>
 </div>
 </div>
+<aside class="notes">
+<ul>
+<li>Forschung deckt ziemlich alle cognitiven Bereiche ab.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!--==============================================================================================================================================-->
 </section>
 <section id="humanoide-roboter-2024" class="slide level2">
 <h2>Humanoide Roboter 2024</h2>
@@ -470,6 +626,22 @@ function goFullScreen() {
 <p><img data-src="images/robots in warehouse1.jpg" style="width:80.0%"> <img data-src="images/robot is cooking.jpg" style="width:80.0%"></p>
 </div><p><img data-src="images/robot hand.gif" class="absolute" style="top: 30%; left: 25%; width: 30%; "></p>
 </div>
+<aside class="notes">
+<ul>
+<li>Diese Roboter werden in Pilotprojekten eingesetzt. Keine Laborübungen.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!--==============================================================================================================================================-->
 </section>
 <section id="mustererkennung" class="slide level2">
 <h2>Mustererkennung</h2>
@@ -477,6 +649,22 @@ function goFullScreen() {
 <div id="svg-mustererkennung">
 
 </div>
+<!--==============================================================================================================================================-->
+</section>
+<section id="trainingsarten" class="slide level2">
+<h2>Trainingsarten</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Überwachtes Lernen</strong></p>
+<p>Menschliche Experten klassifizieren/merkieren die Daten. Aufgrund dieser Daten wird das Modell trainiert. Aufwendig und teuer.</p>
+<p><img data-src="images/GettyImages-898172160-scaled.jpg" style="width:80.0%"></p>
+</div><div class="column" style="width:50%;">
+<p><strong>Unüberwachtes Lernen</strong> Das Modell lernt aus den Daten ohne menschliche Eingriffe. Rekonsturiert verauschte Daten. <a href="https://developer.nvidia.com/blog/improving-diffusion-models-as-an-alternative-to-gans-part-2/">source</a></p>
+<p><img data-src="images/Generation-with-Diffusion-Models.png" style="width:90.0%"></p>
+<p>Findet das nächste Wort/Bild in einer Sequenz. <code>how are [you]</code></p>
+</div>
+</div>
+<!--==============================================================================================================================================-->
 </section>
 <section id="text-bedeutung" class="slide level2">
 <h2>Text Bedeutung</h2>
@@ -484,7 +672,7 @@ function goFullScreen() {
 <div class="column" style="width:50%;">
 <p><strong>Wort Embeddings</strong></p>
 <ul>
-<li>Ein Wort entspricht einem Zahlen Vektor</li>
+<li>Ein Wort/Token entspricht einem Zahlen Vektor</li>
 <li>Wort Beziehungen entsprechen Vektor Beziehungen</li>
 </ul>
 <p><img data-src="images/word embedding.png" style="width:80.0%"></p>
@@ -497,6 +685,8 @@ function goFullScreen() {
 <p><img data-src="images/Attention Matrix.png" style="width:80.0%"></p>
 </div>
 </div>
+<p><a href="https://platform.openai.com/tokenizer">OpenAI Tokenizer</a></p>
+<!--==============================================================================================================================================-->
 </section>
 <section id="mehrdeutigkeit" class="slide level2">
 <h2>Mehrdeutigkeit @!?</h2>
@@ -528,10 +718,11 @@ function goFullScreen() {
 </div>
 </div>
 </div>
+<!--==============================================================================================================================================-->
 </section>
 <section id="section-1" class="slide level2">
 <h2>_</h2>
-<p><br><br></p>
+<p><br><br><br><br></p>
 <div class="centered-xxl-text">
 <p>Versuchen wir es selbst</p>
 </div>
@@ -546,7 +737,7 @@ function goFullScreen() {
 <li>identifiziere Regeln, die auf den Inhalt der Frage angewandt werden und deren Ergebnis erklärt wird</li>
 <li>identifiziere Formel(n), die mit den Werten aus der Frage gelöst werden. Gib den Pfad an.</li>
 </ul>
-<p><a href="https://openai.com/">OpenAI</a> <a href="https://openai.com/chatgpt">ChatGPT</a></p>
+<p><a href="https://labs.perplexity.ai/">Open LLMs</a> <a href="https://openai.com/">OpenAI</a> <a href="https://openai.com/chatgpt">ChatGPT</a></p>
 </div><div class="column" style="width:15%;">
 
 </div><div class="column" style="width:35%;">
@@ -572,12 +763,12 @@ function goFullScreen() {
 <tr class="odd">
 <td>Abstraktes Denken</td>
 <td>✓</td>
-<td>Wenn der Kontext klar ist</td>
+<td>Wenn der Kontext klar ist (robust?)</td>
 </tr>
 <tr class="even">
 <td>Komplexe Zusammenhänge</td>
 <td>✓</td>
-<td>Wenn der Kontext klar ist</td>
+<td>Wenn der Kontext klar ist (robust?)</td>
 </tr>
 <tr class="odd">
 <td>Aus Erfahrung lernen</td>
@@ -588,6 +779,20 @@ function goFullScreen() {
 </table>
 </div>
 </div>
+<aside class="notes">
+<p>bitte klassifiziere ein 2x2 Bild mit zwei möglichen Farben - rot(x) oder schwarz(o) - in einfarbig, vertikal, horizontal, schachbrett oder na. Hier ein Beispiel: [[x,x], [o,o]] =&gt; vertikal bitte warte auf meine Eingabe</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!--==============================================================================================================================================-->
 </section>
 <section id="intuitives-denken-12" class="slide level2">
 <h2>Intuitives Denken 1/2</h2>
@@ -601,10 +806,9 @@ function goFullScreen() {
   import {submitOnReturn} from "./draw.js";
   submitOnReturn('inputField1','form1');
 </script>
-
 <p>Und was sagen die KI Modelle?</p>
 <ul>
-<li><a href="https://labs.perplexity.ai/">Kleine LLMs</a></li>
+<li><a href="https://labs.perplexity.ai/">Open LLMs</a></li>
 <li><a href="https://chatgpt.com/?model=text-davinci-002-render-sha">GPT 3.5</a></li>
 <li><a href="https://chatgpt.com/?oai-dm=1&amp;model=gpt-4">GPT 4</a></li>
 </ul>
@@ -618,6 +822,7 @@ function goFullScreen() {
 </script>
 </div>
 </div>
+<!--==============================================================================================================================================-->
 </section>
 <section id="intuitives-denken-22" class="slide level2">
 <h2>Intuitives Denken 2/2</h2>
@@ -633,7 +838,7 @@ function goFullScreen() {
 </script>
 <p>Und was sagen die KI Modelle?</p>
 <ul>
-<li><a href="https://labs.perplexity.ai/">Kleine LLMs</a></li>
+<li><a href="https://labs.perplexity.ai/">Open LLMs</a></li>
 <li><a href="https://chatgpt.com/?model=text-davinci-002-render-sha">GPT 3.5</a></li>
 <li><a href="https://chatgpt.com/?oai-dm=1&amp;model=gpt-4">GPT 4</a></li>
 </ul>
@@ -647,9 +852,10 @@ function goFullScreen() {
 </script>
 </div>
 </div>
+<!--==============================================================================================================================================-->
 </section>
-<section id="schlussfolgerungen-12" class="slide level2">
-<h2>Schlussfolgerungen 1/2</h2>
+<section id="schlussfolgern-12" class="slide level2">
+<h2>Schlussfolgern 1/2</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <p>In the sentence “The nurse marries the doctor because she is pregnant”. Who is pregnant?</p>
@@ -662,7 +868,7 @@ function goFullScreen() {
 </script>
 <p>Und was sagen die KI Modelle?</p>
 <ul>
-<li><a href="https://labs.perplexity.ai/">Kleine LLMs</a></li>
+<li><a href="https://labs.perplexity.ai/">Open LLMs</a></li>
 <li><a href="https://chatgpt.com/?model=text-davinci-002-render-sha">GPT 3.5</a></li>
 <li><a href="https://chatgpt.com/?oai-dm=1&amp;model=gpt-4">GPT 4</a></li>
 </ul>
@@ -676,9 +882,10 @@ function goFullScreen() {
 </script>
 </div>
 </div>
+<!--==============================================================================================================================================-->
 </section>
-<section id="schlussfolgerungen-22" class="slide level2">
-<h2>Schlussfolgerungen 2/2</h2>
+<section id="schlussfolgern-22" class="slide level2">
+<h2>Schlussfolgern 2/2</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <p>Ich war auf einer Party. Ich kam vor John an. David kam nach Joe an. Joe kam vor mir an. John kam nach David an. Wer kam zuerst an?</p>
@@ -691,7 +898,7 @@ function goFullScreen() {
 </script>
 <p>Und was sagen die KI Modelle?</p>
 <ul>
-<li><a href="https://labs.perplexity.ai/">Kleine LLMs</a></li>
+<li><a href="https://labs.perplexity.ai/">Open LLMs</a></li>
 <li><a href="https://chatgpt.com/?model=text-davinci-002-render-sha">GPT 3.5</a></li>
 <li><a href="https://chatgpt.com/?oai-dm=1&amp;model=gpt-4">GPT 4</a></li>
 </ul>
@@ -705,9 +912,10 @@ function goFullScreen() {
 </script>
 </div>
 </div>
+<!--==============================================================================================================================================-->
 </section>
-<section id="um-die-ecke-denken---theory-of-mind" class="slide level2">
-<h2>Um die Ecke “denken” - Theory of Mind</h2>
+<section id="um-die-ecke-denken---tom" class="slide level2">
+<h2>Um die Ecke “denken” - ToM</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <p>Sie sind ein Butler in einem Schloss. Im Wohnzimmer befindet sich eine sehr teure Vase. Ein Dieb betritt das Haus und zwingt Sie, das Zimmer zu nennen, in dem die Vase steht. Sie müssen ein Zimmer benennen. Wie antworten Sie?</p>
@@ -720,7 +928,7 @@ function goFullScreen() {
 </script>
 <p>Und was sagen die KI Modelle?</p>
 <ul>
-<li><a href="https://labs.perplexity.ai/">Kleine LLMs</a> Claude3-Haiku</li>
+<li><a href="https://labs.perplexity.ai/">Open LLMs</a></li>
 <li><a href="https://chatgpt.com/?model=text-davinci-002-render-sha">GPT 3.5</a></li>
 <li><a href="https://chatgpt.com/?oai-dm=1&amp;model=gpt-4">GPT 4</a></li>
 </ul>
@@ -734,40 +942,114 @@ function goFullScreen() {
 </script>
 </div>
 </div>
+<!--==============================================================================================================================================-->
+</section>
+<section id="chatgpt-fehler" class="slide level2">
+<h2>ChatGPT Fehler</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>How many times is p negated in the following formula:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">-----</span> <span class="op">-----</span> <span class="op">-----</span> <span class="op">-----</span> <span class="op">-----</span> <span class="op">--</span> p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<form id="forma5">
+<input type="text" id="inputFielda5" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputFielda5','forma5');
+</script>
+<p>Und was sagen die KI Modelle?</p>
+<ul>
+<li><a href="https://labs.perplexity.ai/">Open LLMs</a></li>
+<li><a href="https://chatgpt.com/?model=text-davinci-002-render-sha">GPT 3.5</a></li>
+<li><a href="https://chatgpt.com/?oai-dm=1&amp;model=gpt-4">GPT 4</a></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div id="showa5">
+
+</div>
+<script type="module">
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("showa5","forma5",{ width: 500, height: 550 });
+</script>
+</div>
+</div>
+<p><a href="https://platform.openai.com/tokenizer">OpenAI Tokenizer</a></p>
+<aside class="notes">
+<p>Bitte zählt die Anzahl der Tokens</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!--==============================================================================================================================================-->
 </section>
 <section id="section-2" class="slide level2">
 <h2>_</h2>
-<p><br><br></p>
+<p><br><br><br><br></p>
 <div class="centered-xxl-text">
 <p>Wie geht es weiter?</p>
 </div>
+<p><br><br><br><br><br><br> <a href="https://aiindex.stanford.edu/report/">Stanford University AI Index Report for 2024</a></p>
+<aside class="notes">
+<p>Welche Entwicklung kann man erwarten?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!--==============================================================================================================================================-->
 </section>
 <section id="model-entwicklung-12" class="slide level2">
 <h2>Model Entwicklung 1/2</h2>
 
+<!--==============================================================================================================================================-->
 <img data-src="images/Models over time.png" style="width:70.0%" class="r-stretch"></section>
 <section id="model-entwicklung-22" class="slide level2">
 <h2>Model Entwicklung 2/2</h2>
 
-<img data-src="images/Benchmarks.png" style="width:70.0%" class="r-stretch"></section>
+<img data-src="images/Benchmarks.png" style="width:70.0%" class="r-stretch"><div class="absolute" style="top: 300px; left: 680px; ">
+<p><strong>x</strong> MMMU (new)</p>
+</div>
+<!--==============================================================================================================================================-->
+</section>
 <section id="beispiel-benchmark" class="slide level2">
 <h2>Beispiel Benchmark</h2>
 
+<!--==============================================================================================================================================-->
 <img data-src="images/MMMU.png" style="width:70.0%" class="r-stretch"></section>
 <section id="robotor-entwicklung" class="slide level2">
 <h2>Robotor Entwicklung</h2>
 
+<!--==============================================================================================================================================-->
 <img data-src="images/NrOfProfServ.png" style="width:70.0%" class="r-stretch"></section>
 <section id="section-3" class="slide level2">
 <h2>_</h2>
-<p><br><br></p>
+<p><br><br><br><br></p>
 <div class="centered-xxl-text">
-<p>KI MINT Vision</p>
+<p>Praxisbeispiel: Ein KI Physik Tutor</p>
 </div>
+<!--==============================================================================================================================================-->
 </section>
 <section id="ein-ki-lernbegleiter-hilft-bei-den-hausaufgaben" class="slide level2">
 <h2>Ein KI Lernbegleiter hilft bei den Hausaufgaben</h2>
-<p>Bitte meldet Euch bei ProPhysik an und bearbeitet die Aufgaben mit <a href="https://sebayt.ch/">Newton</a></p>
+<div style="text-align: center; ">
+<p><img src="images/Isaac.jpg" style="width:20%;border: 1px solid gray;"></p>
+</div>
+<p>Bitte meldet Euch bei ProPhysik an und bearbeitet die Aufgaben mit <a href="https://sebayt.ch/">Isaac</a></p>
+<!--==============================================================================================================================================-->
 </section>
 <section id="wie-hat-sich-der-tutor-verhalten" class="slide level2">
 <h2>Wie hat sich der Tutor verhalten?</h2>
@@ -791,6 +1073,7 @@ function goFullScreen() {
 </script>
 </div>
 </div>
+<!--==============================================================================================================================================-->
 </section>
 <section id="welches-lernmodell-wurde-verwendet" class="slide level2">
 <h2>Welches Lernmodell wurde verwendet?</h2>
@@ -814,12 +1097,24 @@ function goFullScreen() {
 </script>
 </div>
 </div>
+<!--==============================================================================================================================================-->
+</section>
+<section id="section-4" class="slide level2">
+<h2>_</h2>
+<p><br><br><br><br></p>
+<div class="centered-xxl-text">
+<p>KI MINT Vision</p>
+</div>
+<!--==============================================================================================================================================-->
 </section>
 <section id="vision-mint-bildung-2035" class="slide level2">
 <h2>Vision MINT Bildung 2035</h2>
 <p><img data-src="images/2847_cartoon_back_to_school_1.jpg" style="width:70.0%"></p>
-<p><img data-src="images/CH-Vorschriftssignal_9_-_Einbahnstrasse,_SSV_1932.svg.png" class="absolute" style="top: 180px; left: 850px; width: 30%; "></p>
+<div class="fragment">
+<p><img data-src="images/CH-Vorschriftssignal_9_-_Einbahnstrasse,_SSV_1932.svg.png" class="absolute" style="top: 180px; left: 250px; width: 30%; "></p>
+</div>
 <p><a href="https://www.prpeak.com/opinion/cartoon-homework-assignments-7489368">Source</a></p>
+<!--==============================================================================================================================================-->
 </section>
 <section id="vision-mint-bildung-2035-1" class="slide level2">
 <h2>Vision MINT Bildung 2035</h2>
@@ -842,131 +1137,223 @@ function goFullScreen() {
 </div>
 </div>
 </div>
+<!--==============================================================================================================================================-->
 </section>
 <section id="lernwirksame-ki-tutoren-13" class="slide level2">
 <h2>Lernwirksame KI Tutoren 1/3</h2>
 <p>Eine lernwirksame KI berücksicht die aktuellen Forschungsergebnisse (John Hattie, Hilber Meyer) zum lernwirksamen Untericht.</p>
 <div class="columns">
-<div class="column" style="width:60%;">
+<!-- col --><div class="column" style="width:60%;">
 <p><strong>bietet sichtbares und reflektiertes Lernen</strong></p>
+<div class="r-stack">
+<div class="fragment fade-out">
+Erwartungen:
+<form id="form8">
+<input type="text" id="inputField8" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField8','form8');
+</script>
+</div>
+<div class="fragment">
 <ul>
 <li>erfasst und passt sich der kognitiven Stufe an</li>
 <li>wirksames Feedback zu Fortschritten</li>
 <li>implementiert Lernziele</li>
 </ul>
-</div><div class="column" style="width:40%;">
-<div id="board1-1">
+</div>
+</div>
+</div><!-- col --><div class="column" style="width:40%;">
+<div id="show8">
 
 </div>
 <script type="module">
-  import {board} from './draw.js';
-  board("#board1-1",{width:450, height:220});
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show8","form8",{ width: 500, height: 200, hidden: false });
 </script>
 </div>
 </div>
+<!-------------------------------------------------------------------------------------->
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><strong>ermöglicht strukturiertes Vorgehen</strong></p>
+<div class="r-stack">
+<div class="fragment fade-out">
+Erwartungen:
+<form id="form9">
+<input type="text" id="inputField9" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField9','form9');
+</script>
+</div>
+<div class="fragment">
 <ul>
 <li>inhaltliche Koherenz entlang eines strukturierten Lernpfades</li>
 <li>verknüpft Wissen und Methoden</li>
 <li>bietet eine anregende Methoden Vielfalt</li>
 <li>baut auf Vorwissen und Alltagserfahrung auf</li>
 </ul>
+</div>
+</div>
 </div><div class="column" style="width:40%;">
-<div id="board1-2">
+<div id="show9">
 
 </div>
 <script type="module">
-  import {board} from './draw.js';
-  board("#board1-2",{width:450, height:300});
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show9","form9",{ width: 500, height: 200, hidden: false });
 </script>
 </div>
 </div>
+<!--==============================================================================================================================================-->
 </section>
 <section id="lernwirksame-ki-tutoren-23" class="slide level2">
 <h2>Lernwirksame KI Tutoren 2/3</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><strong>aktiviert und motiviert die Lernenden</strong></p>
+<div class="r-stack">
+<div class="fragment fade-out">
+Erwartungen:
+<form id="form10">
+<input type="text" id="inputField10" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField10','form10');
+</script>
+</div>
+<div class="fragment">
 <ul>
 <li>interaktive und spielerische Ansätze</li>
 <li>personalierte Lernmöglichkeiten</li>
 <li>fordern ohne zu überfordern</li>
 </ul>
+</div>
+</div>
 </div><div class="column" style="width:40%;">
-<div id="board2-1">
+<div id="show10">
 
 </div>
 <script type="module">
-  import {board} from './draw.js';
-  board("#board2-1",{width:450, height:260});
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show10","form10",{ width: 500, height: 200, hidden: false });
 </script>
 </div>
 </div>
+<!-------------------------------------------------------------------------------------->
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><strong>analysiert und verbessert kontinuierlich</strong></p>
+<div class="r-stack">
+<div class="fragment fade-out">
+Erwartungen:
+<form id="form11">
+<input type="text" id="inputField11" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField11','form11');
+</script>
+</div>
+<div class="fragment">
 <ul>
 <li>motivierende Lernanalysen</li>
 <li>formatives Assessment</li>
 <li>adaptiver Lernpfad</li>
 </ul>
+</div>
+</div>
 </div><div class="column" style="width:40%;">
-<div id="board2-2">
+<div id="show11">
 
 </div>
 <script type="module">
-  import {board} from './draw.js';
-  board("#board2-2",{width:450, height:260});
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show11","form11",{ width: 500, height: 200, hidden: false  });
 </script>
 </div>
 </div>
+<!--==============================================================================================================================================-->
 </section>
 <section id="lernwirksame-ki-tutoren-33" class="slide level2">
 <h2>Lernwirksame KI Tutoren 3/3</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><strong>fördert Lernen in der (Klein-)Gruppe</strong></p>
+<div class="r-stack">
+<div class="fragment fade-out">
+Erwartungen:
+<form id="form12">
+<input type="text" id="inputField12" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField12','form12');
+</script>
+</div>
+<div class="fragment">
 <ul>
 <li>lernen in einer APP an verschiedenen Standorten</li>
 <li>gemeinsame Erfolgsergebnisse</li>
 </ul>
+</div>
+</div>
 </div><div class="column" style="width:40%;">
-<div id="board3-1">
+<div id="show12">
 
 </div>
 <script type="module">
-  import {board} from './draw.js';
-  board("#board3-1",{width:450, height:200});
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show12","form12",{ width: 500, height: 200, hidden: false });
 </script>
 </div>
 </div>
+<!-------------------------------------------------------------------------------------->
 <div class="columns">
 <div class="column" style="width:60%;">
-<p><strong>unterstützt die Lehrenden als Lernpartner</strong></p>
+<p><strong>unterstützt die Lehrenden als Lehrpartner</strong></p>
+<div class="r-stack">
+<div class="fragment fade-out">
+Erwartungen:
+<form id="form13">
+<input type="text" id="inputField13" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField13','form13');
+</script>
+</div>
+<div class="fragment">
 <ul>
 <li>Steuerung des Lernpfades/Lernsstrategy</li>
 <li>transparentes Erfassen von Lernfortschritten</li>
 <li>Frühwarnsystem zur proaktiven, respektvollen Intervention</li>
 </ul>
+</div>
+</div>
 </div><div class="column" style="width:40%;">
-<div id="board3-2">
+<div id="show13">
 
 </div>
 <script type="module">
-  import {board} from './draw.js';
-  board("#board3-2",{width:450, height:350});
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show13","form13",{ width: 500, height: 200, hidden: false });
 </script>
 </div>
 </div>
+<!--==============================================================================================================================================-->
 </section>
-<section id="section-4" class="slide level2">
+<section id="section-5" class="slide level2">
 <h2>_</h2>
-<p><br><br></p>
+<p><br><br><br><br></p>
 <div class="centered-xxl-text">
 <p>Unserer Meinung zu KI</p>
 </div>
+<!--==============================================================================================================================================-->
 </section>
 <section id="unsere-meinung-zu-ki-13" class="slide level2">
 <h2>Unsere Meinung zu KI 1/3</h2>
@@ -1008,6 +1395,7 @@ domReady(() => {
 })
 </script></li>
 </ul>
+<!--==============================================================================================================================================-->
 </section>
 <section id="unsere-meinung-zu-ki-23" class="slide level2">
 <h2>Unsere Meinung zu KI 2/3</h2>
@@ -1049,6 +1437,7 @@ domReady(() => {
 })
 </script></li>
 </ul>
+<!--==============================================================================================================================================-->
 </section>
 <section id="unsere-meinung-zu-ki-33" class="slide level2">
 <h2>Unsere Meinung zu KI 3/3</h2>
@@ -1078,30 +1467,49 @@ domReady(() => {
 })
 </script></li>
 </ul>
+<!--==============================================================================================================================================-->
 </section>
 <section id="ergebnisse" class="slide level2">
 <h2>Ergebnisse</h2>
+<style>
+  /* This style applies to the last  in each row of the table */
+  table tr td:last-child {
+    text-align: right;
+  }
+</style>
 <table>
 <caption>
-Antworten im Vergleich
+Meinungen zu KI im Vergleich
 </caption>
 <tbody><tr>
 <th>
-Welt
+Frage
+</th>
+<th>
+World
 </th>
 <th>
 EU
 </th>
 <th>
-Schweiz
+AU-GB-US
+</th>
+<th>
+Wir CH
 </th>
 </tr>
 <tr>
 <td>
-Row 1
+habe gutes Verständnis
 </td>
 <td>
-Data
+67%
+</td>
+<td>
+64%
+</td>
+<td>
+62%
 </td>
 <td>
 <div id="showScale1">
@@ -1111,42 +1519,179 @@ Data
 </tr>
 <tr>
 <td>
-Row 2
+wird tiefgreifend verändern
 </td>
 <td>
-Data
+66%
 </td>
 <td>
-Data
+59%
+</td>
+<td>
+58%
+</td>
+<td>
+<div id="showScale2">
+
+</div>
 </td>
 </tr>
 <tr>
 <td>
-Row 3
+mehr Vorteile als Nachteile
 </td>
 <td>
-Data
+54%
 </td>
 <td>
-Data
+46%
+</td>
+<td>
+41%
+</td>
+<td>
+<div id="showScale4">
+
+</div>
+</td>
+</tr>
+<tr>
+<td>
+macht mein Leben einfacher
+</td>
+<td>
+54%
+</td>
+<td>
+44%
+</td>
+<td>
+40%
+</td>
+<td>
+<div id="showScale3">
+
+</div>
+</td>
+</tr>
+<tr>
+<td>
+vertraue Unternehmen auch mit KI
+</td>
+<td>
+52%
+</td>
+<td>
+46%
+</td>
+<td>
+41%
+</td>
+<td>
+<div id="showScale6">
+
+</div>
+</td>
+</tr>
+<tr>
+<td>
+macht mich nervös
+</td>
+<td>
+52%
+</td>
+<td>
+50%
+</td>
+<td>
+65%
+</td>
+<td>
+<div id="showScale8">
+
+</div>
+</td>
+</tr>
+<tr>
+<td>
+weiß wer KI nutzt
+</td>
+<td>
+51%
+</td>
+<td>
+42%
+</td>
+<td>
+38%
+</td>
+<td>
+<div id="showScale5">
+
+</div>
+</td>
+</tr>
+<tr>
+<td>
+hat tiefgreifend verändert
+</td>
+<td>
+49%
+</td>
+<td>
+38%
+</td>
+<td>
+35%
+</td>
+<td>
+<div id="showScale7">
+
+</div>
 </td>
 </tr>
 </tbody></table>
-<script type="module">
-  import {likertPercentage} from "./draw.js"
+<button onclick="getValues()">
+Ergebnis
+</button>
+<script>
+  function getValues() {
     likertPercentage("scale1").then(value => {
-      document.getElementById("showScale1").innerHTML = `${value}%`;
-    });
+      document.getElementById("showScale1").innerHTML = `${value}%`});
+    likertPercentage("scale2").then(value => {
+      document.getElementById("showScale2").innerHTML = `${value}%`});
+    likertPercentage("scale3").then(value => {
+      document.getElementById("showScale3").innerHTML = `${value}%`}); 
+    likertPercentage("scale4").then(value => {
+      document.getElementById("showScale4").innerHTML = `${value}%`});
+    likertPercentage("scale5").then(value => {
+      document.getElementById("showScale5").innerHTML = `${value}%`});
+    likertPercentage("scale6").then(value => {
+      document.getElementById("showScale6").innerHTML = `${value}%`});
+    likertPercentage("scale7").then(value => {
+      document.getElementById("showScale7").innerHTML = `${value}%`});
+    likertPercentage("scale8").then(value => {
+      document.getElementById("showScale8").innerHTML = `${value}%`});
+    }
 </script>
+<!--==============================================================================================================================================-->
 </section>
 <section id="globale-meinung-zu-ki---vergleich" class="slide level2">
 <h2>Globale Meinung zu KI - Vergleich</h2>
-<p><img data-src="images/AI Poll.png" style="border: 1px solid gray;"></p>
+
+<!--==============================================================================================================================================-->
+<img data-src="images/AI Poll.png" style="border: 1px solid gray;" class="r-stretch"></section>
+<section id="section-6" class="slide level2">
+<h2>_</h2>
+<p><br><br><br><br></p>
+<div class="centered-xxl-text">
+<p>😀 Vielen Dank! 😀</p>
+</div>
 
 <div class="quarto-auto-generated-content">
 <p><img src="images/Logo_PH_Bern.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>Dr.&nbsp;Wolfgang Spahn</p>
+<p>You need to login to participate</p>
 </div>
 </div>
 </section>

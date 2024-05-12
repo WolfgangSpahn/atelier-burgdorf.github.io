@@ -1,6 +1,6 @@
 ---
 title: "Atelier Burgdorf"
-subtitle: "Didaktik und künstliche Intelligenz"
+subtitle: "Wolfgang Spahn -- Didaktik und künstliche Intelligenz"
 format: 
   revealjs: 
     controls: true
@@ -10,7 +10,7 @@ format:
       buttons: false
     preview-links: auto
     logo: images/Logo_PH_Bern.png
-    footer: Dr. Wolfgang Spahn
+    footer: You need to login to participate
     css: [styles.css, custom-styles.css]  # custom css
     include-in-header: includes.html
 resources:
@@ -35,7 +35,7 @@ Zum Starten des Ateliers bitte diesen Link verwenden:
 
 <br><br>
 
-Um in den Vollbildmodus zu gelangen, klicken Sie bitte auf den Button "Fullscreen" oder drücken Sie die Taste "F11".
+Fèr Vollbildmodus bitte diesen Button "Fullscreen" klicken oder Taste "F11".
 
 <br>
 
@@ -53,6 +53,14 @@ function goFullScreen() {
 }
 </script>
 
+::: {.notes}
+- Willkommen zum Atelier "Didaktik und künstliche Intelligenz".
+- Wer bin ich? Wolfgang Spahn, Wiss. MA für KI Didaktik Systeme an der PH Bern. Physiker, Dr, CTO etc.
+- Du oder Sie.
+- Bitte wählt Euch ein Tier aus. So können wir anonym Euer Feedback einholen.
+:::
+
+<!--==============================================================================================================================================-->
 ## Willkommen im Atelier
 <div id="svg-team"></div>
 <div class="toast-container" id="toast-container"></div>
@@ -60,25 +68,41 @@ function goFullScreen() {
 <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.0/dist/umd/uuid.min.js"></script>
 <script src="team.js"></script>
 
+::: {.notes}
+- Bitte wählt Euch ein Tier aus. So können wir anonym Euer Feedback einholen.
+:::
+
+<!--==============================================================================================================================================-->
 ## Agenda
 
-- KI - Wo stehen wir heute, wo geht die Reise hin
+- Was ist künstliche Intelligenz (20 min)
   - Einführung
   - KI - Wir bauen ein Neuronales Netz
   - Grundlagen Modelle
   - Ausblick 2029/2034
-- Selbstversuche mit ProPhysik 
+- Selbstversuche mit ProPhysik (20 min)
   - einen KI Lernbegleiter Prototyp
-- Workshop: Und was bedeutet das für die Bildung
+- Und was bedeutet das für die Bildung (20 min)
+  - KI MINT Vision
+  - Lernwirksame KI Tutoren
 
+::: {.notes}
+- Fokus ist auf Technik und Didaktik. Vertehen was KI ist und wie sie funktioniert.
+- Da wir relative wenig Leute sind könnnen gerne Fragen gestellt werden.
+- Wir habe ca. 10 min Pufferzeit eingeplant.
+- Bitte versteht aber dass ich auf die Zeit achten muss.
+:::
+
+<!--==============================================================================================================================================-->
 ## _
 
-<br><br>
+<br><br><br><br>
 
 ::: {.centered-xxl-text}
 KI - Wo stehen wir heute, wo geht die Reise hin
 :::
 
+<!--==============================================================================================================================================-->
 ## KI: Definition
 
 :::: {.columns}
@@ -100,8 +124,12 @@ Analogie
 
 :::
 ::::
+::: {.notes}
+- Daher spreche ich lieber von cognitive Aufgaben.
+:::
 
-## Cognition - 2024
+<!--==============================================================================================================================================-->
+## Kognition - 2024
 
 :::: {.columns}
 
@@ -126,7 +154,10 @@ Analogie
 
 :::
 ::::
-
+::: {.notes}
+- Forschung deckt ziemlich alle cognitiven Bereiche ab.
+:::
+<!--==============================================================================================================================================-->
 ## Humanoide Roboter 2024
 
 :::: {.columns}
@@ -140,19 +171,44 @@ Analogie
 :::
 ![](images/robot hand.gif){.absolute top="30%" left="25%" width="30%" }
 ::::
-
+::: {.notes}
+- Diese Roboter werden in Pilotprojekten eingesetzt. Keine Laborübungen.
+:::
+<!--==============================================================================================================================================-->
 ## Mustererkennung
 
 <script type="module" src="mustererkennung.js"></script>
 <div id="svg-mustererkennung"></div>
 
+<!--==============================================================================================================================================-->
+## Trainingsarten
 
+:::: {.columns}
+::: {.column width="50%"}
+**Überwachtes Lernen**
+
+Menschliche Experten klassifizieren/merkieren die Daten. Aufgrund dieser Daten wird das Modell trainiert. Aufwendig und teuer.
+
+![](images/GettyImages-898172160-scaled.jpg){width="80%" }
+:::
+
+::: {.column width="50%"}
+**Unüberwachtes Lernen**
+Das Modell lernt aus den Daten ohne menschliche Eingriffe. Rekonsturiert verauschte Daten. [source](https://developer.nvidia.com/blog/improving-diffusion-models-as-an-alternative-to-gans-part-2/)
+
+![](images/Generation-with-Diffusion-Models.png){width="90%" }
+
+Findet das nächste Wort/Bild in einer Sequenz. `how are [you]`
+:::
+::::
+
+<!--==============================================================================================================================================-->
 ## Text Bedeutung
 :::: {.columns}
 ::: {.column width="50%"}
 **Wort Embeddings**
 
-- Ein Wort entspricht einem Zahlen Vektor
+- Ein Wort/Token entspricht einem Zahlen Vektor
 - Wort Beziehungen entsprechen Vektor Beziehungen 
 
 ![](images/word embedding.png){width="80%" }
@@ -168,7 +224,10 @@ Analogie
 :::
 ::::
 
+[OpenAI Tokenizer](https://platform.openai.com/tokenizer)
 
+
+<!--==============================================================================================================================================-->
 ## Mehrdeutigkeit @!?
 :::: {.columns}
 ::: {.column width="50%"}
@@ -194,9 +253,10 @@ Analogie
 :::
 ::::
 
+<!--==============================================================================================================================================-->
 ## _
 
-<br><br>
+<br><br><br><br>
 
 ::: {.centered-xxl-text}
 Versuchen wir es selbst
@@ -213,6 +273,7 @@ LLMs können geistige Arbeit erledigen im Umgang mit Wissen (Training) und Dokum
 - identifiziere Regeln, die auf den Inhalt der Frage angewandt werden und deren Ergebnis erklärt wird
 - identifiziere Formel(n), die mit den Werten aus der Frage gelöst werden. Gib den Pfad an.
 
+[Open LLMs](https://labs.perplexity.ai/)
 [OpenAI](https://openai.com/)
 [ChatGPT](https://openai.com/chatgpt)
 
@@ -225,15 +286,20 @@ Fertigkeiten           |   | Anmerkungen
 -----------------------|---|---------------------------
 Schlussfolgern         | ✓ | Kann Dinge erfinden
 Planen                 | ✗ | Nein, muss vom Nutzer kommen
-Abstraktes Denken      | ✓ | Wenn der Kontext klar ist
-Komplexe Zusammenhänge | ✓ | Wenn der Kontext klar ist
+Abstraktes Denken      | ✓ | Wenn der Kontext klar ist (robust?)
+Komplexe Zusammenhänge | ✓ | Wenn der Kontext klar ist (robust?)
 Aus Erfahrung lernen   | ✓ | Nur innerhalb einer Sitzung 
 
 :::
 ::::
 
+::: {.notes}
+bitte klassifiziere ein 2x2 Bild mit zwei möglichen Farben - rot(x) oder schwarz(o) - in einfarbig, vertikal, horizontal, schachbrett oder na. Hier ein Beispiel:
+[[x,x], [o,o]] => vertikal
+bitte warte auf meine Eingabe
+:::
 
-
+<!--==============================================================================================================================================-->
 ## Intuitives Denken 1/2
 
 :::: {.columns}
@@ -249,11 +315,10 @@ Wie viele Tiere jeder Art hat Moses mit auf die Arche genommen?
   submitOnReturn('inputField1','form1');
 </script>
 
-</script>
 
 Und was sagen die KI Modelle?
 
-- [Kleine LLMs](https://labs.perplexity.ai/)
+- [Open LLMs](https://labs.perplexity.ai/)
 - [GPT 3.5](https://chatgpt.com/?model=text-davinci-002-render-sha)
 - [GPT 4](https://chatgpt.com/?oai-dm=1&model=gpt-4)
 
@@ -267,6 +332,7 @@ Und was sagen die KI Modelle?
 :::
 :::
 
+<!--==============================================================================================================================================-->
 ## Intuitives Denken 2/2
 
 :::: {.columns}
@@ -284,7 +350,7 @@ Ein Schläger und ein Ball kosten zusammen 1,10 Dollar. Der Schläger kostet ein
 
 Und was sagen die KI Modelle?
 
-- [Kleine LLMs](https://labs.perplexity.ai/)
+- [Open LLMs](https://labs.perplexity.ai/)
 - [GPT 3.5](https://chatgpt.com/?model=text-davinci-002-render-sha)
 - [GPT 4](https://chatgpt.com/?oai-dm=1&model=gpt-4)
 
@@ -298,7 +364,8 @@ Und was sagen die KI Modelle?
 :::
 :::
 
-## Schlussfolgerungen 1/2
+<!--==============================================================================================================================================-->
+## Schlussfolgern 1/2
 
 :::: {.columns}
 ::: {.column width="40%"}
@@ -315,7 +382,7 @@ In the sentence “The nurse marries the doctor because she is pregnant”. Who 
 
 Und was sagen die KI Modelle?
 
-- [Kleine LLMs](https://labs.perplexity.ai/)
+- [Open LLMs](https://labs.perplexity.ai/)
 - [GPT 3.5](https://chatgpt.com/?model=text-davinci-002-render-sha)
 - [GPT 4](https://chatgpt.com/?oai-dm=1&model=gpt-4)
 
@@ -329,7 +396,8 @@ Und was sagen die KI Modelle?
 :::
 :::
 
-## Schlussfolgerungen 2/2
+<!--==============================================================================================================================================-->
+## Schlussfolgern 2/2
 
 :::: {.columns}
 ::: {.column width="40%"}
@@ -346,7 +414,7 @@ Ich war auf einer Party. Ich kam vor John an. David kam nach Joe an. Joe kam vor
 
 Und was sagen die KI Modelle?
 
-- [Kleine LLMs](https://labs.perplexity.ai/)
+- [Open LLMs](https://labs.perplexity.ai/)
 - [GPT 3.5](https://chatgpt.com/?model=text-davinci-002-render-sha)
 - [GPT 4](https://chatgpt.com/?oai-dm=1&model=gpt-4)
 
@@ -360,7 +428,8 @@ Und was sagen die KI Modelle?
 :::
 ::::
 
-## Um die Ecke "denken" - Theory of Mind
+<!--==============================================================================================================================================-->
+## Um die Ecke "denken" - ToM
 
 :::: {.columns}
 ::: {.column width="40%"}
@@ -377,7 +446,7 @@ Sie sind ein Butler in einem Schloss. Im Wohnzimmer befindet sich eine sehr teur
 
 Und was sagen die KI Modelle?
 
-- [Kleine LLMs](https://labs.perplexity.ai/) Claude3-Haiku
+- [Open LLMs](https://labs.perplexity.ai/)
 - [GPT 3.5](https://chatgpt.com/?model=text-davinci-002-render-sha)
 - [GPT 4](https://chatgpt.com/?oai-dm=1&model=gpt-4)
 :::
@@ -391,45 +460,109 @@ Und was sagen die KI Modelle?
 :::
 ::::
 
+<!--==============================================================================================================================================-->
+## ChatGPT Fehler
+
+:::: {.columns}
+::: {.column width="50%"}
+How many times is p negated in the following formula:
+
+```{.python code-line-numbers="false"}
+----- ----- ----- ----- ----- -- p
+```
+<br>
+
+<form id="forma5">
+  <input type="text" id="inputFielda5" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputFielda5','forma5');
+</script>
+
+Und was sagen die KI Modelle?
+
+- [Open LLMs](https://labs.perplexity.ai/)
+- [GPT 3.5](https://chatgpt.com/?model=text-davinci-002-render-sha)
+- [GPT 4](https://chatgpt.com/?oai-dm=1&model=gpt-4)
+:::
+::: {.column width="50%"}
+<div id="showa5"></div>
+<script type="module">
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("showa5","forma5",{ width: 500, height: 550 });
+</script>
+
+:::
+::::
+
+[OpenAI Tokenizer](https://platform.openai.com/tokenizer)
+
+::: {.notes}
+Bitte zählt die Anzahl der Tokens
+:::
+
+
+<!--==============================================================================================================================================-->
 ## _
 
-<br><br>
+<br><br><br><br>
 
 ::: {.centered-xxl-text}
 Wie geht es weiter?
 :::
+<br><br><br><br><br><br>
+[Stanford University AI Index Report for 2024](https://aiindex.stanford.edu/report/)
 
+::: {.notes}
+Welche Entwicklung kann man erwarten?
+:::
 
+<!--==============================================================================================================================================-->
 ## Model Entwicklung 1/2
 
 ![](images/Models over time.png){width="70%"}
 
+<!--==============================================================================================================================================-->
 ## Model Entwicklung 2/2
 
 ![](images/Benchmarks.png){width="70%"}
 
+:::{.absolute top=300 left=680}
+ **x** MMMU (new)
+:::
+
+<!--==============================================================================================================================================-->
 ## Beispiel Benchmark
 
 ![](images/MMMU.png){width="70%"}
 
+<!--==============================================================================================================================================-->
 ## Robotor Entwicklung
 
 ![](images/NrOfProfServ.png){width="70%"}
 
 
+<!--==============================================================================================================================================-->
 ## _
 
-<br><br>
+<br><br><br><br>
 
 ::: {.centered-xxl-text}
-KI MINT Vision
+Praxisbeispiel: Ein KI Physik Tutor
 :::
 
-
+<!--==============================================================================================================================================-->
 ## Ein KI Lernbegleiter hilft bei den Hausaufgaben
 
-Bitte meldet Euch bei ProPhysik an und bearbeitet die Aufgaben mit [Newton](https://sebayt.ch/)
+<div style="text-align: center; ">
+  <img src="images/Isaac.jpg" style="width:20%;border: 1px solid gray;">
+</div>
 
+
+Bitte meldet Euch bei ProPhysik an und bearbeitet die Aufgaben mit [Isaac](https://sebayt.ch/)
+
+<!--==============================================================================================================================================-->
 ## Wie hat sich der Tutor verhalten?
 
 :::: {.columns}
@@ -455,6 +588,7 @@ Was kann die Tutor schon, was noch nicht? Wie unterscheidet sich der Tutor von C
 :::
 ::::
 
+<!--==============================================================================================================================================-->
 ## Welches Lernmodell wurde verwendet?
 
 :::: {.columns}
@@ -480,16 +614,29 @@ Was für eine Art von Lernmodell wurde verwendet? Welche Annahmen liegen dahinte
 :::
 ::::
 
+<!--==============================================================================================================================================-->
+## _
+
+<br><br><br><br>
+
+::: {.centered-xxl-text}
+KI MINT Vision
+:::
+
+<!--==============================================================================================================================================-->
 ## Vision MINT Bildung 2035
 
 ![](images/2847_cartoon_back_to_school_1.jpg){width="70%"}
 
-![](images/CH-Vorschriftssignal_9_-_Einbahnstrasse,_SSV_1932.svg.png){width="30%" .absolute top=180 left=850 }
+::: {.fragment}
+![](images/CH-Vorschriftssignal_9_-_Einbahnstrasse,_SSV_1932.svg.png){width="30%" .absolute top=180 left=250 }
+:::
+
 
 [Source](https://www.prpeak.com/opinion/cartoon-homework-assignments-7489368)
 
 
-
+<!--==============================================================================================================================================-->
 ## Vision MINT Bildung 2035
 
 :::: {.columns}
@@ -526,127 +673,232 @@ Sources:
 ::::
 
 
-
+<!--==============================================================================================================================================-->
 ## Lernwirksame KI Tutoren 1/3 
 
 Eine lernwirksame KI berücksicht die aktuellen Forschungsergebnisse (John Hattie, Hilber Meyer) zum lernwirksamen Untericht.
 
 :::: {.columns}
+<!-- col -->
 ::: {.column width="60%"}
 **bietet sichtbares und reflektiertes Lernen**
 
-  - erfasst und passt sich der kognitiven Stufe an
-  - wirksames Feedback zu Fortschritten
-  - implementiert Lernziele
-:::
-::: {.column width="40%"}
-<div id='board1-1'></div>
-<script type="module">
-  import {board} from './draw.js';
-  board("#board1-1",{width:450, height:220});
+::: {.r-stack}
+::: {.fragment .fade-out}
+Erwartungen:
+<form id="form8">
+  <input type="text" id="inputField8" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField8','form8');
 </script>
 :::
+
+::: {.fragment}
+- erfasst und passt sich der kognitiven Stufe an
+- wirksames Feedback zu Fortschritten
+- implementiert Lernziele
+:::
+:::
+:::
+
+
+<!-- col -->
+::: {.column width="40%"}
+<div id="show8"></div>
+<script type="module">
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show8","form8",{ width: 500, height: 200, hidden: false });
+</script>
+:::
+
 ::::
 
+<!-------------------------------------------------------------------------------------->
 :::: {.columns}
 ::: {.column width="60%"}
 **ermöglicht strukturiertes Vorgehen**
 
-  - inhaltliche Koherenz entlang eines strukturierten Lernpfades
-  - verknüpft Wissen und Methoden
-  - bietet eine anregende Methoden Vielfalt
-  - baut auf Vorwissen und Alltagserfahrung auf
+::: {.r-stack}
+::: {.fragment .fade-out}
+Erwartungen:
+<form id="form9">
+  <input type="text" id="inputField9" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField9','form9');
+</script>
 :::
+
+::: {.fragment}
+- inhaltliche Koherenz entlang eines strukturierten Lernpfades
+- verknüpft Wissen und Methoden
+- bietet eine anregende Methoden Vielfalt
+- baut auf Vorwissen und Alltagserfahrung auf
+:::
+:::
+:::
+
 ::: {.column width="40%"}
-<div id='board1-2'></div>
+<div id="show9"></div>
 <script type="module">
-  import {board} from './draw.js';
-  board("#board1-2",{width:450, height:300});
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show9","form9",{ width: 500, height: 200, hidden: false });
 </script>
 :::
 ::::
 
+<!--==============================================================================================================================================-->
 ## Lernwirksame KI Tutoren 2/3
 
 :::: {.columns}
 ::: {.column width="60%"}
 **aktiviert und motiviert die Lernenden**
 
-  - interaktive und spielerische Ansätze
-  - personalierte Lernmöglichkeiten
-  - fordern ohne zu überfordern
+::: {.r-stack}
+::: {.fragment .fade-out}
+Erwartungen:
+<form id="form10">
+  <input type="text" id="inputField10" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField10','form10');
+</script>
 :::
+
+::: {.fragment}
+- interaktive und spielerische Ansätze
+- personalierte Lernmöglichkeiten
+- fordern ohne zu überfordern
+:::
+:::
+:::
+
 ::: {.column width="40%"}
-<div id='board2-1'></div>
+<div id="show10"></div>
 <script type="module">
-  import {board} from './draw.js';
-  board("#board2-1",{width:450, height:260});
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show10","form10",{ width: 500, height: 200, hidden: false });
 </script>
 :::
 ::::
+<!-------------------------------------------------------------------------------------->
 
 :::: {.columns}
 ::: {.column width="60%"}
 **analysiert und verbessert kontinuierlich**
 
-  - motivierende Lernanalysen
-  - formatives Assessment
-  - adaptiver Lernpfad
+::: {.r-stack}
+::: {.fragment .fade-out}
+Erwartungen:
+<form id="form11">
+  <input type="text" id="inputField11" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField11','form11');
+</script>
 :::
+
+::: {.fragment}
+- motivierende Lernanalysen
+- formatives Assessment
+- adaptiver Lernpfad
+:::
+:::
+:::
+
 ::: {.column width="40%"}
-<div id='board2-2'></div>
+<div id="show11"></div>
 <script type="module">
-  import {board} from './draw.js';
-  board("#board2-2",{width:450, height:260});
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show11","form11",{ width: 500, height: 200, hidden: false  });
 </script>
 :::
 ::::
 
+<!--==============================================================================================================================================-->
 ## Lernwirksame KI Tutoren 3/3
 
 :::: {.columns}
 ::: {.column width="60%"}
 **fördert Lernen in der (Klein-)Gruppe**
 
-  - lernen in einer APP an verschiedenen Standorten
-  - gemeinsame Erfolgsergebnisse
+::: {.r-stack}
+::: {.fragment .fade-out}
+Erwartungen:
+<form id="form12">
+  <input type="text" id="inputField12" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField12','form12');
+</script>
 :::
+
+::: {.fragment}
+- lernen in einer APP an verschiedenen Standorten
+- gemeinsame Erfolgsergebnisse
+:::
+:::
+:::
+
 ::: {.column width="40%"}
-<div id='board3-1'></div>
+<div id="show12"></div>
 <script type="module">
-  import {board} from './draw.js';
-  board("#board3-1",{width:450, height:200});
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show12","form12",{ width: 500, height: 200, hidden: false });
 </script>
 :::
 ::::
 
+<!-------------------------------------------------------------------------------------->
 :::: {.columns}
 ::: {.column width="60%"}
-**unterstützt die Lehrenden als Lernpartner**
+**unterstützt die Lehrenden als Lehrpartner**
 
-  - Steuerung des Lernpfades/Lernsstrategy
-  - transparentes Erfassen von Lernfortschritten
-  - Frühwarnsystem zur proaktiven, respektvollen Intervention
+::: {.r-stack}
+::: {.fragment .fade-out}
+Erwartungen:
+<form id="form13">
+  <input type="text" id="inputField13" name="input" style="width: 300px;">
+</form>
+<script type="module"> 
+  import {submitOnReturn} from "./draw.js";
+  submitOnReturn('inputField13','form13');
+</script>
 :::
+
+::: {.fragment}
+- Steuerung des Lernpfades/Lernsstrategy
+- transparentes Erfassen von Lernfortschritten
+- Frühwarnsystem zur proaktiven, respektvollen Intervention
+:::
+:::
+:::
+
 ::: {.column width="40%"}
-<div id='board3-2'></div>
+<div id="show13"></div>
 <script type="module">
-  import {board} from './draw.js';
-  board("#board3-2",{width:450, height:350});
+  import {resultsBoard} from "./draw.js"
+  resultsBoard("show13","form13",{ width: 500, height: 200, hidden: false });
 </script>
 :::
 ::::
 
-
+<!--==============================================================================================================================================-->
 ## _
 
-<br><br>
+<br><br><br><br>
 
 ::: {.centered-xxl-text}
 Unserer Meinung zu KI
 :::
 
-
+<!--==============================================================================================================================================-->
 ## Unsere Meinung zu KI 1/3
 
 - Ich habe ein gutes Verständnis was künstliche Intelligenz ist
@@ -680,7 +932,7 @@ Unserer Meinung zu KI
   })
 </script>
 
-
+<!--==============================================================================================================================================-->
 ## Unsere Meinung zu KI 2/3
 
 - Produkte und Dienstleistungen mit künstlicher Intelligenz Intelligenz haben mehr Vorteile als Nachteile
@@ -714,6 +966,7 @@ Unserer Meinung zu KI
   })
   </script>
 
+<!--==============================================================================================================================================-->
 ## Unsere Meinung zu KI 3/3
 - Produkte und Dienstleistungen, die künstliche Intelligenz nutzen, haben mein tägliches Leben in den letzten 3 bis 5 Jahren tiefgreifend verändert
 <div id="scale7"></div>
@@ -736,38 +989,82 @@ Unserer Meinung zu KI
   })
 </script>
 
+<!--==============================================================================================================================================-->
 ## Ergebnisse
 
+<style>
+  /* This style applies to the last <td> in each row of the table */
+  table tr td:last-child {
+    text-align: right;
+  }
+</style>
 <table>
-  <caption>Antworten im Vergleich</caption>
+  <caption>Meinungen zu KI im Vergleich</caption>
   <tr>
-    <th>Welt</th><th>EU</th><th>Schweiz</th>
+    <th>Frage</th><th>World</th><th>EU</th><th>AU-GB-US</th><th>Wir CH</th>
   </tr>
   <tr>
-    <td>Row 1</td><td>Data</td><td><div id="showScale1"></div></td>
-  </tr>
-  <tr>
-    <td>Row 2</td><td>Data</td><td>Data</td>
-  </tr>
-  <tr>
-    <td>Row 3</td><td>Data</td><td>Data</td>
+    <td>habe gutes Verständnis</td><td>67%</td><td>64%</td><td>62%</td><td><div id="showScale1"></div></td>
+  </tr>  
+  <tr>						   				    
+    <td>wird tiefgreifend verändern</td><td>66%</td><td>59%</td><td>58%</td><td><div id="showScale2"></div></td>
+  </tr>						   				    
+   <tr>						   				    
+    <td>mehr Vorteile als Nachteile</td><td>54%</td><td>46%</td><td>41%</td><td><div id="showScale4"></div></td>
+  </tr>						   				    
+  <tr>						   				    
+    <td>macht mein Leben einfacher</td><td>54%</td><td>44%</td><td>40%</td><td><div id="showScale3"></div></td>
+  </tr>						   				    
+  <tr>						   				    
+    <td>vertraue Unternehmen auch mit KI </td><td>52%</td><td>46%</td><td>41%</td><td><div id="showScale6"></div></td>
+  </tr>						   				    
+  <tr>						   				    
+    <td>macht mich nervös</td><td>52%</td><td>50%</td><td>65%</td><td><div id="showScale8"></div></td>
+  </tr>						   				    
+  <tr>						   				    
+    <td>weiß wer KI nutzt</td><td>51%</td><td>42%</td><td>38%</td><td><div id="showScale5"></div></td>
+  </tr>						   				    
+  <tr>						   				    
+    <td>hat tiefgreifend verändert</td><td>49%</td><td>38%</td><td>35%</td><td><div id="showScale7"></div></td>
   </tr>
 </table>
 
-
-<script type="module">
-  import {likertPercentage} from "./draw.js"
+<button onclick="getValues()">Ergebnis</button>
+<script>
+  function getValues() {
     likertPercentage("scale1").then(value => {
-      document.getElementById("showScale1").innerHTML = `${value}%`;
-    });
+      document.getElementById("showScale1").innerHTML = `${value}%`});
+    likertPercentage("scale2").then(value => {
+      document.getElementById("showScale2").innerHTML = `${value}%`});
+    likertPercentage("scale3").then(value => {
+      document.getElementById("showScale3").innerHTML = `${value}%`}); 
+    likertPercentage("scale4").then(value => {
+      document.getElementById("showScale4").innerHTML = `${value}%`});
+    likertPercentage("scale5").then(value => {
+      document.getElementById("showScale5").innerHTML = `${value}%`});
+    likertPercentage("scale6").then(value => {
+      document.getElementById("showScale6").innerHTML = `${value}%`});
+    likertPercentage("scale7").then(value => {
+      document.getElementById("showScale7").innerHTML = `${value}%`});
+    likertPercentage("scale8").then(value => {
+      document.getElementById("showScale8").innerHTML = `${value}%`});
+    }
 </script>
 
+<!--==============================================================================================================================================-->
 ## Globale Meinung zu KI - Vergleich
 
 ![](images/AI Poll.png){style="border: 1px solid gray;"}
 
 
+<!--==============================================================================================================================================-->
+## _
 
+<br><br><br><br>
+
+::: {.centered-xxl-text}
+😀 Vielen Dank! 😀
+:::
 
 
 

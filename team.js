@@ -87,6 +87,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                 .move(900, 300)
                 .font({ size: 48, weight: 'bold' })
                 .fill('black')
+    // create a footer text
+    changeFooter(`${localStorage.getItem('nickname') || 'NOT YET LOGGED IN'}`);
     draw.rect(770, 585).fill('white').stroke({ width: 1, color: 'black' });
     // draw.text('Ping: 0').move(850, 10).font({ size: 16 }).fill('black').id('pingCounter');
     draw.text(localStorage.getItem('uuid')).move(850, 30).font({ size: 16 })
@@ -135,6 +137,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                         board.text(`Hallo\n${postData.name}!`);
                         localStorage.setItem('nickname', postData.name);
                         localStorage.setItem('uuid', postData.uuid);
+                        // change footer text
+                        changeFooter(`${postData.name}`);
                         // fetch names from server and update icons
                         fetchNamesAndUpdateIcons();
                         // disable click for all group-icons
@@ -273,4 +277,27 @@ function fetchNamesAndUpdateIcons() {
             console.error('Error fetching names:', error);
         });
 }
-
+function changeFooter(footerText) {
+    // Get the first element with the class 'footer'
+    var footerElements = document.getElementsByClassName('footer');
+    
+    if (footerElements.length === 0) {
+        console.error('No footer element found');
+        return; // Exit the function if no footer element is found
+    }
+    
+    // Assuming the footer is a simple div or similar element
+    var footer = footerElements[0]; // Get the first (or only) 'footer' element
+    
+    // Get the paragraph element within the footer, assuming there's at least one
+    var paragraph = footer.getElementsByTagName('p')[0];
+    
+    if (!paragraph) {
+        // If no paragraph exists, create one and append it to the footer
+        paragraph = document.createElement('p');
+        footer.appendChild(paragraph);
+    }
+    
+    // Change the text content of the paragraph element
+    paragraph.textContent = footerText;
+}

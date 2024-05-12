@@ -26,12 +26,15 @@ export const domReady = (callBack) => {
     }
   }
 
+
 export function getSVG(id, argConfig) {
     const defaults = { width: 1050, height: 600 };
     const config = { ...defaults, ...argConfig };
     if(id[0] !== '#') {id = '#' + id;}
     return SVG().size('100%', '100%').addTo(id).size(config.width, config.height);
 }
+
+///////////////////////////////////////////// WEB UTILITY FUNCTIONS ///////////////////////////////////////
 
 // fetch data from the server
 // method = 'GET', 'POST', 'PUT', 'PATCH', 'DELETE'
@@ -61,9 +64,11 @@ export async function doFetch(url, method, data = null, /* leagcy */ callback = 
         }
         return response_1;
     } catch (error) {
-        console.warning('Error:', error);
+        console.warn('Error:', error);
     }
 }
+
+///////////////////////////////////////////// SVG DRAWING FUNCTIONS ///////////////////////////////////////
 
 export function rectWithText(draw, x, y, width, height, textFn, argConfig) {
     // Default configuration rx="2px", ry="2px",  textStroke ="white", fill = "gray", stroke = "black", strokeWidth = 1
@@ -95,7 +100,6 @@ export function rectWithText(draw, x, y, width, height, textFn, argConfig) {
 }
 
 
-// Function to measure text width without rendering it visibly
 // Function to measure text width without rendering it visibly
 function measureTextWidth(draw,text, fontFamily, fontSize) {
     // Create text element off-screen
@@ -163,6 +167,7 @@ export function postIt(draw, text, x, y, maxWidth=100, lineHeight=18, maxHeight=
 
 
 export function createBoardD3(draw, texts, boardWidth, boardHeight) {
+    console.log('Creating board with texts:', texts);
     const nodes = texts.map(text => ({
         x: Math.random() * boardWidth*0.8,
         y: Math.random() * boardHeight*0.9,
@@ -183,19 +188,6 @@ export function createBoardD3(draw, texts, boardWidth, boardHeight) {
         postIt(draw, node.text, node.x, node.y, 110, 18);
     });
 }
-
-export function createBoard(draw, texts, boardWidth, boardHeight, maxWidth, lineHeight) {
-
-    texts.forEach(function(text) {
-        // Choose a random position for the post-it
-        const x = Math.random() * (boardWidth - 120); // Adjusted for wider post-its
-        const y = Math.random() * (boardHeight - 70); // Adjusted for taller post-its
-
-        // Create and place a post-it note
-        postIt(draw, text, x+maxWidth/2, y+5*lineHeight, maxWidth, lineHeight); // maxWidth and lineHeight as required
-    });
-}
-
 
 export function origin(draw, x, y, argConfig) {
     // radius = 5, fillColor = 'red'
@@ -259,25 +251,30 @@ export function likertScale(draw, id) {
         });
 };
 
-export function board(id,argConfig){
-    // import {domReady,getSVG, board} from './draw.js';
-    const defaults = { width: 1050, height: 600 };
-    const config = { ...defaults, ...argConfig };
-    domReady(() => {
-        const draw = getSVG(id, config);
-        draw.rect(config.width, config.height).fill('white').stroke({ width: 1, color: 'black' })
-    })
-}
+///////////////////////////////////////////// MAIN FUNCTIONS ///////////////////////////////////////
 
 export function resultsBoard(id,qid,argConfig){
-    const defaults = { width: 1050, height: 550, fieldname: 'answers'};
+    const defaults = { width: 1050, height: 550, fieldname: 'answers',hidden: true};
     const config = { ...defaults, ...argConfig };
     // create an svg drawing by placing above icons in a grid using svg.js
     // check if id starts with #, otherwise add #
     if (id[0] !== '#') {id = '#' + id;}
+    // ident without #
 
     domReady(async () => {
+        const button_visibility = createToggleVisibilityButton(`button-${id.slice(1)}`, `${id} svg`, {class: 'button'});
+        // attach the button to the element with id
+        const element = document.querySelector(id)
+        element.appendChild(button_visibility);
+
+        // create a new svg drawing
         const draw = getSVG(id, config);
+        // hide draw element if config.idden is true else show it
+        if (config.hidden) {
+            draw.hide();
+        } else {
+            draw.show();
+        }
 
         // fetch data from the server
         try {
@@ -290,7 +287,7 @@ export function resultsBoard(id,qid,argConfig){
         }
         // update the board via server-sent events
         eventSource.addEventListener(`A-${qid}`, function(event) {
-            // console.log('Event received:', event, event.data);
+            console.log('Event received:', event, event.data);
             // render json data
             const data = JSON.parse(event.data);
             draw.clear();
@@ -316,17 +313,48 @@ export async function likertPercentage(id){
     
 
 
-export function createSVGText(text, x, y, size = 18, color = 'black') {
+export function createSVGText(text, x, y, argConfig)  {
+    const defaults = { anchor: 'left', size: 18, color: 'black' };
+    const config = { ...defaults, ...argConfig };
     const textElement = document.createElementNS('http://www.w3.org/2000/svg', 'text');
     textElement.setAttribute('x', x);
     textElement.setAttribute('y', y);
-    textElement.setAttribute('fill', color);
+    textElement.setAttribute('fill', config.color);
     textElement.setAttribute('font-family', 'Arial');
-    textElement.setAttribute('font-size', size);
-    textElement.setAttribute('text-anchor', 'left');  // Centers text horizontally
+    textElement.setAttribute('font-size', config.size);
+    textElement.setAttribute('text-anchor', config.anchor);  // Centers text horizontally
     textElement.setAttribute('dominant-baseline', 'text-before-edge');  // Aligns text top to y coordinate
     textElement.textContent = text;
     return textElement;
+}
+
+export function createHTMLButton(text, id, argConfig) {
+    const defaults = {class: 'button', callback: () => console.log('Button clicked') };
+    const config = { ...defaults, ...argConfig };
+    const button = document.createElement('button');
+    button.setAttribute('id', id);
+    button.setAttribute('class', config.class);
+    button.textContent = text;
+    button.addEventListener('click', config.callback);
+    return button;
+}
+export function createToggleVisibilityButton(id, targetId, argConfig) {
+    const defaults = {class: 'clickable', text:":::", callback: () => console.log('Button clicked') };
+    const config = { ...defaults, ...argConfig };
+    const button = document.createElement('button');
+    button.setAttribute('id', id);
+    button.setAttribute('class', config.class);
+    button.textContent = config.text;
+    button.addEventListener('click', () => {
+        const target = document.querySelector(targetId);
+        if (target === null) {console.log('Target not found:', targetId); return;}
+        if (target.style.display === 'none') {
+            target.style.display = 'block';
+        } else {
+            target.style.display = 'none';
+        }   
+    });
+    return button;
 }
 
 function submitForm(inputId, formId) {
@@ -342,6 +370,7 @@ export function submitOnReturn(inputFieldId, formId) {
         inputField.addEventListener('keydown', function (event) {
             if (event.key === 'Enter' && !event.shiftKey) {
                 event.preventDefault(); // Prevent the form from submitting in the default way
+                console.log('Enter pressed to submit the form', inputField, inputField.value, formId);
 
                 // Assuming submitForm takes the input field's value and the form's id
                 submitForm(inputFieldId, formId);
@@ -364,3 +393,4 @@ export async function getIPSocket() {
 // register the functions as global functions
 window.doFetch = doFetch;
 window.getIPSocket = getIPSocket;
+window.likertPercentage = likertPercentage;

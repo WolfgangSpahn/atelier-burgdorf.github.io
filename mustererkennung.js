@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             ];
     // Show labels for the nodes for human readability
     let showLabels = false;
-    let showLayers = [true, true, true, true, true];
+    let showLayers = [true, false, false, false, false];
     let weightUsage = 'zero'; // 'random', 'optimal', 'zero'
 
     ///////////////////////////////////////////// CONFIG NETWORK ////////////////////////////////////////////////
@@ -643,7 +643,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const labelText = draw.text(networkNodeLabels[layerIndex][nodeIndex])
                     .move(centerX, centerY - 2*radius - 2*fontSize)
                     .fill('black')
-                    .font({ family: 'Helvetica', size: fontSize, anchor: 'middle' });
+                    .font({ family: 'Helvetica', size: fontSize, anchor: 'middle'});
                 if (showLabels || layerIndex == 0) {
                     labelText.show();
                 } else {
