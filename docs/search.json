@@ -18,7 +18,7 @@
     "href": "first.html#agenda",
     "title": "Atelier Burgdorf",
     "section": "Agenda",
-    "text": "Agenda\n\nWas ist künstliche Intelligenz (20 min)\n\nEinführung\nKI - Wir bauen ein Neuronales Netz\nGrundlagen Modelle\nAusblick 2029/2034\n\nSelbstversuche mit ProPhysik (20 min)\n\neinen KI Lernbegleiter Prototyp\n\nUnd was bedeutet das für die Bildung (20 min)\n\nKI MINT Vision\nLernwirksame KI Tutoren\n\n\n\n\nFokus ist auf Technik und Didaktik. Vertehen was KI ist und wie sie funktioniert.\nDa wir relative wenig Leute sind könnnen gerne Fragen gestellt werden.\nWir habe ca. 10 min Pufferzeit eingeplant.\nBitte versteht aber dass ich auf die Zeit achten muss."
+    "text": "Agenda\n\nTechnologie hinter künstlicher Intelligenz (20 min)\n\nKI Technologie heute (&lt;-)\nWir bauen ein neuronales Netz (&lt;-)\nKI Foundation Modelle (&lt;-)\nKI Modelle, Kosten und Evaluation\n\nSelbstversuche mit KI für MINT Didaktik (20 min)\n\nPraxisbeispiel: Ein KI Physik Tutor (&lt;-)\n\nUnd was bedeutet das für die Bildung (20 min)\n\nUnsere KI MINT Vision (&lt;-)\nUnserer Meinung zu KI (&lt;-)\n\n\n\n\nFokus ist auf Technik und Didaktik. Vertehen was KI ist und wie sie funktioniert.\nDa wir relative wenig Leute sind könnnen gerne Fragen gestellt werden.\nWir habe ca. 10 min Pufferzeit eingeplant.\nBitte versteht aber dass ich auf die Zeit achten muss."
   },
   {
     "objectID": "first.html#slide-with-form",
@@ -319,7 +319,7 @@
     "href": "first.html#model-entwicklung-12",
     "title": "Atelier Burgdorf",
     "section": "Model Entwicklung 1/2",
-    "text": "Model Entwicklung 1/2"
+    "text": "Model Entwicklung 1/2\n\n\nGTP4 - 13T (13 10^12) tokens for Training - estimated 1.5 10^12 parameters - Brain has 100 1^12 Synapses"
   },
   {
     "objectID": "first.html#model-entwicklung-22",
@@ -445,7 +445,7 @@
     "href": "first.html#section",
     "title": "Atelier Burgdorf",
     "section": "_",
-    "text": "_\n\n\nKI - Wo stehen wir heute, wo geht die Reise hin"
+    "text": "_\n\n\nKI Technologie heute"
   },
   {
     "objectID": "first.html#lernwirksame-ki-12",
@@ -494,7 +494,7 @@
     "href": "first.html#lernwirksame-ki-tutoren-13",
     "title": "Atelier Burgdorf",
     "section": "Lernwirksame KI Tutoren 1/3",
-    "text": "Lernwirksame KI Tutoren 1/3\nEine lernwirksame KI berücksicht die aktuellen Forschungsergebnisse (John Hattie, Hilber Meyer) zum lernwirksamen Untericht.\n\n\nbietet sichtbares und reflektiertes Lernen\n\n\nErwartungen:\n\n\n\n\n\n\n\nerfasst und passt sich der kognitiven Stufe an\nwirksames Feedback zu Fortschritten\nimplementiert Lernziele\n\n\n\n\n\n\n\n\n\n\n\n\n\nermöglicht strukturiertes Vorgehen\n\n\nErwartungen:\n\n\n\n\n\n\n\ninhaltliche Koherenz entlang eines strukturierten Lernpfades\nverknüpft Wissen und Methoden\nbietet eine anregende Methoden Vielfalt\nbaut auf Vorwissen und Alltagserfahrung auf"
+    "text": "Lernwirksame KI Tutoren 1/3\nEine lernwirksame KI berücksicht die aktuellen Forschungsergebnisse (John Hattie, Hilber Meyer) zum lernwirksamen Untericht.\n\n\nbietet sichtbares und reflektiertes Lernen\n\n\nErwartungen:\n\n\n\n\n\n\n\nerfasst und passt sich der kognitiven Stufe an\nwirksames Feedback zu Fortschritten\nimplementiert Lernziele\n\n\n\n\n\n\n\n\n\n\n\n\n\nermöglicht strukturiertes Vorgehen\n\n\nErwartungen:\n\n\n\n\n\n\n\nentlang eines strukturierten Lernpfades\nverknüpft Wissen und Methoden\nbietet eine anregende Methoden Vielfalt\nbaut auf Vorwissen und Alltagserfahrung auf"
   },
   {
     "objectID": "first.html#lernwirksame-ki-tutoren-23",
@@ -578,7 +578,7 @@
     "href": "first.html#ergebnisse",
     "title": "Atelier Burgdorf",
     "section": "Ergebnisse",
-    "text": "Ergebnisse\n\n\n\nMeinungen zu KI im Vergleich\n\n\n\nFrage\n\n\nWorld\n\n\nEU\n\n\nAU-GB-US\n\n\nWir CH\n\n\n\n\nhabe gutes Verständnis\n\n\n67%\n\n\n64%\n\n\n62%\n\n\n\n\n\n\n\n\n\nwird tiefgreifend verändern\n\n\n66%\n\n\n59%\n\n\n58%\n\n\n\n\n\n\n\n\n\nmehr Vorteile als Nachteile\n\n\n54%\n\n\n46%\n\n\n41%\n\n\n\n\n\n\n\n\n\nmacht mein Leben einfacher\n\n\n54%\n\n\n44%\n\n\n40%\n\n\n\n\n\n\n\n\n\nvertraue Unternehmen auch mit KI\n\n\n52%\n\n\n46%\n\n\n41%\n\n\n\n\n\n\n\n\n\nmacht mich nervös\n\n\n52%\n\n\n50%\n\n\n65%\n\n\n\n\n\n\n\n\n\nweiß wer KI nutzt\n\n\n51%\n\n\n42%\n\n\n38%\n\n\n\n\n\n\n\n\n\nhat tiefgreifend verändert\n\n\n49%\n\n\n38%\n\n\n35%\n\n\n\n\n\n\n\n\n\nErgebnis"
+    "text": "Ergebnisse\n\n\n\nMeinungen zu KI im Vergleich\n\n\n\nFrage\n\n\nWorld\n\n\nEU\n\n\nAU-GB-US\n\n\nWir CH\n\n\n\n\nhabe gutes Verständnis\n\n\n67%\n\n\n64%\n\n\n62%\n\n\n\n\n\n\n\n\n\nwird tiefgreifend verändern\n\n\n66%\n\n\n59%\n\n\n58%\n\n\n\n\n\n\n\n\n\nmehr Vorteile als Nachteile\n\n\n54%\n\n\n46%\n\n\n41%\n\n\n\n\n\n\n\n\n\nmacht mein Leben einfacher\n\n\n54%\n\n\n44%\n\n\n40%\n\n\n\n\n\n\n\n\n\nvertraue Unternehmen auch mit KI\n\n\n52%\n\n\n46%\n\n\n41%\n\n\n\n\n\n\n\n\n\nmacht mich nervös\n\n\n52%\n\n\n50%\n\n\n65%\n\n\n\n\n\n\n\n\n\nweiß wer KI nutzt\n\n\n51%\n\n\n42%\n\n\n38%\n\n\n\n\n\n\n\n\n\nhat tiefgreifend verändert\n\n\n49%\n\n\n38%\n\n\n35%\n\n\n\n\n\n\n\n\n\nErgebnis\n\n\nPoll"
   },
   {
     "objectID": "first.html#vision-bildung-2035-1",
@@ -613,21 +613,21 @@
     "href": "first.html#vision-mint-bildung-2035-1",
     "title": "Atelier Burgdorf",
     "section": "Vision MINT Bildung 2035",
-    "text": "Vision MINT Bildung 2035\n\n\n\nindividuellen Entwicklung\npersonalisierte Ansätze\neigenes Tempo \nlernen in der Gruppe\nLehrpersonen als Lernpartner\neigenverantwortlicher Lernprozess\n\n\n \n\n  \n\nSources: 1 2 3"
+    "text": "Vision MINT Bildung 2035\n\n\nUnterstützt/ermöglicht durch KI\n\nindividuelle Entwicklung\npersonalisierte Ansätze\neigenes Tempo \nlernen in der Gruppe\nLehrpersonen als Lernpartner\neigenverantwortlicher Lernprozess\n\n\n \n\n  \n\nSources: 1 2 3"
   },
   {
     "objectID": "first.html#section-1",
     "href": "first.html#section-1",
     "title": "Atelier Burgdorf",
     "section": "_",
-    "text": "_\n\n\nVersuchen wir es selbst"
+    "text": "_\n\n\nKI Foundation Modelle"
   },
   {
     "objectID": "first.html#section-2",
     "href": "first.html#section-2",
     "title": "Atelier Burgdorf",
     "section": "_",
-    "text": "_\n\n\nWie geht es weiter?\n\n Stanford University AI Index Report for 2024\n\nWelche Entwicklung kann man erwarten?"
+    "text": "_\n\n\nKI Kosten und Evaluation\n\n Stanford University AI Index Report for 2024\n\nWelche Entwicklung kann man erwarten?"
   },
   {
     "objectID": "first.html#section-3",
@@ -690,7 +690,7 @@
     "href": "first.html#chatgpt-fehler",
     "title": "Atelier Burgdorf",
     "section": "ChatGPT Fehler",
-    "text": "ChatGPT Fehler\n\n\nHow many times is p negated in the following formula:\n----- ----- ----- ----- ----- -- p\n\n\n\n\n\nUnd was sagen die KI Modelle?\n\nOpen LLMs\nGPT 3.5\nGPT 4\n\n\n\n\n\n\n\n\nOpenAI Tokenizer\n\nBitte zählt die Anzahl der Tokens"
+    "text": "ChatGPT Fehler\n\n\nHow many times is p negated in the following formula:\n----- ----- ----- ----- ----- -- p\n\n\n\n\n\nUnd was sagen die KI Modelle?\n\nOpen LLMs\nGPT 3.5\nGPT 4 screenshot\n\n\n\n\n\n\n\n\nOpenAI Tokenizer\n\nBitte zählt die Anzahl der Tokens"
   },
   {
     "objectID": "first.html#trainingsarten",
@@ -705,5 +705,19 @@
     "title": "Atelier Burgdorf",
     "section": "_",
     "text": "_\n\n\n😀 Vielen Dank! 😀\n\n\n\n\n\nYou need to login to participate"
+  },
+  {
+    "objectID": "first.html#roboter-entwicklung",
+    "href": "first.html#roboter-entwicklung",
+    "title": "Atelier Burgdorf",
+    "section": "Roboter Entwicklung",
+    "text": "Roboter Entwicklung"
+  },
+  {
+    "objectID": "first.html#zusammenfassung-und-fragen",
+    "href": "first.html#zusammenfassung-und-fragen",
+    "title": "Atelier Burgdorf",
+    "section": "Zusammenfassung und Fragen",
+    "text": "Zusammenfassung und Fragen\nIch hoffe ich konnte einen Einblick geben in:\n\nTechnologie hinter künstlicher Intelligenz\nWas geht heute mit KI als wirklichen Lernbegleiter\nUnd was bedeutet das für die Bildung/Didaktik\nWo wollen wir hin und wo nicht"
   }
 ]

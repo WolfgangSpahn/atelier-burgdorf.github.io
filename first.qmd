@@ -1,6 +1,6 @@
 ---
 title: "Atelier Burgdorf"
-subtitle: "Wolfgang Spahn -- Didaktik und künstliche Intelligenz"
+subtitle: "Wolfgang Spahn -- MINT Didaktik in Zeiten künstlicher Intelligenz"
 format: 
   revealjs: 
     controls: true
@@ -24,6 +24,7 @@ resources:
 Zum Starten des Ateliers bitte diesen Link verwenden:
 
 <br>
+<div type="showIPSocket" id="ip-socket" class="centered-xxl-text"></div>
 <div id="ip-socket" class="centered-xxl-text"></div>
 <script type="module">
   // using the "let ip_socket = await getIPSocket();" from draw.js displays the IP address in the html
@@ -75,16 +76,16 @@ function goFullScreen() {
 <!--==============================================================================================================================================-->
 ## Agenda
 
-- Was ist künstliche Intelligenz (20 min)
-  - Einführung
-  - KI - Wir bauen ein Neuronales Netz
-  - Grundlagen Modelle
-  - Ausblick 2029/2034
-- Selbstversuche mit ProPhysik (20 min)
-  - einen KI Lernbegleiter Prototyp
+- Technologie hinter künstlicher Intelligenz (20 min)
+  - KI Technologie heute (<-)
+  - Wir bauen ein neuronales Netz (<-)
+  - KI Foundation Modelle (<-)
+  - KI Modelle, Kosten und Evaluation
+- Selbstversuche mit KI für MINT Didaktik (20 min)
+  - Praxisbeispiel: Ein KI Physik Tutor (<-)
 - Und was bedeutet das für die Bildung (20 min)
-  - KI MINT Vision
-  - Lernwirksame KI Tutoren
+  - Unsere KI MINT Vision (<-)
+  - Unserer Meinung zu KI (<-)
 
 ::: {.notes}
 - Fokus ist auf Technik und Didaktik. Vertehen was KI ist und wie sie funktioniert.
@@ -99,7 +100,7 @@ function goFullScreen() {
 <br><br><br><br>
 
 ::: {.centered-xxl-text}
-KI - Wo stehen wir heute, wo geht die Reise hin
+KI Technologie heute
 :::
 
 <!--==============================================================================================================================================-->
@@ -259,7 +260,7 @@ Findet das nächste Wort/Bild in einer Sequenz. `how are [you]`
 <br><br><br><br>
 
 ::: {.centered-xxl-text}
-Versuchen wir es selbst
+KI Foundation Modelle
 :::
 
 ## KI erledigt geitsige Arbeit
@@ -485,6 +486,8 @@ Und was sagen die KI Modelle?
 - [Open LLMs](https://labs.perplexity.ai/)
 - [GPT 3.5](https://chatgpt.com/?model=text-davinci-002-render-sha)
 - [GPT 4](https://chatgpt.com/?oai-dm=1&model=gpt-4)
+[screenshot](images/ChatGPT 11 times.png)
+
 :::
 ::: {.column width="50%"}
 <div id="showa5"></div>
@@ -509,7 +512,7 @@ Bitte zählt die Anzahl der Tokens
 <br><br><br><br>
 
 ::: {.centered-xxl-text}
-Wie geht es weiter?
+KI Kosten und Evaluation
 :::
 <br><br><br><br><br><br>
 [Stanford University AI Index Report for 2024](https://aiindex.stanford.edu/report/)
@@ -522,6 +525,13 @@ Welche Entwicklung kann man erwarten?
 ## Model Entwicklung 1/2
 
 ![](images/Models over time.png){width="70%"}
+
+:::{.notes}
+GTP4
+- 13T (13 10^12) tokens for Training
+- estimated 1.5 10^12 parameters
+- Brain has 100 1^12 Synapses
+:::
 
 <!--==============================================================================================================================================-->
 ## Model Entwicklung 2/2
@@ -538,7 +548,7 @@ Welche Entwicklung kann man erwarten?
 ![](images/MMMU.png){width="70%"}
 
 <!--==============================================================================================================================================-->
-## Robotor Entwicklung
+## Roboter Entwicklung
 
 ![](images/NrOfProfServ.png){width="70%"}
 
@@ -563,7 +573,7 @@ Praxisbeispiel: Ein KI Physik Tutor
 Bitte meldet Euch bei ProPhysik an und bearbeitet die Aufgaben mit [Isaac](https://sebayt.ch/)
 
 <!--==============================================================================================================================================-->
-## Wie hat sich der Tutor verhalten?
+## Wie hat sich der Tutor verhalten? 
 
 :::: {.columns}
 ::: {.column width="40%"}
@@ -589,7 +599,7 @@ Was kann die Tutor schon, was noch nicht? Wie unterscheidet sich der Tutor von C
 ::::
 
 <!--==============================================================================================================================================-->
-## Welches Lernmodell wurde verwendet?
+## Welches Lernmodell wurde verwendet? 
 
 :::: {.columns}
 ::: {.column width="40%"}
@@ -641,7 +651,9 @@ KI MINT Vision
 
 :::: {.columns}
 ::: {.column width="40%"}
-- individuellen Entwicklung
+**Unterstützt/ermöglicht durch KI**
+
+- individuelle Entwicklung
 - personalisierte Ansätze
 - eigenes Tempo
 ![](images/student-study-group.webp){width="70%"}
@@ -687,7 +699,7 @@ Eine lernwirksame KI berücksicht die aktuellen Forschungsergebnisse (John Hatti
 ::: {.fragment .fade-out}
 Erwartungen:
 <form id="form8">
-  <input type="text" id="inputField8" name="input" style="width: 300px;">
+   <textarea id="inputField8" name="input" style="height:100px; width: 300px;"></textarea>
 </form>
 <script type="module"> 
   import {submitOnReturn} from "./draw.js";
@@ -724,7 +736,7 @@ Erwartungen:
 ::: {.fragment .fade-out}
 Erwartungen:
 <form id="form9">
-  <input type="text" id="inputField9" name="input" style="width: 300px;">
+   <textarea id="inputField9" name="input" style="height:100px; width: 300px;"></textarea>
 </form>
 <script type="module"> 
   import {submitOnReturn} from "./draw.js";
@@ -733,7 +745,7 @@ Erwartungen:
 :::
 
 ::: {.fragment}
-- inhaltliche Koherenz entlang eines strukturierten Lernpfades
+- entlang eines strukturierten Lernpfades
 - verknüpft Wissen und Methoden
 - bietet eine anregende Methoden Vielfalt
 - baut auf Vorwissen und Alltagserfahrung auf
@@ -761,7 +773,7 @@ Erwartungen:
 ::: {.fragment .fade-out}
 Erwartungen:
 <form id="form10">
-  <input type="text" id="inputField10" name="input" style="width: 300px;">
+  <textarea id="inputField10" name="input" style="height:100px; width: 300px;"></textarea>
 </form>
 <script type="module"> 
   import {submitOnReturn} from "./draw.js";
@@ -795,7 +807,7 @@ Erwartungen:
 ::: {.fragment .fade-out}
 Erwartungen:
 <form id="form11">
-  <input type="text" id="inputField11" name="input" style="width: 300px;">
+   <textarea id="inputField11" name="input" style="height:100px; width: 300px;"></textarea>
 </form>
 <script type="module"> 
   import {submitOnReturn} from "./draw.js";
@@ -831,7 +843,7 @@ Erwartungen:
 ::: {.fragment .fade-out}
 Erwartungen:
 <form id="form12">
-  <input type="text" id="inputField12" name="input" style="width: 300px;">
+   <textarea id="inputField12" name="input" style="height:100px; width: 300px;"></textarea>
 </form>
 <script type="module"> 
   import {submitOnReturn} from "./draw.js";
@@ -864,7 +876,7 @@ Erwartungen:
 ::: {.fragment .fade-out}
 Erwartungen:
 <form id="form13">
-  <input type="text" id="inputField13" name="input" style="width: 300px;">
+  <textarea id="inputField12" name="input" style="height:100px; width: 300px;"></textarea>
 </form>
 <script type="module"> 
   import {submitOnReturn} from "./draw.js";
@@ -1051,10 +1063,17 @@ Unserer Meinung zu KI
     }
 </script>
 
-<!--==============================================================================================================================================-->
-## Globale Meinung zu KI - Vergleich
+[Poll](images/AI Poll.png)
 
-![](images/AI Poll.png){style="border: 1px solid gray;"}
+<!--==============================================================================================================================================-->
+## Zusammenfassung und Fragen
+
+Ich hoffe ich konnte einen Einblick geben in:
+
+- Technologie hinter künstlicher Intelligenz
+- Was geht heute mit KI als wirklichen Lernbegleiter
+- Und was bedeutet das für die Bildung/Didaktik
+- Wo wollen wir hin und wo nicht
 
 
 <!--==============================================================================================================================================-->

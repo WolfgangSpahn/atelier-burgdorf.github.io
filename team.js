@@ -1,3 +1,5 @@
+
+
 // Description: This file contains the list of team members.
 const icons = [ { name: "Ameise", path: "animal-ant-domestic-svgrepo-com.svg"},
                 { name: "Fisch", path: "animal-aquarium-domestic-svgrepo-com.svg"},

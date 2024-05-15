@@ -231,7 +231,7 @@ export function likertScale(draw, id) {
         //     .move(x, 30) // This sets the x and y position
         //     .font({ anchor: 'middle', size: 14 }) // This sets the text-anchor to middle
         //     .attr('alignment-baseline', 'middle'); // This sets the alignment-baseline to middle
-        const textElement = createSVGText(labels[i], x, 45, 14, 'black');
+        const textElement = createSVGText(labels[i], x, 45,{ anchor: 'middle', size: 14, color: 'black' });
         draw.node.appendChild(textElement);
       
     }
